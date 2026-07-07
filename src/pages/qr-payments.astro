@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const qrCells = Array.from({ length: 49 });
 ---
 <BaseLayout
   title="QR Payments - SkanPay"
@@ -15,24 +13,22 @@ const qrCells = Array.from({ length: 49 });
   </section>
 
   <section class="section split">
-    <div class="mockup-shell" aria-label="QR checkout illustration">
-      <div class="terminal-mockup">
-        <div class="terminal-top">
-          <strong>Payment request</strong>
-          <span>Open</span>
-        </div>
-        <div class="terminal-body">
-          <div class="qr-grid" aria-hidden="true">
-            {qrCells.map(() => <span></span>)}
-          </div>
-          <div class="payment-lines" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <div class="payment-status">Awaiting customer</div>
-          </div>
-        </div>
+    <div class="spec-panel">
+      <div class="spec-row">
+        <span>Request</span>
+        <p>Payment details are attached to a checkout-specific QR session.</p>
+      </div>
+      <div class="spec-row">
+        <span>Customer</span>
+        <p>The customer opens the request through a supported wallet or app.</p>
+      </div>
+      <div class="spec-row">
+        <span>Decision</span>
+        <p>The transaction is authorized, cancelled, expired, or left pending.</p>
+      </div>
+      <div class="spec-row">
+        <span>Merchant</span>
+        <p>The checkout team needs a readable result before closing the sale.</p>
       </div>
     </div>
     <div class="split-panel">

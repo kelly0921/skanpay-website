@@ -220,115 +220,95 @@ h3 {
   font-size: 1.45rem;
 }
 
-.mockup-shell {
+.hero-panel {
+  display: grid;
+  gap: 18px;
   width: min(100%, 520px);
   margin-left: auto;
-  padding: 18px;
-  background: rgba(56, 87, 119, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 22px;
+  padding: 24px;
+  overflow: hidden;
+  background: rgba(22, 22, 22, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
   box-shadow: var(--shadow);
 }
 
-.mockup-shell.technical {
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.panel-header strong {
+  color: var(--white);
+  font-size: 1.35rem;
+}
+
+.panel-header span {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.system-card {
   display: grid;
   gap: 14px;
 }
 
-.terminal-mockup {
-  overflow: hidden;
-  background: var(--white);
-  border-radius: 16px;
-}
-
-.terminal-top {
-  display: flex;
-  justify-content: space-between;
-  padding: 18px;
-  color: var(--white);
-  background: var(--navy);
-}
-
-.terminal-body {
+.system-card div {
   display: grid;
-  grid-template-columns: 156px 1fr;
-  gap: 24px;
-  padding: 26px;
-}
-
-.qr-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-  aspect-ratio: 1;
-  padding: 12px;
-  background: #eef3f8;
-  border-radius: 10px;
-}
-
-.qr-grid span {
-  background: var(--navy);
-  border-radius: 2px;
-}
-
-.qr-grid span:nth-child(2n),
-.qr-grid span:nth-child(5n) {
-  background: transparent;
-}
-
-.payment-lines {
-  display: grid;
-  gap: 12px;
-  align-content: start;
-}
-
-.payment-lines span {
-  height: 13px;
-  background: var(--panel-strong);
-  border-radius: 4px;
-}
-
-.payment-lines span:nth-child(1) {
-  width: 72%;
-  background: var(--accent-dark);
-}
-
-.payment-lines span:nth-child(2) {
-  width: 52%;
-}
-
-.payment-status {
-  display: inline-flex;
-  width: max-content;
-  margin-top: 8px;
-  padding: 7px 10px;
-  color: var(--accent-dark);
-  background: #eef3f8;
+  gap: 6px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 800;
 }
 
-.event-log {
+.system-card span {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.system-card strong {
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.signal-grid {
   display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
   overflow: hidden;
-  color: rgba(255, 255, 255, 0.82);
-  background: rgba(0, 0, 0, 0.38);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 8px;
-  font-family: "Consolas", "SFMono-Regular", monospace;
-  font-size: 0.82rem;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
 }
 
-.event-log div {
-  display: flex;
-  gap: 12px;
-  padding: 11px 13px;
-  background: rgba(22, 22, 22, 0.62);
+.signal-grid div {
+  display: grid;
+  gap: 6px;
+  padding: 14px 10px;
+  background: rgba(56, 87, 119, 0.42);
 }
 
-.event-log span,
+.signal-grid span {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.signal-grid strong {
+  color: var(--white);
+  font-size: 0.88rem;
+}
+
 .data-card span,
 .route-card span,
 .spec-row span,
@@ -421,7 +401,7 @@ h3 {
   padding: 24px;
   background: var(--white);
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .data-card,
@@ -456,7 +436,7 @@ h3 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .flow-table article {
@@ -493,7 +473,7 @@ h3 {
   padding: 30px;
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .spec-panel {
@@ -501,7 +481,7 @@ h3 {
   overflow: hidden;
   background: var(--white);
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .spec-row {
@@ -692,7 +672,7 @@ textarea {
     min-height: auto;
   }
 
-  .mockup-shell {
+  .hero-panel {
     margin: 0;
   }
 
@@ -741,13 +721,9 @@ textarea {
   }
 
   .trust-strip,
-  .terminal-body,
+  .signal-grid,
   .field-grid {
     grid-template-columns: 1fr;
-  }
-
-  .qr-grid {
-    max-width: 180px;
   }
 
   .spec-row {

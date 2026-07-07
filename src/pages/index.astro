@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const qrCells = Array.from({ length: 49 });
 ---
 <BaseLayout
   title="SkanPay - QR Payment Gateway for In-Store Transactions"
@@ -11,9 +9,9 @@ const qrCells = Array.from({ length: 49 });
   <section class="hero">
     <div>
       <p class="eyebrow">QR payment gateway</p>
-      <h1>QR payment gateway for in-store and mobile wallet transactions</h1>
+      <h1>QR payment infrastructure for in-store acceptance</h1>
       <p class="hero-copy">
-        SkanPay helps merchants and payment partners define the transaction path from QR presentation to customer authorization, merchant confirmation, and operational follow-up.
+        SkanPay supports structured QR payment conversations for merchants, payment apps, mobile wallets, and loyalty platforms entering physical-store checkout.
       </p>
       <div class="button-row">
         <a class="button primary" href="/contact/">Contact SkanPay</a>
@@ -34,42 +32,46 @@ const qrCells = Array.from({ length: 49 });
         </div>
       </div>
     </div>
-    <div class="mockup-shell technical" aria-label="QR payment terminal illustration">
-      <div class="terminal-mockup">
-        <div class="terminal-top">
-          <strong>SkanPay Checkout</strong>
-          <span>$24.80</span>
+    <aside class="hero-panel" aria-label="SkanPay platform overview">
+      <div class="panel-header">
+        <span>Platform overview</span>
+        <strong>SkanPay</strong>
+      </div>
+      <div class="system-card">
+        <div>
+          <span>Acceptance channel</span>
+          <strong>In-store QR code payment</strong>
         </div>
-        <div class="terminal-body">
-          <div class="qr-grid" aria-hidden="true">
-            {qrCells.map(() => <span></span>)}
-          </div>
-          <div class="payment-lines" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <div class="payment-status">Ready to scan</div>
-          </div>
+        <div>
+          <span>Primary participants</span>
+          <strong>Merchant, customer, payment app</strong>
+        </div>
+        <div>
+          <span>Transaction states</span>
+          <strong>Created, scanned, authorized, confirmed</strong>
+        </div>
+        <div>
+          <span>Commercial focus</span>
+          <strong>Merchant onboarding and partner enablement</strong>
         </div>
       </div>
-      <div class="event-log" aria-label="Transaction event states">
-        <div><span>01</span> qr_session.created</div>
-        <div><span>02</span> customer.scan_received</div>
-        <div><span>03</span> payment.authorization_pending</div>
-        <div><span>04</span> merchant.confirmation_ready</div>
+      <div class="signal-grid">
+        <div><span>Flow</span><strong>QR request</strong></div>
+        <div><span>Status</span><strong>Readable</strong></div>
+        <div><span>Audience</span><strong>B2B</strong></div>
+        <div><span>Scope</span><strong>Gateway</strong></div>
       </div>
-    </div>
+    </aside>
   </section>
 
   <section class="section">
     <div class="section-heading">
       <div>
         <p class="eyebrow">Transaction model</p>
-        <h2>A readable flow for every party in the payment</h2>
+        <h2>Define the transaction before integration begins</h2>
       </div>
       <p>
-        The site now describes SkanPay as a gateway workflow: what is created, who acts next, and what the merchant needs to see before completing the sale.
+        QR payment projects need clear state definitions, merchant expectations, customer actions, and partner responsibilities.
       </p>
     </div>
     <div class="flow-table" aria-label="QR payment transaction model">
@@ -98,10 +100,10 @@ const qrCells = Array.from({ length: 49 });
 
   <section class="section technical-band">
     <div>
-      <p class="eyebrow">Implementation focus</p>
-      <h2>Technical enough for partners. Simple enough for merchants.</h2>
+      <p class="eyebrow">Where SkanPay fits</p>
+      <h2>A practical layer between checkout and mobile payment experiences</h2>
       <p class="section-intro">
-        SkanPay should make the QR payment workflow understandable before an integration discussion starts. Each page separates checkout behavior, partner responsibilities, and support expectations.
+        SkanPay positions QR payment as an operational workflow, not just a code on the counter. The focus is the handoff between merchant checkout, customer approval, and partner payment experiences.
       </p>
     </div>
     <div class="grid three">
@@ -125,10 +127,10 @@ const qrCells = Array.from({ length: 49 });
 
   <section class="section split">
     <div>
-      <p class="eyebrow">Gateway capabilities</p>
-      <h2>What the site now makes easier to understand</h2>
+      <p class="eyebrow">Readiness model</p>
+      <h2>What needs to be clear before a launch conversation</h2>
       <p class="section-intro">
-        The redesign avoids vague payment language and gives prospects a more concrete view of the system conversations SkanPay supports.
+        The site now reads more like a serious payment-operations product: clear scope, clear stakeholders, and clear next questions.
       </p>
     </div>
     <div class="spec-panel">
@@ -154,28 +156,28 @@ const qrCells = Array.from({ length: 49 });
   <section class="section">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Site architecture</p>
-        <h2>Pages organized around buyer questions</h2>
+        <p class="eyebrow">Use cases</p>
+        <h2>Built for payment conversations with real operators</h2>
       </div>
       <p>
-        A visitor can move from business value to payment flow to partner fit without hunting through repeated text.
+        The content is organized around practical business questions instead of feature claims.
       </p>
     </div>
     <div class="grid three">
       <article class="card route-card">
-        <span>/services</span>
-        <h3>What SkanPay supports</h3>
-        <p>QR payments, gateway planning, onboarding, and partner support.</p>
+        <span>Merchant</span>
+        <h3>Add a QR payment option</h3>
+        <p>Plan how staff present the request, read the result, and support customers.</p>
       </article>
       <article class="card route-card">
-        <span>/qr-payments</span>
-        <h3>How the transaction works</h3>
-        <p>Presentation, scan, authorization, confirmation, and follow-up.</p>
+        <span>Payment app</span>
+        <h3>Enter the checkout moment</h3>
+        <p>Connect an existing mobile payment relationship to an in-store action.</p>
       </article>
       <article class="card route-card">
-        <span>/partners</span>
-        <h3>Where integrations fit</h3>
-        <p>Payment apps, wallets, and loyalty platforms entering in-store checkout.</p>
+        <span>Loyalty</span>
+        <h3>Link rewards and payment</h3>
+        <p>Explore payment flows that can work alongside offers and customer engagement.</p>
       </article>
     </div>
   </section>
@@ -183,24 +185,24 @@ const qrCells = Array.from({ length: 49 });
   <section class="section">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Trust posture</p>
-        <h2>Precise language, no inflated claims</h2>
+        <p class="eyebrow">Professional standard</p>
+        <h2>Measured language for a serious payments audience</h2>
       </div>
       <p>
-        Payment websites need clarity more than decoration. The copy is written to be useful without implying unverified processor, bank, or compliance capabilities.
+        The site avoids invented customer logos, processor promises, and compliance claims until those details are confirmed.
       </p>
     </div>
     <div class="grid three">
       <article class="card">
-        <h3>System language</h3>
-        <p>Visitors see concrete transaction states instead of generic payment slogans.</p>
+        <h3>Concrete operating language</h3>
+        <p>Visitors see transaction states, participants, and support responsibilities.</p>
       </article>
       <article class="card">
         <h3>Responsible scope</h3>
-        <p>Security, reporting, and settlement language stays practical until specific integrations are confirmed.</p>
+        <p>Security, reporting, and settlement language stays practical until integrations are confirmed.</p>
       </article>
       <article class="card">
-        <h3>Direct next step</h3>
+        <h3>Clear inquiry path</h3>
         <p>Prospects can identify the inquiry type and send details to support@skanpay.us.</p>
       </article>
     </div>
