@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const qrCells = Array.from({ length: 49 });
+---
+<BaseLayout
+  title="QR Payments - SkanPay"
+  description="Learn how SkanPay frames QR code payment flows for in-store commerce, customer authorization, and merchant confirmation."
+  activePath="/qr-payments/"
+>
+  <section class="page-hero">
+    <p class="eyebrow">QR payments</p>
+    <h1>A clearer scan-to-pay path for physical checkout</h1>
+    <p>QR payments give customers a familiar mobile action while giving merchants another way to support checkout without adding confusion at the counter.</p>
+  </section>
+
+  <section class="section split">
+    <div class="mockup-shell" aria-label="QR checkout illustration">
+      <div class="terminal-mockup">
+        <div class="terminal-top">
+          <strong>Payment request</strong>
+          <span>Open</span>
+        </div>
+        <div class="terminal-body">
+          <div class="qr-grid" aria-hidden="true">
+            {qrCells.map(() => <span></span>)}
+          </div>
+          <div class="payment-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="payment-status">Awaiting customer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="split-panel">
+      <p class="eyebrow">How it works</p>
+      <h2>Simple enough for the checkout counter</h2>
+      <ul>
+        <li>The merchant presents a QR code linked to the payment request.</li>
+        <li>The customer scans with a supported app or wallet experience.</li>
+        <li>The customer reviews and authorizes the transaction.</li>
+        <li>The merchant receives a clear confirmation state.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Why it matters</p>
+        <h2>QR payments can support more flexible commerce</h2>
+      </div>
+      <p>For merchants and partners, the opportunity is not only the code on the counter. It is the ability to connect checkout with mobile relationships.</p>
+    </div>
+    <div class="grid three">
+      <article class="card">
+        <h3>Customer familiarity</h3>
+        <p>Scanning is already a common mobile action, which helps reduce explanation at the point of sale.</p>
+      </article>
+      <article class="card">
+        <h3>Wallet participation</h3>
+        <p>Mobile apps and loyalty programs can become more relevant when they can participate in payment moments.</p>
+      </article>
+      <article class="card">
+        <h3>Merchant flexibility</h3>
+        <p>Stores can evaluate QR payment as an additional checkout option alongside existing acceptance methods.</p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

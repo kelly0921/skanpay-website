@@ -1,0 +1,155 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const qrCells = Array.from({ length: 49 });
+---
+<BaseLayout
+  title="SkanPay - QR Payment Gateway for In-Store Transactions"
+  description="SkanPay helps merchants and payment partners support QR code payment experiences for in-store and mobile wallet transactions."
+  activePath="/"
+>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">QR payment gateway</p>
+      <h1>QR payment gateway for in-store and mobile wallet transactions</h1>
+      <p class="hero-copy">
+        SkanPay helps merchants and payment partners create a clearer path from scan to authorization to transaction confirmation.
+      </p>
+      <div class="button-row">
+        <a class="button primary" href="/contact/">Contact SkanPay</a>
+        <a class="button secondary" href="/qr-payments/">Explore QR Payments</a>
+      </div>
+      <div class="trust-strip" aria-label="SkanPay focus areas">
+        <div class="trust-item">
+          <strong>01</strong>
+          Merchant checkout
+        </div>
+        <div class="trust-item">
+          <strong>02</strong>
+          Wallet-ready QR flow
+        </div>
+        <div class="trust-item">
+          <strong>03</strong>
+          Partner integration support
+        </div>
+      </div>
+    </div>
+    <div class="mockup-shell" aria-label="QR payment terminal illustration">
+      <div class="terminal-mockup">
+        <div class="terminal-top">
+          <strong>SkanPay Checkout</strong>
+          <span>$24.80</span>
+        </div>
+        <div class="terminal-body">
+          <div class="qr-grid" aria-hidden="true">
+            {qrCells.map(() => <span></span>)}
+          </div>
+          <div class="payment-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="payment-status">Ready to scan</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Payment flow</p>
+        <h2>From customer scan to merchant confirmation</h2>
+      </div>
+      <p>
+        The site explains the intended transaction experience without overstating processor, bank, or compliance capabilities.
+      </p>
+    </div>
+    <div class="grid four timeline">
+      <article>
+        <span class="number">1</span>
+        <h3>Scan</h3>
+        <p>The merchant presents a QR code at checkout for the customer to scan with a supported payment or wallet experience.</p>
+      </article>
+      <article>
+        <span class="number">2</span>
+        <h3>Authorize</h3>
+        <p>The customer reviews the payment request and confirms the transaction in the participating payment experience.</p>
+      </article>
+      <article>
+        <span class="number">3</span>
+        <h3>Confirm</h3>
+        <p>The checkout flow returns a clear result so the merchant can complete the sale with confidence.</p>
+      </article>
+      <article>
+        <span class="number">4</span>
+        <h3>Settle</h3>
+        <p>SkanPay supports payment gateway workflows with settlement and reporting language kept general until confirmed.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section split">
+    <div>
+      <p class="eyebrow">Merchant value</p>
+      <h2>Designed for stores that need a cleaner payment option</h2>
+      <p class="section-intro">
+        QR payments can reduce checkout friction, support mobile-first customers, and give merchants another way to accept payment without relying on a single checkout pattern.
+      </p>
+    </div>
+    <div class="grid two">
+      <article class="card accent">
+        <h3>In-store QR acceptance</h3>
+        <p>Make the scan-and-pay moment easy to understand for employees and customers.</p>
+      </article>
+      <article class="card">
+        <h3>Mobile wallet readiness</h3>
+        <p>Support payment experiences where customers already manage loyalty, offers, or wallet activity.</p>
+      </article>
+      <article class="card">
+        <h3>Operational clarity</h3>
+        <p>Keep transaction results, next steps, and support paths visible to the people running the checkout.</p>
+      </article>
+      <article class="card accent">
+        <h3>Partner-friendly model</h3>
+        <p>Give payment apps and loyalty platforms a practical path into physical-store checkout.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Trust posture</p>
+        <h2>Clear, careful, and ready for real conversations</h2>
+      </div>
+      <p>
+        Payment websites need credibility. The redesign makes SkanPay look current while avoiding unsupported claims.
+      </p>
+    </div>
+    <div class="grid three">
+      <article class="card">
+        <h3>Plain-language product story</h3>
+        <p>Visitors can quickly understand what SkanPay does, who it serves, and why QR payment matters.</p>
+      </article>
+      <article class="card">
+        <h3>Responsible payment wording</h3>
+        <p>Security, reporting, and settlement language stays practical until specific integrations are confirmed.</p>
+      </article>
+      <article class="card">
+        <h3>Direct contact path</h3>
+        <p>Prospects and partners can reach SkanPay through a focused inquiry form and support email.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div>
+      <p class="eyebrow">Next step</p>
+      <h2>Bring QR payment conversations into focus.</h2>
+      <p>Share the merchant, partner, or product details you want SkanPay to support and the team can follow up directly.</p>
+    </div>
+    <a class="button secondary" href="/contact/">Start a Conversation</a>
+  </section>
+</BaseLayout>

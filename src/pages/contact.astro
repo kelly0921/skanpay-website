@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const subject = encodeURIComponent("SkanPay inquiry");
+const body = encodeURIComponent("Name:\nEmail:\nCompany:\nInquiry type:\n\nMessage:\n");
+---
+<BaseLayout
+  title="Contact - SkanPay"
+  description="Contact SkanPay for questions, cooperation, merchant conversations, and QR payment partnership inquiries."
+  activePath="/contact/"
+>
+  <section class="page-hero">
+    <p class="eyebrow">Contact</p>
+    <h1>Start a SkanPay conversation</h1>
+    <p>Tell us a little about your business, payment use case, or partnership question. SkanPay can follow up with the right next step.</p>
+  </section>
+
+  <section class="section contact-grid">
+    <div class="split-panel">
+      <h2>For questions or cooperation</h2>
+      <p>Use the form details as a guide, or email SkanPay directly while the hosted form endpoint is being configured.</p>
+      <ul class="check-list">
+        <li>Merchant QR payment inquiries</li>
+        <li>Wallet or loyalty partnership discussions</li>
+        <li>Payment gateway service questions</li>
+        <li>General cooperation requests</li>
+      </ul>
+      <p><strong>Email:</strong> <a href="mailto:support@skanpay.us">support@skanpay.us</a></p>
+    </div>
+
+    <form class="contact-form" action={`mailto:support@skanpay.us?subject=${subject}&body=${body}`} method="post" enctype="text/plain">
+      <div class="field-grid">
+        <label>
+          Name
+          <input type="text" name="name" autocomplete="name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+      </div>
+      <label>
+        Company
+        <input type="text" name="company" autocomplete="organization" />
+      </label>
+      <label>
+        Inquiry type
+        <select name="inquiry_type" required>
+          <option value="">Select an inquiry type</option>
+          <option>Merchant QR payment inquiry</option>
+          <option>Partner or wallet inquiry</option>
+          <option>Gateway service question</option>
+          <option>General cooperation</option>
+        </select>
+      </label>
+      <label>
+        Message
+        <textarea name="message" required></textarea>
+      </label>
+      <p class="form-note">This temporary form opens an email draft to support@skanpay.us until a hosted form endpoint is connected.</p>
+      <button class="button primary" type="submit">Send Inquiry</button>
+    </form>
+  </section>
+</BaseLayout>
