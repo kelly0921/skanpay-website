@@ -1,17 +1,17 @@
 :root {
-  --ink: #08252f;
-  --muted: #5f7280;
-  --line: #dbe7e8;
-  --panel: #f6fbfa;
-  --panel-strong: #eaf6f3;
-  --accent: #00a884;
-  --accent-dark: #007a68;
-  --navy: #052c37;
+  --ink: #1b1b1b;
+  --muted: #5e5e5e;
+  --line: #e2e2e2;
+  --panel: #f7f7f7;
+  --panel-strong: #eef3f8;
+  --accent: #5e83a8;
+  --accent-dark: #385777;
+  --navy: #161616;
   --white: #ffffff;
-  --shadow: 0 18px 50px rgba(6, 45, 55, 0.12);
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
   font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+    Helvetica, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
 }
 
 * {
@@ -44,8 +44,8 @@ svg {
   justify-content: space-between;
   gap: 24px;
   padding: 18px clamp(20px, 5vw, 72px);
-  background: rgba(255, 255, 255, 0.92);
-  border-bottom: 1px solid var(--line);
+  background: rgba(22, 22, 22, 0.94);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(16px);
 }
 
@@ -53,7 +53,7 @@ svg {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--navy);
+  color: var(--white);
   font-weight: 800;
   font-size: 1.08rem;
 }
@@ -64,7 +64,7 @@ svg {
   width: 34px;
   height: 34px;
   color: var(--white);
-  background: var(--navy);
+  background: var(--accent-dark);
   border-radius: 8px;
   font-weight: 900;
 }
@@ -73,7 +73,7 @@ svg {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #385360;
+  color: #cfcfcf;
   font-size: 0.94rem;
 }
 
@@ -85,13 +85,13 @@ svg {
 
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
-  color: var(--navy);
-  background: var(--panel-strong);
+  color: var(--white);
+  background: rgba(94, 131, 168, 0.26);
 }
 
 .header-cta {
   color: var(--white);
-  background: var(--navy);
+  background: var(--accent-dark);
   font-weight: 700;
 }
 
@@ -111,13 +111,13 @@ svg {
   padding-top: 64px;
   padding-bottom: 76px;
   background:
-    linear-gradient(115deg, rgba(234, 246, 243, 0.9), rgba(255, 255, 255, 0.72)),
-    radial-gradient(circle at 88% 20%, rgba(0, 168, 132, 0.16), transparent 34%);
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.68)),
+    url("https://img1.wsimg.com/isteam/stock/Z0jOYQW/:/rs=w:1800,m") center / cover no-repeat;
 }
 
 .eyebrow {
   margin: 0 0 14px;
-  color: var(--accent-dark);
+  color: var(--accent);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -128,7 +128,7 @@ h1,
 h2,
 h3 {
   margin: 0;
-  color: var(--navy);
+  color: var(--ink);
   line-height: 1.08;
 }
 
@@ -157,7 +157,14 @@ h3 {
 .hero-copy {
   max-width: 650px;
   margin: 22px 0 0;
+  color: rgba(255, 255, 255, 0.86);
   font-size: 1.18rem;
+}
+
+.hero h1,
+.hero h2,
+.hero h3 {
+  color: var(--white);
 }
 
 .button-row {
@@ -180,12 +187,14 @@ h3 {
 
 .button.primary {
   color: var(--white);
-  background: var(--navy);
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
 }
 
 .button.secondary {
-  color: var(--navy);
+  color: var(--accent-dark);
   background: var(--white);
+  border-color: var(--white);
 }
 
 .trust-strip {
@@ -198,14 +207,15 @@ h3 {
 
 .trust-item {
   padding: 16px;
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid var(--line);
+  color: rgba(255, 255, 255, 0.78);
+  background: rgba(22, 22, 22, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 8px;
 }
 
 .trust-item strong {
   display: block;
-  color: var(--navy);
+  color: var(--white);
   font-size: 1.45rem;
 }
 
@@ -213,8 +223,8 @@ h3 {
   width: min(100%, 520px);
   margin-left: auto;
   padding: 18px;
-  background: #dceceb;
-  border: 1px solid rgba(8, 37, 47, 0.12);
+  background: rgba(56, 87, 119, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 22px;
   box-shadow: var(--shadow);
 }
@@ -246,7 +256,7 @@ h3 {
   gap: 5px;
   aspect-ratio: 1;
   padding: 12px;
-  background: #eff7f5;
+  background: #eef3f8;
   border-radius: 10px;
 }
 
@@ -274,7 +284,7 @@ h3 {
 
 .payment-lines span:nth-child(1) {
   width: 72%;
-  background: var(--navy);
+  background: var(--accent-dark);
 }
 
 .payment-lines span:nth-child(2) {
@@ -287,7 +297,7 @@ h3 {
   margin-top: 8px;
   padding: 7px 10px;
   color: var(--accent-dark);
-  background: #e8faf3;
+  background: #eef3f8;
   border-radius: 6px;
   font-size: 0.85rem;
   font-weight: 800;
@@ -296,8 +306,10 @@ h3 {
 .page-hero {
   padding-top: 72px;
   padding-bottom: 56px;
-  background: var(--panel);
-  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.72)),
+    url("https://img1.wsimg.com/isteam/stock/Z0jOYQW/:/rs=w:1800,m") center / cover no-repeat;
+  border-bottom: 1px solid #000000;
 }
 
 .page-hero p,
@@ -305,6 +317,14 @@ h3 {
   max-width: 720px;
   margin: 18px 0 0;
   font-size: 1.08rem;
+}
+
+.page-hero h1 {
+  color: var(--white);
+}
+
+.page-hero p {
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .section {
@@ -347,7 +367,7 @@ h3 {
 }
 
 .card.accent {
-  background: var(--panel);
+  background: var(--panel-strong);
 }
 
 .card p {
@@ -394,6 +414,7 @@ h3 {
   position: relative;
   padding-left: 28px;
   color: #29424e;
+  color: #303030;
 }
 
 .split-panel li::before,
@@ -425,7 +446,8 @@ h3 {
   padding-top: 48px;
   padding-bottom: 48px;
   color: var(--white);
-  background: var(--navy);
+  background:
+    linear-gradient(135deg, rgba(22, 22, 22, 0.98), rgba(56, 87, 119, 0.98));
 }
 
 .cta-band h2 {
@@ -461,7 +483,7 @@ h3 {
 label {
   display: grid;
   gap: 7px;
-  color: #29424e;
+  color: #303030;
   font-weight: 800;
 }
 
@@ -494,7 +516,7 @@ textarea {
   gap: 32px;
   padding: 42px clamp(20px, 5vw, 72px);
   color: rgba(255, 255, 255, 0.74);
-  background: #061d25;
+  background: #000000;
 }
 
 .site-footer a,
