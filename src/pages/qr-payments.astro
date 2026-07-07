@@ -39,10 +39,10 @@ const qrCells = Array.from({ length: 49 });
       <p class="eyebrow">How it works</p>
       <h2>Simple enough for the checkout counter</h2>
       <ul>
-        <li>The merchant presents a QR code linked to the payment request.</li>
-        <li>The customer scans with a supported app or wallet experience.</li>
-        <li>The customer reviews and authorizes the transaction.</li>
-        <li>The merchant receives a clear confirmation state.</li>
+        <li>Merchant presents a QR code linked to a checkout-specific payment request.</li>
+        <li>Customer scans with a supported app or wallet experience.</li>
+        <li>Customer reviews the amount and authorizes or cancels the transaction.</li>
+        <li>Merchant receives a readable status before completing the sale.</li>
       </ul>
     </div>
   </section>
@@ -56,15 +56,18 @@ const qrCells = Array.from({ length: 49 });
       <p>For merchants and partners, the opportunity is not only the code on the counter. It is the ability to connect checkout with mobile relationships.</p>
     </div>
     <div class="grid three">
-      <article class="card">
+      <article class="card route-card">
+        <span>UX</span>
         <h3>Customer familiarity</h3>
         <p>Scanning is already a common mobile action, which helps reduce explanation at the point of sale.</p>
       </article>
-      <article class="card">
+      <article class="card route-card">
+        <span>Partner</span>
         <h3>Wallet participation</h3>
         <p>Mobile apps and loyalty programs can become more relevant when they can participate in payment moments.</p>
       </article>
-      <article class="card">
+      <article class="card route-card">
+        <span>Store</span>
         <h3>Merchant flexibility</h3>
         <p>Stores can evaluate QR payment as an additional checkout option alongside existing acceptance methods.</p>
       </article>

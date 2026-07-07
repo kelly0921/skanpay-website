@@ -14,21 +14,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <section class="section">
     <div class="grid two">
-      <article class="card accent">
+      <article class="card route-card">
+        <span>Service</span>
         <h3>In-store QR payments</h3>
-        <p>Help merchants present a simple scan-and-pay checkout option that customers can understand quickly.</p>
+        <p>Define how a QR payment request appears at checkout and what staff should expect after scan.</p>
       </article>
-      <article class="card">
+      <article class="card route-card">
+        <span>Gateway</span>
         <h3>Payment gateway integration</h3>
-        <p>Support technical and operational planning for QR payment flows, transaction status, and confirmation handling.</p>
+        <p>Map transaction status, customer authorization, and merchant confirmation requirements.</p>
       </article>
-      <article class="card">
+      <article class="card route-card">
+        <span>Operations</span>
         <h3>Merchant onboarding</h3>
-        <p>Shape the practical steps stores need to get started, train staff, and explain QR payment at checkout.</p>
+        <p>Plan store setup, staff guidance, checkout messaging, and support escalation steps.</p>
       </article>
-      <article class="card accent">
+      <article class="card route-card">
+        <span>Partner</span>
         <h3>Loyalty and wallet partnerships</h3>
-        <p>Connect payment conversations with apps that already have customer relationships, rewards, or stored wallet behavior.</p>
+        <p>Clarify where payment apps, wallets, and loyalty programs participate in the transaction.</p>
       </article>
     </div>
   </section>
@@ -42,11 +46,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="split-panel">
       <h3>Service conversations can include</h3>
       <ul>
-        <li>Store-level QR payment use cases</li>
-        <li>Customer scan and authorization flow</li>
-        <li>Merchant transaction confirmation needs</li>
-        <li>General reporting and settlement expectations</li>
-        <li>Partner or wallet integration planning</li>
+        <li>Store-level QR payment use cases and checkout constraints</li>
+        <li>Customer scan, review, authorization, and cancellation states</li>
+        <li>Merchant-facing confirmation, pending, and failure handling</li>
+        <li>General reporting and settlement expectations, kept scope-accurate</li>
+        <li>Partner or wallet integration boundaries</li>
       </ul>
     </div>
   </section>
