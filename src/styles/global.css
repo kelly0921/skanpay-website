@@ -168,6 +168,11 @@ h3 {
   color: var(--white);
 }
 
+.hero .eyebrow,
+.page-hero .eyebrow {
+  color: #a4c1e7;
+}
+
 .button-row {
   display: flex;
   flex-wrap: wrap;
