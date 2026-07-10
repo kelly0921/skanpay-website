@@ -1,0 +1,137 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const sessionStates = [
+  {
+    label: "Created",
+    detail: "Merchant creates a checkout request with amount, location, and session reference."
+  },
+  {
+    label: "Scanned",
+    detail: "Customer opens the request through a supported BeamCash-style mobile experience."
+  },
+  {
+    label: "Authorized",
+    detail: "Customer approves the request in the demo flow. No real payment data is collected."
+  },
+  {
+    label: "Confirmed",
+    detail: "Merchant sees a readable result and can close the checkout conversation."
+  }
+];
+
+const demoPayload = `{
+  "session_id": "demo_8F42",
+  "merchant": "Sample Market",
+  "amount": "24.80",
+  "currency": "USD",
+  "status": "authorized",
+  "mode": "sandbox"
+}`;
+---
+<BaseLayout
+  title="BeamCash Demo - SkanPay"
+  description="View a controlled BeamCash sandbox walkthrough for QR checkout sessions, customer approval, and merchant confirmation."
+  activePath="/beamcash-demo/"
+>
+  <section class="page-hero">
+    <p class="eyebrow">BeamCash demo</p>
+    <h1>A sandbox walkthrough for QR checkout</h1>
+    <p>
+      BeamCash can be presented as a controlled demo of the merchant and customer flow behind a QR payment session.
+    </p>
+  </section>
+
+  <section class="section demo-layout">
+    <div>
+      <p class="eyebrow">Demo purpose</p>
+      <h2>Make the workflow understandable before integration work begins</h2>
+      <p class="section-intro">
+        The demo should help a merchant, wallet partner, or internal stakeholder understand the payment states without suggesting that this page processes live payments.
+      </p>
+      <div class="notice-panel">
+        <strong>Sandbox only</strong>
+        <p>No card, bank, wallet, or personal payment credentials should be entered here. This is an illustrative product walkthrough.</p>
+      </div>
+    </div>
+
+    <aside class="demo-console" aria-label="BeamCash sandbox session summary">
+      <div class="demo-console-header">
+        <span>Session</span>
+        <strong>BeamCash sandbox</strong>
+      </div>
+      <div class="demo-metric-grid">
+        <div>
+          <span>Status</span>
+          <strong>Authorized</strong>
+        </div>
+        <div>
+          <span>Mode</span>
+          <strong>Sandbox</strong>
+        </div>
+        <div>
+          <span>Channel</span>
+          <strong>QR checkout</strong>
+        </div>
+        <div>
+          <span>Result</span>
+          <strong>Readable</strong>
+        </div>
+      </div>
+      <pre class="payload-block"><code>{demoPayload}</code></pre>
+    </aside>
+  </section>
+
+  <section class="section technical-band">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Walkthrough states</p>
+        <h2>Show the transaction as a simple state machine</h2>
+      </div>
+      <p>
+        A technical buyer should be able to understand what changes at each step and what the merchant sees.
+      </p>
+    </div>
+    <div class="state-track">
+      {sessionStates.map((state, index) => (
+        <article>
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <h3>{state.label}</h3>
+          <p>{state.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section split">
+    <div class="split-panel">
+      <p class="eyebrow">Merchant view</p>
+      <h2>What the counter team needs to know</h2>
+      <ul>
+        <li>The request amount and checkout reference are visible.</li>
+        <li>The customer action is separated from the merchant result.</li>
+        <li>Pending, cancelled, expired, and authorized states are easy to explain.</li>
+        <li>The demo ends with a confirmation screen, not a real settlement claim.</li>
+      </ul>
+    </div>
+    <div class="split-panel">
+      <p class="eyebrow">Customer view</p>
+      <h2>What the customer experiences</h2>
+      <ul>
+        <li>Scan or open the QR payment request.</li>
+        <li>Review the merchant name, amount, and session details.</li>
+        <li>Approve or cancel inside the sandbox flow.</li>
+        <li>Return to checkout with a clear final status.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div>
+      <p class="eyebrow">Next step</p>
+      <h2>Use the demo to guide a serious integration conversation.</h2>
+      <p>Share which merchant, wallet, or partner flow you want the BeamCash walkthrough to represent.</p>
+    </div>
+    <a class="button secondary" href="/contact/">Request a Demo</a>
+  </section>
+</BaseLayout>
