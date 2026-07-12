@@ -3,70 +3,91 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout
   title="QR Payments - SkanPay"
-  description="Learn how SkanPay frames QR code payment flows for in-store commerce, customer authorization, and merchant confirmation."
+  description="Review the SkanPay QR payment state model, participant responsibilities, and integration touchpoints for in-store checkout."
   activePath="/qr-payments/"
 >
   <section class="page-hero">
     <p class="eyebrow">QR payments</p>
-    <h1>A clearer scan-to-pay path for physical checkout</h1>
-    <p>The transaction flow is simple to describe: request, scan, decision, and merchant result.</p>
+    <h1>The transaction model behind QR checkout</h1>
+    <p>A technical view of the request, scan, decision, and merchant result.</p>
   </section>
 
-  <section class="section split">
-    <div class="spec-panel">
-      <div class="spec-row">
-        <span>Request</span>
-        <p>Payment details are attached to a checkout-specific QR session.</p>
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">State model</p>
+        <h2>Keep every checkout request readable</h2>
       </div>
-      <div class="spec-row">
-        <span>Customer</span>
-        <p>The customer opens the request through a supported wallet or app.</p>
-      </div>
-      <div class="spec-row">
-        <span>Decision</span>
-        <p>The transaction is authorized, cancelled, expired, or left pending.</p>
-      </div>
-      <div class="spec-row">
-        <span>Merchant</span>
-        <p>The checkout team needs a readable result before closing the sale.</p>
-      </div>
+      <p>
+        The value of QR payment is not the code. It is the state model behind the code.
+      </p>
     </div>
-    <div class="split-panel">
-      <p class="eyebrow">How it works</p>
-      <h2>The flow in plain terms</h2>
-      <ul>
-        <li>Present the QR payment request.</li>
-        <li>Open the request in a supported app or wallet.</li>
-        <li>Authorize, cancel, expire, or leave the request pending.</li>
-        <li>Return a readable result to the merchant.</li>
-      </ul>
+    <div class="state-table">
+      <article>
+        <span>Created</span>
+        <strong>Merchant starts checkout request</strong>
+        <p>Amount, merchant reference, and session details are attached to a QR request.</p>
+      </article>
+      <article>
+        <span>Scanned</span>
+        <strong>Customer opens request</strong>
+        <p>A supported wallet or app reads the request and shows the customer what they are approving.</p>
+      </article>
+      <article>
+        <span>Decided</span>
+        <strong>App returns outcome</strong>
+        <p>The request can be authorized, cancelled, expired, or left pending.</p>
+      </article>
+      <article>
+        <span>Confirmed</span>
+        <strong>Store receives result</strong>
+        <p>Counter staff get a readable result before closing the sale.</p>
+      </article>
     </div>
   </section>
 
   <section class="section">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Why it matters</p>
-        <h2>QR payments can support more flexible commerce</h2>
+        <p class="eyebrow">Responsibilities</p>
+        <h2>Separate merchant, customer, and partner roles</h2>
       </div>
-      <p>The value is not the code itself. The value is a checkout process that customers and staff can both understand.</p>
+      <p>Clear roles make QR checkout easier to explain, support, and integrate.</p>
     </div>
     <div class="grid three">
       <article class="card route-card">
-        <span>UX</span>
-        <h3>Customer familiarity</h3>
-        <p>Scanning is already a common mobile action, which helps reduce explanation at the point of sale.</p>
+        <span>Merchant</span>
+        <h3>Present request and read status</h3>
+        <p>The store needs a clean checkout prompt and a final result staff can trust.</p>
+      </article>
+      <article class="card route-card">
+        <span>Customer</span>
+        <h3>Review and approve</h3>
+        <p>The customer needs merchant details, amount, and a familiar app approval experience.</p>
       </article>
       <article class="card route-card">
         <span>Partner</span>
-        <h3>Wallet participation</h3>
-        <p>Mobile apps and loyalty programs can participate in payment moments when the flow is clearly defined.</p>
+        <h3>Handle app participation</h3>
+        <p>Payment, wallet, e-commerce, or loyalty apps need a defined checkout boundary.</p>
       </article>
-      <article class="card route-card">
-        <span>Store</span>
-        <h3>Merchant flexibility</h3>
-        <p>Stores can evaluate QR payment as an additional checkout option alongside existing acceptance methods.</p>
-      </article>
+    </div>
+  </section>
+
+  <section class="section technical-band">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Integration touchpoints</p>
+        <h2>Where deeper technical conversations begin</h2>
+      </div>
+      <p>
+        SkanPay keeps public claims focused, then uses direct conversations to discuss partner-specific requirements.
+      </p>
+    </div>
+    <div class="integration-list">
+      <div><span>01</span><strong>QR request format</strong></div>
+      <div><span>02</span><strong>Supported app or wallet behavior</strong></div>
+      <div><span>03</span><strong>Status and timeout handling</strong></div>
+      <div><span>04</span><strong>Merchant confirmation display</strong></div>
     </div>
   </section>
 </BaseLayout>

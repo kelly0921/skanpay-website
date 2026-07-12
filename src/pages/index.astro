@@ -102,22 +102,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           The SkanPay model keeps the payment conversation readable for the store and structured for partners.
         </p>
       </div>
-      <div class="process-board" aria-label="SkanPay checkout flow">
-        <div>
-          <span>01</span>
-          <strong>Merchant creates request</strong>
+      <div class="skanpay-diagram" aria-label="SkanPay checkout flow">
+        <div class="diagram-node merchant">
+          <span>Merchant</span>
+          <strong>Create QR request</strong>
         </div>
-        <div>
-          <span>02</span>
-          <strong>Customer scans and approves</strong>
+        <div class="diagram-arrow" aria-hidden="true">→</div>
+        <div class="diagram-node customer">
+          <span>Customer</span>
+          <strong>Scan and approve</strong>
         </div>
-        <div>
-          <span>03</span>
-          <strong>Payment app participates</strong>
+        <div class="diagram-arrow" aria-hidden="true">→</div>
+        <div class="diagram-node app">
+          <span>Payment app</span>
+          <strong>Authorize decision</strong>
         </div>
-        <div>
-          <span>04</span>
-          <strong>Store receives result</strong>
+        <div class="diagram-result">
+          <span>Store result</span>
+          <strong>Confirmed / cancelled / expired</strong>
         </div>
       </div>
     </div>
