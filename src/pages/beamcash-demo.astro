@@ -1,33 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const sessionStates = [
-  {
-    label: "Created",
-    detail: "Merchant creates a checkout request with amount, location, and session reference."
-  },
-  {
-    label: "Scanned",
-    detail: "Customer opens the request through the BeamCash mobile flow."
-  },
-  {
-    label: "Authorized",
-    detail: "Customer approves, cancels, or leaves the request pending."
-  },
-  {
-    label: "Confirmed",
-    detail: "Merchant receives a readable checkout result."
-  }
-];
-
-const demoPayload = `{
-  "session_id": "demo_8F42",
-  "merchant": "Sample Market",
-  "amount": "24.80",
-  "currency": "USD",
-  "status": "authorized",
-  "mode": "sandbox"
-}`;
 ---
 <BaseLayout
   title="BeamCash Demo - SkanPay"
@@ -38,64 +10,43 @@ const demoPayload = `{
     <p class="eyebrow">BeamCash demo</p>
     <h1>BeamCash is the working demo for the SkanPay checkout vision</h1>
     <p>
-      BeamCash shows merchants, investors, banks, and payment partners that the QR payment workflow can be made understandable for real users.
+      BeamCash shows the QR payment workflow with real product screens for sellers and buyers.
     </p>
   </section>
 
-  <section class="section demo-layout">
+  <section class="section split">
     <div>
       <img class="beamcash-wordmark" src="/beamcash/beamcash-wordmark.svg" alt="BeamCash" />
       <p class="eyebrow">Product proof</p>
-      <h2>BeamCash proves the user flow. SkanPay is the payment gateway invention.</h2>
+      <h2>A demo for merchants, banks, investors, and payment partners</h2>
       <p class="section-intro">
-        BeamCash is a mobile-first MVP that demonstrates buyer checkout, seller QR setup, payment status, and merchant readiness. It supports SkanPay conversations without implying this website processes live payments.
+        BeamCash demonstrates seller QR setup, buyer checkout, and payment status. SkanPay is the broader payment gateway invention.
       </p>
-      <div class="notice-panel">
-        <strong>Sandbox only</strong>
-        <p>This walkthrough is illustrative. It should not collect card, bank, wallet, or personal payment credentials.</p>
+    </div>
+    <div class="spec-panel">
+      <div class="spec-row">
+        <span>BeamCash</span>
+        <p>Working MVP that shows the user experience.</p>
+      </div>
+      <div class="spec-row">
+        <span>SkanPay</span>
+        <p>Patent-pending QR payment gateway model and partner opportunity.</p>
+      </div>
+      <div class="spec-row">
+        <span>Boundary</span>
+        <p>Demo only. This website does not process live payments or collect payment credentials.</p>
       </div>
     </div>
-
-    <aside class="demo-console" aria-label="BeamCash sandbox session summary">
-      <div class="demo-console-header">
-        <span>Session</span>
-        <strong>BeamCash sandbox</strong>
-      </div>
-      <div class="demo-flow-map" aria-label="BeamCash participant flow">
-        <span>Merchant request</span>
-        <span>Customer approval</span>
-        <span>Checkout result</span>
-      </div>
-      <div class="demo-metric-grid">
-        <div>
-          <span>Status</span>
-          <strong>Authorized</strong>
-        </div>
-        <div>
-          <span>Mode</span>
-          <strong>Sandbox</strong>
-        </div>
-        <div>
-          <span>Channel</span>
-          <strong>QR checkout</strong>
-        </div>
-        <div>
-          <span>Result</span>
-          <strong>Readable</strong>
-        </div>
-      </div>
-      <pre class="payload-block"><code>{demoPayload}</code></pre>
-    </aside>
   </section>
 
   <section class="section">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Show, not tell</p>
-        <h2>What the demo makes visible</h2>
+        <p class="eyebrow">Screens</p>
+        <h2>The flow in pictures</h2>
       </div>
       <p>
-        Instead of explaining QR payments abstractly, BeamCash shows the buyer and seller surfaces that make the checkout flow concrete.
+        Seller setup, QR display, buyer checkout, and repeat access are visible in the product.
       </p>
     </div>
     <div class="device-gallery">
@@ -118,56 +69,11 @@ const demoPayload = `{
     </div>
   </section>
 
-  <section class="section technical-band">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">Walkthrough states</p>
-        <h2>A simple state model for checkout conversations</h2>
-      </div>
-      <p>
-        Each state gives a technical buyer enough context to discuss store behavior, app behavior, and support needs.
-      </p>
-    </div>
-    <div class="state-track">
-      {sessionStates.map((state, index) => (
-        <article>
-          <span>{String(index + 1).padStart(2, "0")}</span>
-          <h3>{state.label}</h3>
-          <p>{state.detail}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section class="section split">
-    <div>
-      <p class="eyebrow">Product boundary</p>
-      <h2>BeamCash and SkanPay have different roles</h2>
-      <p class="section-intro">
-        Keeping the distinction clear helps the site stay credible with merchants, banks, and payment partners.
-      </p>
-    </div>
-    <div class="spec-panel">
-      <div class="spec-row">
-        <span>BeamCash</span>
-        <p>Demonstrates the buyer and seller user experience for QR-based merchant payments.</p>
-      </div>
-      <div class="spec-row">
-        <span>SkanPay</span>
-        <p>Represents the broader payment gateway invention, partner model, and in-store QR acceptance opportunity.</p>
-      </div>
-      <div class="spec-row">
-        <span>Purpose</span>
-        <p>Shows capability, user flow, and product thinking before deeper merchant, bank, or partner integration work.</p>
-      </div>
-    </div>
-  </section>
-
   <section class="cta-band">
     <div>
       <p class="eyebrow">Next step</p>
-      <h2>Use the demo to guide a focused integration conversation.</h2>
-      <p>Share which merchant, wallet, or partner flow you want the BeamCash walkthrough to represent.</p>
+      <h2>Use the demo to guide the integration conversation.</h2>
+      <p>Share the merchant, wallet, or partner flow you want to evaluate.</p>
     </div>
     <a class="button secondary" href="/contact/">Request a Demo</a>
   </section>
