@@ -8,9 +8,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 >
   <section class="page-hero">
     <p class="eyebrow">BeamCash demo</p>
-    <h1>A simple walkthrough of QR checkout</h1>
+    <h1>The product demo behind the SkanPay conversation</h1>
     <p>
-      BeamCash shows the seller and buyer experience behind the SkanPay checkout vision.
+      BeamCash shows how a seller QR code, buyer checkout screen, and merchant confirmation experience fit together.
     </p>
   </section>
 
@@ -43,26 +43,40 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="section-heading">
       <div>
         <p class="eyebrow">Walkthrough</p>
-        <h2>How the demo works</h2>
+        <h2>Follow the checkout path</h2>
       </div>
       <p>
-        The key screens are seller QR setup and buyer checkout.
+        The demo is intentionally narrow: set up the seller, scan the QR code, review checkout.
       </p>
     </div>
     <div class="walkthrough">
+      <article class="demo-story">
+        <div>
+          <span>01</span>
+          <strong>Seller is ready to accept a QR payment.</strong>
+        </div>
+        <div>
+          <span>02</span>
+          <strong>Buyer scans and reviews merchant details.</strong>
+        </div>
+        <div>
+          <span>03</span>
+          <strong>The flow gives SkanPay a concrete integration reference.</strong>
+        </div>
+      </article>
       <article class="walkthrough-step flow-overview">
         <div>
           <span>Overview</span>
-          <h3>Seller setup to checkout confirmation</h3>
-          <p>The overview shows how QR display, buyer checkout, and confirmation connect.</p>
+          <h3>Seller setup to checkout review</h3>
+          <p>The overview shows the path from seller setup to buyer checkout and post-checkout activity.</p>
         </div>
         <img src="/beamcash/beamcash-product-flow.svg" alt="BeamCash product flow from seller setup to QR sign, buyer checkout, confirmation, and dashboard" />
       </article>
       <article class="walkthrough-step">
         <div>
           <span>Step 1</span>
-          <h3>Seller creates a QR code</h3>
-          <p>The seller dashboard shows readiness, activity, and the QR code customers scan.</p>
+          <h3>Seller presents the QR code</h3>
+          <p>The dashboard gives the seller a visible QR code, readiness state, and recent activity.</p>
         </div>
         <img src="/beamcash/beamcash-seller-dashboard-mobile.png" alt="BeamCash seller dashboard with QR code and readiness status" />
       </article>
@@ -70,7 +84,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <div>
           <span>Step 2</span>
           <h3>Buyer reviews and pays</h3>
-          <p>The buyer sees the merchant profile, selects an amount, and proceeds through checkout.</p>
+          <p>The buyer sees who they are paying, enters an amount, and moves through a familiar checkout screen.</p>
         </div>
         <img src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen with merchant profile and payment amount" />
       </article>

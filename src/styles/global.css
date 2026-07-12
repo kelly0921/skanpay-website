@@ -60,14 +60,33 @@ svg {
 }
 
 .brand-mark {
-  display: inline-grid;
-  place-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
   width: 34px;
   height: 34px;
-  color: var(--white);
   background: var(--accent-dark);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 8px;
-  font-weight: 900;
+  padding: 7px;
+}
+
+.brand-mark span {
+  display: block;
+  background: var(--white);
+  border-radius: 2px;
+}
+
+.brand-mark span:nth-child(2) {
+  opacity: 0.68;
+}
+
+.brand-mark span:nth-child(3) {
+  opacity: 0.42;
+}
+
+.brand-mark span:nth-child(4) {
+  background: #a4c1e7;
 }
 
 .site-nav {
@@ -701,6 +720,37 @@ h3 {
   gap: 18px;
 }
 
+.demo-story {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.demo-story div {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-height: 130px;
+  padding: 22px;
+  background: var(--white);
+}
+
+.demo-story span {
+  color: var(--accent);
+  font-family: "Consolas", "SFMono-Regular", monospace;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.demo-story strong {
+  line-height: 1.35;
+}
+
 .walkthrough-step {
   display: grid;
   grid-template-columns: minmax(0, 0.82fr) minmax(260px, 0.42fr);
@@ -950,6 +1000,7 @@ textarea {
   .skanpay-diagram,
   .state-table,
   .integration-list,
+  .demo-story,
   .walkthrough-step,
   .walkthrough-step.flow-overview,
   .team-grid {
@@ -990,6 +1041,16 @@ textarea {
 @media (max-width: 620px) {
   .site-header {
     padding: 10px 18px;
+  }
+
+  .site-nav {
+    justify-content: space-between;
+    gap: 0;
+    font-size: 0.82rem;
+  }
+
+  .site-nav a {
+    padding: 7px 5px;
   }
 
   .header-cta {
@@ -1049,6 +1110,19 @@ textarea {
 
   .walkthrough-step {
     padding: 18px;
+  }
+
+  .demo-story {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .demo-story div {
+    min-height: 116px;
+    padding: 12px;
+  }
+
+  .demo-story strong {
+    font-size: 0.82rem;
   }
 
   .walkthrough-step img {

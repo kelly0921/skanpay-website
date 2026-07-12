@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="SkanPay">
   <rect width="64" height="64" rx="14" fill="#161616"/>
-  <path d="M20 43h20c5.4 0 8.8-3.1 8.8-7.8 0-4.1-2.6-6.4-7.5-7.2l-9.5-1.5c-2.5-.4-3.7-1.2-3.7-2.8 0-1.8 1.5-2.9 4.3-2.9h14.2v-7.3H30.8c-6 0-10 3.3-10 8.2 0 4.4 2.8 7 8.1 7.8l9 1.4c2.4.4 3.5 1.2 3.5 2.8 0 1.8-1.4 2.8-4.1 2.8H20V43Z" fill="#ffffff"/>
-  <path d="M17 51h30v5H17z" fill="#385777"/>
+  <rect x="14" y="14" width="36" height="36" rx="9" fill="#385777"/>
+  <rect x="23" y="23" width="8" height="8" rx="2" fill="#ffffff"/>
+  <rect x="34" y="23" width="8" height="8" rx="2" fill="#ffffff" opacity="0.68"/>
+  <rect x="23" y="34" width="8" height="8" rx="2" fill="#ffffff" opacity="0.42"/>
+  <rect x="34" y="34" width="8" height="8" rx="2" fill="#a4c1e7"/>
 </svg>
