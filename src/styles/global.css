@@ -708,67 +708,39 @@ h3 {
   text-align: center;
 }
 
-.demo-intro {
+.demo-overview {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 32px;
-  align-items: start;
-}
-
-.walkthrough {
-  display: grid;
-  gap: 18px;
-}
-
-.demo-story {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
-  overflow: hidden;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-}
-
-.demo-story div {
-  display: grid;
-  gap: 10px;
-  align-content: start;
-  min-height: 130px;
-  padding: 22px;
-  background: var(--white);
-}
-
-.demo-story span {
-  color: var(--accent);
-  font-family: "Consolas", "SFMono-Regular", monospace;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-}
-
-.demo-story strong {
-  line-height: 1.35;
-}
-
-.walkthrough-step {
-  display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(260px, 0.42fr);
-  gap: 28px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+  gap: clamp(28px, 5vw, 56px);
   align-items: center;
-  padding: 24px;
-  background: var(--panel);
-  border: 1px solid var(--line);
+}
+
+.demo-overview-copy .beamcash-wordmark {
+  margin-bottom: 26px;
+}
+
+.demo-brief {
+  display: grid;
+  overflow: hidden;
+  background: var(--navy);
+  border: 1px solid #000000;
   border-radius: 6px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.16);
 }
 
-.walkthrough-step.flow-overview {
-  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1fr);
+.demo-brief div {
+  display: grid;
+  gap: 8px;
+  padding: 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.walkthrough-step span {
-  display: inline-block;
-  margin-bottom: 10px;
+.demo-brief div:last-child {
+  border-bottom: 0;
+}
+
+.demo-brief span,
+.evidence-grid span {
   color: var(--accent);
   font-family: "Consolas", "SFMono-Regular", monospace;
   font-size: 0.78rem;
@@ -777,24 +749,106 @@ h3 {
   text-transform: uppercase;
 }
 
-.walkthrough-step p {
-  margin: 12px 0 0;
-  color: var(--muted);
+.demo-brief strong {
+  color: var(--white);
+  line-height: 1.35;
 }
 
-.walkthrough-step img {
+.demo-stage-band {
+  color: var(--white);
+  background: var(--navy);
+}
+
+.demo-stage-band h2,
+.demo-stage-band h3 {
+  color: var(--white);
+}
+
+.demo-stage-band .section-heading p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.demo-stage {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(120px, 0.26fr) minmax(220px, 0.7fr);
+  gap: clamp(18px, 4vw, 42px);
+  align-items: center;
+}
+
+.phone-shot {
+  margin: 0;
+}
+
+.phone-shot img {
   display: block;
-  width: min(100%, 260px);
+  width: min(100%, 300px);
   margin: 0 auto;
-  border: 1px solid #d9dfe8;
-  border-radius: 10px;
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 22px;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.36);
 }
 
-.walkthrough-step.flow-overview img {
-  width: 100%;
-  max-width: 760px;
+.phone-shot figcaption {
+  max-width: 310px;
+  margin: 18px auto 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.phone-shot figcaption span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--white);
+  font-weight: 900;
+}
+
+.demo-connector {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  color: rgba(255, 255, 255, 0.74);
+  font-family: "Consolas", "SFMono-Regular", monospace;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.demo-connector strong {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  color: var(--white);
+  background: rgba(56, 87, 119, 0.64);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.evidence-grid article {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  min-height: 210px;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
   border-radius: 6px;
+}
+
+.evidence-grid p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .team-grid {
@@ -974,8 +1028,9 @@ textarea {
 
   .hero,
   .split,
-  .demo-intro,
+  .demo-overview,
   .demo-preview,
+  .demo-stage,
   .process-layout,
   .contact-grid,
   .site-footer {
@@ -1000,9 +1055,7 @@ textarea {
   .skanpay-diagram,
   .state-table,
   .integration-list,
-  .demo-story,
-  .walkthrough-step,
-  .walkthrough-step.flow-overview,
+  .evidence-grid,
   .team-grid {
     grid-template-columns: 1fr;
   }
@@ -1103,34 +1156,23 @@ textarea {
     gap: 12px;
   }
 
+  .demo-connector {
+    display: none;
+  }
+
   .spec-row {
     grid-template-columns: 1fr;
     gap: 8px;
   }
 
-  .walkthrough-step {
-    padding: 18px;
+  .phone-shot img {
+    width: min(100%, 230px);
+    border-radius: 18px;
   }
 
-  .demo-story {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .demo-story div {
-    min-height: 116px;
-    padding: 12px;
-  }
-
-  .demo-story strong {
-    font-size: 0.82rem;
-  }
-
-  .walkthrough-step img {
-    width: min(100%, 220px);
-  }
-
-  .walkthrough-step.flow-overview img {
-    width: 100%;
+  .phone-shot figcaption {
+    max-width: 260px;
+    text-align: center;
   }
 
 }
