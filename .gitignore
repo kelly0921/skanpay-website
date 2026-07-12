@@ -1,5 +1,5 @@
-node_modules/
-dist/
+docs/skanpay-strategy-brief.md
 .astro/
+dist/
+node_modules/
 *.log
-.DS_Store

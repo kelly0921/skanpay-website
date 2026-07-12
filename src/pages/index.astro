@@ -2,8 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout
-  title="SkanPay - QR Checkout Coordination for Physical Commerce"
-  description="SkanPay helps stores and payment partners coordinate QR checkout requests, customer approval, and merchant confirmation."
+  title="SkanPay - QR Checkout and Redemption Coordination"
+  description="SkanPay helps stores and payment partners coordinate QR checkout requests, coupon or voucher redemption, customer approval, and merchant confirmation."
   activePath="/"
 >
   <section class="hero">
@@ -11,7 +11,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <p class="eyebrow">QR payment gateway</p>
       <h1>Turn a QR scan into a checkout result</h1>
       <p class="hero-copy">
-        SkanPay focuses on the layer stores actually need: a QR request the customer can approve and a clear result the merchant can trust.
+        SkanPay focuses on the layer stores actually need: a QR request the customer can approve, redemption logic when needed, and a clear result the merchant can trust.
       </p>
       <div class="button-row">
         <a class="button primary" href="/contact/">Contact SkanPay</a>
@@ -28,7 +28,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
         <div class="trust-item">
           <strong>03</strong>
-          Partner handoff
+          Redemption logic
         </div>
       </div>
     </div>
@@ -48,11 +48,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
         <div>
           <span>Partner problem</span>
-          <strong>The app handoff needs clear boundaries</strong>
+          <strong>Coupons and vouchers need real-time coordination</strong>
         </div>
         <div>
           <span>SkanPay focus</span>
-          <strong>Coordinate request, decision, and result</strong>
+          <strong>Coordinate request, redemption, decision, and result</strong>
         </div>
       </div>
       <div class="signal-grid">
@@ -71,7 +71,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <h2>QR payment needs more than a code on the counter</h2>
       </div>
       <p>
-        SkanPay focuses on the operating layer between merchants, customers, and payment apps.
+        SkanPay focuses on the operating layer between merchants, customers, payment apps, and redemption systems.
       </p>
     </div>
     <div class="pain-grid compact-grid">
@@ -90,6 +90,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <h3>Defined app participation</h3>
         <p>Wallet, payment, e-commerce, and loyalty apps need a clear role in the checkout handoff.</p>
       </article>
+      <article class="pain-card">
+        <span>Redemption</span>
+        <h3>Coupon and voucher coordination</h3>
+        <p>Promotions need to be validated without making checkout harder for staff or customers.</p>
+      </article>
     </div>
   </section>
 
@@ -99,7 +104,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <p class="eyebrow">Flow</p>
         <h2>Merchant request to store result</h2>
         <p class="section-intro">
-          The SkanPay model keeps the payment conversation readable for the store and structured for partners.
+          The SkanPay model keeps the payment and redemption conversation readable for the store and structured for partners.
         </p>
       </div>
       <div class="skanpay-diagram" aria-label="SkanPay checkout flow">
@@ -119,7 +124,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
         <div class="diagram-result">
           <span>Store result</span>
-          <strong>Confirmed / cancelled / expired</strong>
+          <strong>Confirmed / redeemed / cancelled / expired</strong>
         </div>
       </div>
     </div>

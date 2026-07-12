@@ -3,13 +3,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout
   title="QR Payments - SkanPay"
-  description="Review the SkanPay QR payment state model, participant responsibilities, and integration touchpoints for in-store checkout."
+  description="Review the SkanPay QR payment state model, gateway role, coupon or voucher redemption support, and integration touchpoints for in-store checkout."
   activePath="/qr-payments/"
 >
   <section class="page-hero">
     <p class="eyebrow">QR payments</p>
     <h1>The transaction model behind QR checkout</h1>
-    <p>A technical view of the request, scan, decision, and merchant result.</p>
+    <p>A technical view of the request, scan, redemption logic, decision, and merchant result.</p>
   </section>
 
   <section class="section">
@@ -26,7 +26,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <article>
         <span>Created</span>
         <strong>Merchant starts checkout request</strong>
-        <p>Amount, merchant reference, and session details are attached to a QR request.</p>
+        <p>Amount, merchant reference, session details, and optional redemption data are attached to a QR request.</p>
       </article>
       <article>
         <span>Scanned</span>
@@ -42,6 +42,35 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <span>Confirmed</span>
         <strong>Store receives result</strong>
         <p>Counter staff get a readable result before closing the sale.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Gateway role</p>
+        <h2>Coordinate checkout without replacing the processor</h2>
+      </div>
+      <p>
+        SkanPay is best explained as the coordination layer between checkout, wallet participation, redemption logic, and payment processing.
+      </p>
+    </div>
+    <div class="grid three">
+      <article class="card route-card">
+        <span>Gateway</span>
+        <h3>Route the request</h3>
+        <p>A gateway helps collect and route checkout information so the right systems know what should happen next.</p>
+      </article>
+      <article class="card route-card">
+        <span>Processor</span>
+        <h3>Keep money movement separate</h3>
+        <p>Payment processors and banks remain responsible for authorization, clearing, and settlement where applicable.</p>
+      </article>
+      <article class="card route-card">
+        <span>Redemption</span>
+        <h3>Validate offers in context</h3>
+        <p>Coupon or voucher logic can be coordinated with the checkout request instead of being treated as a separate afterthought.</p>
       </article>
     </div>
   </section>
@@ -68,7 +97,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <article class="card route-card">
         <span>Partner</span>
         <h3>Handle app participation</h3>
-        <p>Payment, wallet, e-commerce, or loyalty apps need a defined checkout boundary.</p>
+        <p>Payment, wallet, e-commerce, loyalty, or offer apps need a defined checkout boundary.</p>
       </article>
     </div>
   </section>
@@ -87,7 +116,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div><span>01</span><strong>QR request format</strong></div>
       <div><span>02</span><strong>Supported app or wallet behavior</strong></div>
       <div><span>03</span><strong>Status and timeout handling</strong></div>
-      <div><span>04</span><strong>Merchant confirmation display</strong></div>
+      <div><span>04</span><strong>Coupon or voucher validation</strong></div>
+      <div><span>05</span><strong>Merchant confirmation display</strong></div>
     </div>
   </section>
 </BaseLayout>
