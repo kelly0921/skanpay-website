@@ -8,19 +8,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 >
   <section class="page-hero">
     <p class="eyebrow">BeamCash demo</p>
-    <h1>BeamCash is the working demo for the SkanPay checkout vision</h1>
+    <h1>A simple walkthrough of QR checkout</h1>
     <p>
-      BeamCash shows the QR payment workflow with real product screens for sellers and buyers.
+      BeamCash shows how a seller creates a QR code and how a buyer completes checkout.
     </p>
   </section>
 
-  <section class="section split">
+  <section class="section demo-intro">
     <div>
       <img class="beamcash-wordmark" src="/beamcash/beamcash-wordmark.svg" alt="BeamCash" />
-      <p class="eyebrow">Product proof</p>
-      <h2>A demo for merchants, banks, investors, and payment partners</h2>
+      <p class="eyebrow">Why it is here</p>
+      <h2>BeamCash demonstrates the experience. SkanPay is the gateway vision.</h2>
       <p class="section-intro">
-        BeamCash demonstrates seller QR setup, buyer checkout, and payment status. SkanPay is the broader payment gateway invention.
+        The demo helps merchants, banks, investors, and payment partners see the checkout flow before a deeper integration conversation.
       </p>
     </div>
     <div class="spec-panel">
@@ -42,30 +42,46 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="section">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Screens</p>
-        <h2>The flow in pictures</h2>
+        <p class="eyebrow">Walkthrough</p>
+        <h2>How the demo works</h2>
       </div>
       <p>
-        Seller setup, QR display, buyer checkout, and repeat access are visible in the product.
+        Follow the product flow from seller setup to buyer checkout.
       </p>
     </div>
-    <div class="device-gallery">
-      <figure class="flow-diagram">
+    <div class="walkthrough">
+      <article class="walkthrough-step flow-overview">
+        <div>
+          <span>Overview</span>
+          <h3>Seller setup to checkout confirmation</h3>
+          <p>BeamCash shows the full concept: seller setup, QR sign, buyer checkout, confirmation, and dashboard access.</p>
+        </div>
         <img src="/beamcash/beamcash-product-flow.svg" alt="BeamCash product flow from seller setup to QR sign, buyer checkout, confirmation, and dashboard" />
-        <figcaption>End-to-end demo flow from seller setup to checkout confirmation</figcaption>
-      </figure>
-      <figure>
+      </article>
+      <article class="walkthrough-step">
+        <div>
+          <span>Step 1</span>
+          <h3>Seller creates a QR code</h3>
+          <p>The seller dashboard shows readiness status, payment activity, and the QR code customers can scan.</p>
+        </div>
         <img src="/beamcash/beamcash-seller-dashboard-mobile.png" alt="BeamCash seller dashboard with QR code and readiness status" />
-        <figcaption>Seller dashboard with QR code and readiness state</figcaption>
-      </figure>
-      <figure>
+      </article>
+      <article class="walkthrough-step">
+        <div>
+          <span>Step 2</span>
+          <h3>Buyer reviews and pays</h3>
+          <p>The buyer sees the merchant profile, selects an amount, and proceeds through checkout.</p>
+        </div>
         <img src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen with merchant profile and payment amount" />
-        <figcaption>Buyer checkout with merchant profile and amount selection</figcaption>
-      </figure>
-      <figure>
+      </article>
+      <article class="walkthrough-step">
+        <div>
+          <span>Step 3</span>
+          <h3>Seller can recover the code</h3>
+          <p>A returning seller can find an existing code instead of rebuilding the setup from scratch.</p>
+        </div>
         <img src="/beamcash/beamcash-find-code-mobile.png" alt="BeamCash recovery screen for finding a seller code" />
-        <figcaption>Merchant code recovery for repeat seller use</figcaption>
-      </figure>
+      </article>
     </div>
   </section>
 

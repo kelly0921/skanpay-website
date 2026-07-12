@@ -640,21 +640,50 @@ h3 {
   margin-bottom: 22px;
 }
 
-.device-gallery {
+.demo-intro {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.walkthrough {
+  display: grid;
   gap: 18px;
 }
 
-.device-gallery figure {
-  margin: 0;
-  padding: 18px;
+.walkthrough-step {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(260px, 0.42fr);
+  gap: 28px;
+  align-items: center;
+  padding: 24px;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 6px;
 }
 
-.device-gallery img {
+.walkthrough-step.flow-overview {
+  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1fr);
+}
+
+.walkthrough-step span {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-family: "Consolas", "SFMono-Regular", monospace;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.walkthrough-step p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.walkthrough-step img {
   display: block;
   width: min(100%, 260px);
   margin: 0 auto;
@@ -663,22 +692,10 @@ h3 {
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
 }
 
-.device-gallery .flow-diagram {
-  grid-column: 1 / -1;
-}
-
-.device-gallery .flow-diagram img {
+.walkthrough-step.flow-overview img {
   width: 100%;
-  max-width: 920px;
+  max-width: 760px;
   border-radius: 6px;
-}
-
-.device-gallery figcaption {
-  margin-top: 14px;
-  color: var(--muted);
-  font-size: 0.92rem;
-  font-weight: 800;
-  text-align: center;
 }
 
 .team-grid {
@@ -858,6 +875,7 @@ textarea {
 
   .hero,
   .split,
+  .demo-intro,
   .process-layout,
   .contact-grid,
   .site-footer {
@@ -880,7 +898,8 @@ textarea {
   .grid.two,
   .pain-grid,
   .process-board,
-  .device-gallery,
+  .walkthrough-step,
+  .walkthrough-step.flow-overview,
   .team-grid,
   .flow-table {
     grid-template-columns: 1fr;
