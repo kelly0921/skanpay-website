@@ -150,8 +150,7 @@ h3 {
 .page-hero p,
 .section-intro,
 .card p,
-.split-panel p,
-.timeline p {
+.split-panel p {
   color: var(--muted);
 }
 
@@ -323,8 +322,7 @@ h3 {
 
 .data-card span,
 .route-card span,
-.spec-row span,
-.flow-table span {
+.spec-row span {
   color: var(--accent);
   font-family: "Consolas", "SFMono-Regular", monospace;
   font-size: 0.78rem;
@@ -445,37 +443,6 @@ h3 {
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: 36px;
   align-items: center;
-}
-
-.process-board {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 6px;
-}
-
-.process-board div {
-  display: grid;
-  gap: 12px;
-  align-content: start;
-  min-height: 170px;
-  padding: 22px;
-  background: var(--panel-dark);
-}
-
-.process-board span {
-  color: var(--accent);
-  font-family: "Consolas", "SFMono-Regular", monospace;
-  font-weight: 800;
-}
-
-.process-board strong {
-  color: var(--white);
-  font-size: 1.02rem;
-  line-height: 1.35;
 }
 
 .skanpay-diagram {
@@ -605,49 +572,6 @@ h3 {
   margin: 12px 0 0;
 }
 
-.number {
-  display: inline-grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  margin-bottom: 16px;
-  color: var(--white);
-  background: var(--accent-dark);
-  border-radius: 8px;
-  font-weight: 900;
-}
-
-.flow-table {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-}
-
-.flow-table article {
-  display: grid;
-  gap: 10px;
-  min-height: 190px;
-  padding: 24px;
-  background: var(--white);
-  border-right: 1px solid var(--line);
-}
-
-.flow-table article:last-child {
-  border-right: 0;
-}
-
-.flow-table strong {
-  color: var(--ink);
-  font-size: 1.1rem;
-}
-
-.flow-table p {
-  margin: 0;
-  color: var(--muted);
-}
-
 .split {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -713,36 +637,56 @@ h3 {
   font-weight: 900;
 }
 
-.timeline {
+.demo-preview {
   display: grid;
-  gap: 16px;
-}
-
-.timeline article {
-  padding: 22px;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-
-.demo-entry {
-  display: flex;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  gap: clamp(28px, 5vw, 56px);
   align-items: center;
-  justify-content: space-between;
-  gap: 30px;
   background: var(--panel-strong);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
-.demo-entry .section-intro {
+.demo-preview .section-intro {
   max-width: 760px;
+}
+
+.demo-preview .button {
+  margin-top: 24px;
 }
 
 .beamcash-wordmark {
   display: block;
   width: min(220px, 70vw);
   margin-bottom: 22px;
+}
+
+.demo-screens {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: end;
+}
+
+.demo-screens figure {
+  margin: 0;
+}
+
+.demo-screens img {
+  display: block;
+  width: min(100%, 230px);
+  margin: 0 auto;
+  border: 1px solid #d9dfe8;
+  border-radius: 10px;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
+}
+
+.demo-screens figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-align: center;
 }
 
 .demo-intro {
@@ -981,6 +925,7 @@ textarea {
   .hero,
   .split,
   .demo-intro,
+  .demo-preview,
   .process-layout,
   .contact-grid,
   .site-footer {
@@ -1002,37 +947,20 @@ textarea {
   .grid.three,
   .grid.two,
   .pain-grid,
-  .process-board,
   .skanpay-diagram,
   .state-table,
   .integration-list,
   .walkthrough-step,
   .walkthrough-step.flow-overview,
-  .team-grid,
-  .flow-table {
+  .team-grid {
     grid-template-columns: 1fr;
-  }
-
-  .flow-table article {
-    min-height: auto;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .flow-table article:last-child {
-    border-bottom: 0;
   }
 
   .section-heading,
   .cta-band,
-  .demo-entry,
   .patent-band {
     align-items: flex-start;
     flex-direction: column;
-  }
-
-  .process-board div {
-    min-height: auto;
   }
 
   .diagram-node,
@@ -1108,6 +1036,10 @@ textarea {
   .signal-grid,
   .field-grid {
     grid-template-columns: 1fr;
+  }
+
+  .demo-screens {
+    gap: 12px;
   }
 
   .spec-row {

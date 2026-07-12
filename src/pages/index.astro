@@ -125,15 +125,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <section class="section demo-entry">
-    <div>
-      <p class="eyebrow">BeamCash sandbox</p>
-      <h2>See the workflow in BeamCash</h2>
+  <section class="section demo-preview">
+    <div class="demo-preview-copy">
+      <img class="beamcash-wordmark" src="/beamcash/beamcash-wordmark.svg" alt="BeamCash" />
+      <p class="eyebrow">Demo proof</p>
+      <h2>BeamCash makes the checkout flow tangible</h2>
       <p class="section-intro">
-        BeamCash is the demo that shows the SkanPay checkout vision with real product screens.
+        BeamCash is the working demo used to show seller QR setup and buyer checkout before a deeper SkanPay integration conversation.
       </p>
+      <a class="button primary" href="/beamcash-demo/">Open Demo Walkthrough</a>
     </div>
-    <a class="button primary" href="/beamcash-demo/">Open Demo Walkthrough</a>
+    <div class="demo-screens" aria-label="BeamCash demo screens">
+      <figure>
+        <img src="/beamcash/beamcash-seller-dashboard-mobile.png" alt="BeamCash seller dashboard with QR code" />
+        <figcaption>Seller QR dashboard</figcaption>
+      </figure>
+      <figure>
+        <img src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen" />
+        <figcaption>Buyer checkout</figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="cta-band">
