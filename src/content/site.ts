@@ -22,15 +22,14 @@ export const CONTACT_URL = mailto(
 export const PRODUCT_STATUS = {
   label: "Prototype",
   detail:
-    "SkanPay and BeamCash are early product explorations. The current focus is sharing the direction, learning from sellers, and refining the clearest payment and confirmation flow."
+    "BeamCash is being used to test the clearest QR payment flow before broader SkanPay partner conversations."
 };
 
 export const navigationItems = [
-  { href: "/", label: "Home" },
   { href: "/#beamcash", label: "BeamCash" },
   { href: "/#skanpay", label: "SkanPay" },
-  { href: "/#use-cases", label: "Use Cases" },
-  { href: "/#vision", label: "Vision" },
+  { href: "/beamcash-demo/", label: "Demo" },
+  { href: "/about/", label: "About" },
   { href: "/contact/", label: "Contact" }
 ];
 
@@ -74,12 +73,27 @@ export const problemPoints = [
   "Local and temporary sellers need payment tools that match how they actually sell."
 ];
 
+export const painSolutions = [
+  {
+    pain: "People want to pay, but they do not always carry cash.",
+    response: "BeamCash gives sellers a QR surface buyers can open from the phone already in their hand."
+  },
+  {
+    pain: "Small sellers often need payment acceptance without a full POS setup.",
+    response: "The demo keeps the flow narrow: show code, scan, review amount, choose payment method, confirm."
+  },
+  {
+    pain: "Discounts, vouchers, gift cards, and payment can become separate checkout steps.",
+    response: "SkanPay's broader patent-pending work explores payment and redemption as one coordinated request."
+  }
+];
+
 export const beamcashFlow = [
-  "Seller shares a QR code",
-  "Buyer scans the code",
-  "Buyer enters the amount",
-  "Buyer chooses an available payment method",
-  "Buyer and seller see confirmation"
+  "Show QR",
+  "Scan",
+  "Review amount",
+  "Choose payment",
+  "Confirm"
 ];
 
 export const skanpayFlow = [

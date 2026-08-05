@@ -1,107 +1,111 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { CONTACT_URL } from "../content/site";
+import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/site";
 ---
 <BaseLayout
   title="BeamCash Demo - SkanPay"
-  description="BeamCash is the app-style SkanPay demo used to show seller QR setup, customer scan, and checkout approval in a concrete product flow."
+  description="BeamCash is the SkanPay product demo for seller QR setup, customer scan, and checkout approval."
   activePath="/beamcash-demo/"
 >
   <section class="app-product-hero">
-    <div>
-      <div class="app-logo-block">
-        <img src="/beamcash/beamcash-logo.svg" alt="BeamCash" />
+    <div class="app-hero-inner">
+      <div class="app-hero-copy">
+        <div class="app-logo-block">
+          <img src="/beamcash/beamcash-wordmark.svg" alt="BeamCash" />
+        </div>
+        <p class="page-label">Demo product under SkanPay</p>
+        <h1>A concrete demo for scan-to-pay moments.</h1>
+        <p class="lead-copy">
+          BeamCash makes the SkanPay concept easier to evaluate: seller QR display, buyer review, payment choice, and checkout confirmation.
+        </p>
+        <div class="button-row">
+          <a class="button primary" href={INTEREST_LIST_URL}>Join interest list</a>
+          <a class="button secondary" href="#walkthrough">See the flow</a>
+        </div>
       </div>
-      <p class="page-label">Demo app under SkanPay</p>
-      <h1>BeamCash turns the QR checkout concept into screens people can review.</h1>
-      <p class="lead-copy">
-        BeamCash is not the full SkanPay gateway. It is the demo app used to show seller QR display, customer scan, and checkout approval in a product-like flow.
-      </p>
-      <div class="button-row">
-        <a class="button primary" href="#walkthrough">See the Flow</a>
-        <a class="button ghost" href={CONTACT_URL}>Request Demo</a>
-      </div>
+
+      <aside class="app-screen-hero" aria-label="BeamCash app screens">
+        <img src="/beamcash/beamcash-seller-dashboard-mobile.png" alt="BeamCash seller dashboard with QR code and activity status" />
+        <img src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen with merchant profile and checkout amount" />
+      </aside>
     </div>
-    <aside class="app-screen-hero" aria-label="BeamCash app screens">
-      <img class="seller-screen" src="/beamcash/beamcash-seller-dashboard-mobile.png" alt="BeamCash seller dashboard with QR code and activity status" />
-      <img class="buyer-screen" src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen with merchant profile and checkout amount" />
-    </aside>
   </section>
 
   <section class="section demo-purpose">
-    <div>
-      <span>Why include BeamCash</span>
-      <h2>SkanPay is the company and gateway invention. BeamCash is the proof surface.</h2>
+    <div class="section-inner demo-purpose-inner">
+      <div>
+        <span>Why BeamCash exists</span>
+        <h2>BeamCash is the proof surface. SkanPay is the company and gateway invention.</h2>
+      </div>
+      <p>
+        The demo gives merchants, banks, payment partners, and investors something specific to review before deeper gateway and redemption requirements are discussed.
+      </p>
     </div>
-    <p>
-      The demo gives merchants, banks, payment partners, and investors a concrete interface to discuss before deeper gateway requirements are defined.
-    </p>
   </section>
 
   <section class="section app-flow-section" id="walkthrough">
-    <div class="business-heading">
-      <span>Demo walkthrough</span>
-      <h2>Display. Scan. Approve.</h2>
-    </div>
-    <div class="app-flow-row">
-      <div>
-        <img src="/beamcash/beamcash-seller-dashboard-mobile.png" alt="BeamCash seller dashboard screen" />
-        <span>01 / Seller</span>
-        <h3>Display the QR surface</h3>
-        <p>The seller has a visible code and status surface at the point of interaction.</p>
+    <div class="section-inner">
+      <div class="section-heading">
+        <span>Demo walkthrough</span>
+        <h2>Display. Scan. Review.</h2>
       </div>
-      <div>
-        <img src="/beamcash/beamcash-find-code-mobile.png" alt="BeamCash QR code lookup screen" />
-        <span>02 / Customer</span>
-        <h3>Scan the code</h3>
-        <p>The customer opens the checkout request from the displayed QR surface.</p>
-      </div>
-      <div>
-        <img src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen" />
-        <span>03 / Approval</span>
-        <h3>Review and approve</h3>
-        <p>The buyer sees merchant and amount context before continuing.</p>
+      <div class="app-flow-row">
+        <article>
+          <img src="/beamcash/beamcash-seller-dashboard-mobile.png" alt="BeamCash seller dashboard screen" />
+          <span>01 / Seller</span>
+          <h3>Show the QR surface</h3>
+          <p>The seller has a visible code and a simple status area at the point of interaction.</p>
+        </article>
+        <article>
+          <img src="/beamcash/beamcash-find-code-mobile.png" alt="BeamCash QR code lookup screen" />
+          <span>02 / Buyer</span>
+          <h3>Open the checkout</h3>
+          <p>The buyer scans the code and lands on a focused payment flow.</p>
+        </article>
+        <article>
+          <img src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen" />
+          <span>03 / Review</span>
+          <h3>Confirm the amount</h3>
+          <p>The buyer sees merchant and amount context before continuing.</p>
+        </article>
       </div>
     </div>
   </section>
 
   <section class="section demo-use-section">
-    <div class="demo-use-copy">
-      <span>Business use</span>
-      <h2>Use BeamCash to make SkanPay conversations specific.</h2>
-      <p>BeamCash helps a meeting move from "imagine QR checkout" to concrete questions about screens, states, handoffs, and partner roles.</p>
-    </div>
-    <div class="use-list">
-      <div>
-        <strong>Merchant review</strong>
-        <p>What does staff see when a customer scans?</p>
+    <div class="section-inner demo-use-inner">
+      <div class="demo-use-copy">
+        <span>Business use</span>
+        <h2>Use BeamCash to make SkanPay conversations specific.</h2>
+        <p>BeamCash keeps the discussion grounded in screens, states, handoffs, and partner responsibilities.</p>
       </div>
-      <div>
-        <strong>Customer review</strong>
-        <p>Does the buyer have enough context to approve?</p>
-      </div>
-      <div>
-        <strong>Partner review</strong>
-        <p>Where do wallet, bank, loyalty, gateway, and processor responsibilities sit?</p>
+      <div class="use-list">
+        <div>
+          <strong>Merchant review</strong>
+          <p>What does staff see before and after scan?</p>
+        </div>
+        <div>
+          <strong>Customer review</strong>
+          <p>Does the buyer have enough context to approve?</p>
+        </div>
+        <div>
+          <strong>Partner review</strong>
+          <p>Where do wallet, loyalty, gateway, and processor roles sit?</p>
+        </div>
       </div>
     </div>
-  </section>
-
-  <section class="section boundary-section">
-    <div>
-      <span>Important boundary</span>
-      <h2>BeamCash is the demo. SkanPay is the gateway.</h2>
-    </div>
-    <p>
-      The BeamCash page does not claim live processing. It demonstrates the user-facing flow SkanPay can use when speaking with merchants, banks, wallets, loyalty partners, and investors.
-    </p>
   </section>
 
   <section class="business-cta">
-    <div>
-      <span>Next step</span>
-      <h2>Review BeamCash in a SkanPay conversation.</h2>
+    <div class="business-cta-inner">
+      <div>
+        <span>Feedback</span>
+        <h2>Review the demo and help shape the next version.</h2>
+      </div>
+      <div class="cta-group">
+        <a class="button primary" href={FEEDBACK_FORM_URL}>Give feedback</a>
+        <a class="button ghost" href={CONTACT_URL}>Request a conversation</a>
+      </div>
     </div>
-    <a class="button primary" href={CONTACT_URL}>Request a Conversation</a>
   </section>
 </BaseLayout>
