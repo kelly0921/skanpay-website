@@ -2,63 +2,68 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout
-  title="SkanPay - QR Checkout and Redemption Coordination"
-  description="SkanPay helps stores and payment partners coordinate QR checkout requests, coupon or voucher redemption, customer approval, and merchant confirmation."
+  title="SkanPay - QR Checkout Gateway"
+  description="SkanPay helps merchants and payment partners coordinate QR checkout requests, customer approval, coupon or voucher logic, and merchant-readable results."
   activePath="/"
 >
   <section class="hero">
     <div>
       <p class="eyebrow">QR payment gateway</p>
-      <h1>Turn a QR scan into a checkout result</h1>
+      <h1>Make QR checkout clear enough to trust</h1>
       <p class="hero-copy">
-        SkanPay focuses on the layer stores actually need: a QR request the customer can approve, redemption logic when needed, and a clear result the merchant can trust.
+        SkanPay helps merchants and payment partners turn a scan into a structured checkout request: customer approval, optional coupon or voucher logic, and a result staff can read.
       </p>
       <div class="button-row">
         <a class="button primary" href="/contact/">Contact SkanPay</a>
-        <a class="button secondary" href="/qr-payments/">Explore Technology</a>
+        <a class="button secondary" href="/beamcash-demo/">View BeamCash</a>
+      </div>
+      <div class="hero-check-list" aria-label="SkanPay checkout priorities">
+        <span>Merchant sees checkout status</span>
+        <span>Customer confirms the request</span>
+        <span>Partners get a defined handoff</span>
       </div>
       <div class="trust-strip" aria-label="SkanPay focus areas">
         <div class="trust-item">
           <strong>01</strong>
-          Merchant status
+          Request
         </div>
         <div class="trust-item">
           <strong>02</strong>
-          Customer approval
+          Approval
         </div>
         <div class="trust-item">
           <strong>03</strong>
-          Redemption logic
+          Result
         </div>
       </div>
     </div>
     <aside class="hero-panel" aria-label="SkanPay platform overview">
       <div class="panel-header">
-        <span>Platform overview</span>
-        <strong>SkanPay</strong>
+        <span>Checkout state model</span>
+        <strong>Scan to result</strong>
       </div>
       <div class="system-card">
         <div>
-          <span>Merchant problem</span>
-          <strong>Staff need a readable payment state</strong>
+          <span>Request</span>
+          <strong>Amount, merchant reference, session details</strong>
         </div>
         <div>
-          <span>Customer problem</span>
-          <strong>Approval should happen in a familiar app flow</strong>
+          <span>Scan</span>
+          <strong>Customer opens a clear checkout prompt</strong>
         </div>
         <div>
-          <span>Partner problem</span>
-          <strong>Coupons and vouchers need real-time coordination</strong>
+          <span>Decision</span>
+          <strong>Approval, redemption, or cancellation state</strong>
         </div>
         <div>
-          <span>SkanPay focus</span>
-          <strong>Coordinate request, redemption, decision, and result</strong>
+          <span>Merchant result</span>
+          <strong>Confirmed, redeemed, cancelled, or expired</strong>
         </div>
       </div>
       <div class="signal-grid">
-        <div><span>Flow</span><strong>QR request</strong></div>
-        <div><span>Status</span><strong>Readable</strong></div>
-        <div><span>Audience</span><strong>B2B</strong></div>
+        <div><span>Audience</span><strong>Merchants</strong></div>
+        <div><span>Partners</span><strong>Wallets</strong></div>
+        <div><span>Logic</span><strong>Offers</strong></div>
         <div><span>Scope</span><strong>Gateway</strong></div>
       </div>
     </aside>
@@ -67,33 +72,33 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="section">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Problem and solution</p>
-        <h2>QR payment needs more than a code on the counter</h2>
+        <p class="eyebrow">Pain points</p>
+        <h2>A QR code is easy. The checkout state is the hard part.</h2>
       </div>
       <p>
-        SkanPay focuses on the operating layer between merchants, customers, payment apps, and redemption systems.
+        SkanPay focuses on the operating layer between the store, customer, payment app, and redemption logic.
       </p>
     </div>
     <div class="pain-grid compact-grid">
       <article class="pain-card">
-        <span>Merchant</span>
-        <h3>Clear checkout status</h3>
+        <span>Staff</span>
+        <h3>Unclear status slows checkout</h3>
         <p>Staff need to know whether a request was scanned, approved, cancelled, expired, or completed.</p>
       </article>
       <article class="pain-card">
         <span>Customer</span>
-        <h3>Familiar scan-and-approve flow</h3>
-        <p>The customer opens a QR request, reviews the details, and confirms through a supported app experience.</p>
+        <h3>Trust depends on context</h3>
+        <p>The customer should see who they are paying, what they are approving, and what happens next.</p>
       </article>
       <article class="pain-card">
-        <span>Partner</span>
-        <h3>Defined app participation</h3>
-        <p>Wallet, payment, e-commerce, and loyalty apps need a clear role in the checkout handoff.</p>
+        <span>Offers</span>
+        <h3>Coupons need coordination</h3>
+        <p>Coupon or voucher value has to be validated without becoming a separate staff process.</p>
       </article>
       <article class="pain-card">
-        <span>Redemption</span>
-        <h3>Coupon and voucher coordination</h3>
-        <p>Promotions need to be validated without making checkout harder for staff or customers.</p>
+        <span>Partners</span>
+        <h3>Each system needs a role</h3>
+        <p>Wallet, payment, loyalty, and merchant systems need a defined checkout boundary.</p>
       </article>
     </div>
   </section>
@@ -101,31 +106,33 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="section technical-band">
     <div class="process-layout">
       <div>
-        <p class="eyebrow">Flow</p>
-        <h2>Merchant request to store result</h2>
+        <p class="eyebrow">How it works</p>
+        <h2>Four states make the flow readable</h2>
         <p class="section-intro">
-          The SkanPay model keeps the payment and redemption conversation readable for the store and structured for partners.
+          The model is simple enough to explain in a meeting, but structured enough for technical integration planning.
         </p>
       </div>
-      <div class="skanpay-diagram" aria-label="SkanPay checkout flow">
-        <div class="diagram-node merchant">
-          <span>Merchant</span>
-          <strong>Create QR request</strong>
-        </div>
-        <div class="diagram-arrow" aria-hidden="true">→</div>
-        <div class="diagram-node customer">
-          <span>Customer</span>
-          <strong>Scan and approve</strong>
-        </div>
-        <div class="diagram-arrow" aria-hidden="true">→</div>
-        <div class="diagram-node app">
-          <span>Payment app</span>
-          <strong>Authorize decision</strong>
-        </div>
-        <div class="diagram-result">
-          <span>Store result</span>
-          <strong>Confirmed / redeemed / cancelled / expired</strong>
-        </div>
+      <div class="homepage-flow-grid" aria-label="SkanPay checkout flow">
+        <article>
+          <span>01</span>
+          <h3>Create request</h3>
+          <p>The merchant starts a QR checkout request with amount, merchant reference, and session details.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Customer scans</h3>
+          <p>The customer opens a checkout prompt and reviews the request before approving.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Coordinate logic</h3>
+          <p>Payment, wallet, coupon, or voucher rules can be evaluated in the checkout handoff.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Return result</h3>
+          <p>The merchant receives a readable state such as confirmed, redeemed, cancelled, or expired.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -133,11 +140,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="section demo-preview">
     <div class="demo-preview-copy">
       <img class="beamcash-wordmark" src="/beamcash/beamcash-wordmark.svg" alt="BeamCash" />
-      <p class="eyebrow">Demo proof</p>
-      <h2>BeamCash makes the checkout flow tangible</h2>
+      <p class="eyebrow">Demo app under SkanPay</p>
+      <h2>BeamCash turns the QR concept into a product demo</h2>
       <p class="section-intro">
-        BeamCash is the working demo used to show seller QR setup and buyer checkout before a deeper SkanPay integration conversation.
+        BeamCash is the working app-style demo used to show seller setup, QR display, and buyer approval before a deeper SkanPay integration conversation.
       </p>
+      <div class="mini-flow-list" aria-label="BeamCash demo flow">
+        <span>Set up seller</span>
+        <span>Display QR</span>
+        <span>Review checkout</span>
+      </div>
       <a class="button primary" href="/beamcash-demo/">View Demo</a>
     </div>
     <div class="demo-screens" aria-label="BeamCash demo screens">
@@ -149,6 +161,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <img src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen" />
         <figcaption>Buyer checkout</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="section homepage-faq">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Questions</p>
+        <h2>What partners usually ask first</h2>
+      </div>
+      <p>
+        Short answers for merchants and payment partners evaluating the QR checkout model.
+      </p>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>What does SkanPay do?</summary>
+        <p>SkanPay is focused on QR checkout coordination: request creation, customer approval, optional redemption logic, and merchant-readable results.</p>
+      </details>
+      <details>
+        <summary>Is SkanPay replacing existing processors?</summary>
+        <p>SkanPay is presented as a gateway and coordination layer. Processor or acquirer details depend on the integration model.</p>
+      </details>
+      <details>
+        <summary>Why show BeamCash?</summary>
+        <p>BeamCash gives partners a concrete demo of seller setup, QR display, and customer checkout approval.</p>
+      </details>
     </div>
   </section>
 
