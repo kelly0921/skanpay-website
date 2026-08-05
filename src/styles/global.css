@@ -1,16 +1,18 @@
 :root {
   --color-brand-primary: #14d8ff;
-  --color-brand-primary-soft: #e9fbff;
-  --color-brand-secondary: #108b9a;
-  --color-brand-deep: #0b496b;
-  --color-ink: #102033;
-  --color-muted: #607384;
+  --color-brand-primary-soft: #f0fbfd;
+  --color-brand-secondary: #0e7887;
+  --color-brand-deep: #0d4a63;
+  --color-ink: #111c2e;
+  --color-muted: #5f6f7d;
   --color-surface: #ffffff;
-  --color-surface-alt: #f6fafc;
-  --color-border: #d9e5ed;
-  --color-border-strong: #b8cad6;
-  --shadow-card: 0 20px 50px rgba(16, 32, 51, 0.1);
-  --shadow-screen: 0 22px 44px rgba(16, 32, 51, 0.18);
+  --color-surface-alt: #f8fafc;
+  --color-border: #dce6ee;
+  --color-border-strong: #bdcbd7;
+  --color-action: #102033;
+  --color-action-hover: #0d3c55;
+  --shadow-card: 0 18px 42px rgba(17, 28, 46, 0.08);
+  --shadow-screen: 0 20px 38px rgba(17, 28, 46, 0.14);
   --max-width: 1160px;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
@@ -36,7 +38,7 @@ body {
 
 ::selection {
   color: var(--color-ink);
-  background: #baf3ff;
+  background: #d8f7fc;
 }
 
 a {
@@ -50,7 +52,7 @@ summary:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid rgba(20, 216, 255, 0.46);
+  outline: 3px solid rgba(20, 216, 255, 0.34);
   outline-offset: 3px;
 }
 
@@ -99,7 +101,7 @@ ul {
   gap: 24px;
   min-width: 0;
   padding: 12px clamp(18px, 5vw, 56px);
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.98);
   border-bottom: 1px solid var(--color-border);
   backdrop-filter: blur(14px);
 }
@@ -125,7 +127,7 @@ ul {
   justify-content: center;
   gap: 6px;
   min-width: 0;
-  color: #3f5266;
+  color: #435466;
   font-size: 0.9rem;
   font-weight: 800;
 }
@@ -143,17 +145,23 @@ ul {
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
   color: var(--color-brand-deep);
-  background: var(--color-brand-primary-soft);
+  background: #f4fafc;
 }
 
 .header-cta {
   flex: 0 0 auto;
   justify-content: center;
-  color: var(--color-ink);
-  background: var(--color-brand-primary);
-  border: 1px solid var(--color-brand-primary);
+  color: #ffffff;
+  background: var(--color-action);
+  border: 1px solid var(--color-action);
+  box-shadow: inset 0 -2px 0 rgba(20, 216, 255, 0.34);
   font-size: 0.9rem;
   font-weight: 900;
+}
+
+.header-cta:hover {
+  background: var(--color-action-hover);
+  border-color: var(--color-action-hover);
 }
 
 .button {
@@ -179,39 +187,38 @@ ul {
 }
 
 .button.primary {
-  color: var(--color-ink);
-  background: var(--color-brand-primary);
-  border-color: var(--color-brand-primary);
+  color: #ffffff;
+  background: var(--color-action);
+  border-color: var(--color-action);
+  box-shadow: inset 0 -3px 0 rgba(20, 216, 255, 0.3);
 }
 
 .button.primary:hover {
-  background: #8ff1ff;
-  border-color: #8ff1ff;
+  color: #ffffff;
+  background: var(--color-action-hover);
+  border-color: var(--color-action-hover);
 }
 
 .button.secondary {
   color: var(--color-brand-deep);
   background: var(--color-surface);
-  border-color: #b8d8e0;
+  border-color: #c7d5df;
 }
 
 .button.secondary:hover,
 .button.ghost:hover {
-  background: var(--color-brand-primary-soft);
-  border-color: #9ed9e4;
+  background: #f6fbfc;
+  border-color: #aec6d1;
 }
 
 .button.ghost {
   color: var(--color-brand-deep);
   background: transparent;
-  border-color: #b8d8e0;
+  border-color: #c7d5df;
 }
 
 .landing-hero {
-  background:
-    linear-gradient(90deg, rgba(20, 216, 255, 0.035) 0 1px, transparent 1px),
-    linear-gradient(180deg, #ffffff 0%, #f7fbfd 100%);
-  background-size: 42px 42px, auto;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfd 58%, #f8fafc 100%);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -298,9 +305,9 @@ ul {
 .hero-proof span,
 .audience-list span {
   padding: 7px 10px;
-  color: var(--color-brand-deep);
+  color: #1f3448;
   background: #ffffff;
-  border: 1px solid #cbeaf0;
+  border: 1px solid var(--color-border);
   border-radius: 999px;
   font-size: 0.9rem;
   font-weight: 850;
@@ -340,9 +347,10 @@ ul {
   display: grid;
   gap: 22px;
   padding: clamp(18px, 3vw, 28px);
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid #cfe3ec;
-  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #d7e3ec;
+  border-top: 3px solid rgba(20, 216, 255, 0.58);
+  border-radius: 8px;
   box-shadow: var(--shadow-card);
 }
 
@@ -387,7 +395,7 @@ ul {
 .phone-shot img {
   width: min(100%, 216px);
   background: #ffffff;
-  border: 1px solid #d8e3ec;
+  border: 1px solid #dce5ed;
   border-radius: 18px;
   box-shadow: var(--shadow-screen);
 }
@@ -444,7 +452,7 @@ ul {
   overflow: hidden;
   background: var(--color-border);
   border: 1px solid var(--color-border);
-  border-radius: 14px;
+  border-radius: 8px;
 }
 
 .pain-grid article {
@@ -485,8 +493,9 @@ ul {
   padding: 26px;
   background: #ffffff;
   border: 1px solid var(--color-border);
-  border-radius: 18px;
-  box-shadow: 0 18px 46px rgba(16, 32, 51, 0.07);
+  border-top: 3px solid rgba(20, 216, 255, 0.38);
+  border-radius: 8px;
+  box-shadow: 0 18px 42px rgba(17, 28, 46, 0.06);
 }
 
 .flow-list,
@@ -523,7 +532,7 @@ ul {
   overflow: hidden;
   background: #ffffff;
   border: 1px solid var(--color-border);
-  border-radius: 14px;
+  border-radius: 8px;
 }
 
 .feature-row article {
@@ -543,10 +552,7 @@ ul {
 
 .skanpay-section {
   color: #ffffff;
-  background:
-    linear-gradient(90deg, rgba(20, 216, 255, 0.055) 0 1px, transparent 1px),
-    #0c2438;
-  background-size: 44px 44px, auto;
+  background: linear-gradient(135deg, #102033 0%, #0b3340 100%);
 }
 
 .skanpay-section h2,
@@ -571,10 +577,10 @@ ul {
   gap: 12px;
   min-height: 132px;
   padding: 22px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-top: 4px solid var(--color-brand-primary);
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 .platform-flow strong {
@@ -595,7 +601,7 @@ ul {
   padding: clamp(22px, 3vw, 28px);
   background: #ffffff;
   border: 1px solid var(--color-border);
-  border-radius: 14px;
+  border-radius: 8px;
 }
 
 .fit-grid h3 {
@@ -654,7 +660,7 @@ ul {
   padding: 18px 20px;
   background: #ffffff;
   border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 .faq-list summary {
@@ -690,7 +696,7 @@ ul {
 .business-cta,
 .cta-band {
   color: #ffffff;
-  background: #102033;
+  background: var(--color-action);
 }
 
 .final-cta-inner,
@@ -726,6 +732,23 @@ ul {
   color: #ffffff;
   background: transparent;
   border-color: rgba(255, 255, 255, 0.42);
+}
+
+.final-cta .button.primary,
+.business-cta .button.primary,
+.app-product-hero .button.primary {
+  color: var(--color-ink);
+  background: var(--color-brand-primary);
+  border-color: var(--color-brand-primary);
+  box-shadow: none;
+}
+
+.final-cta .button.primary:hover,
+.business-cta .button.primary:hover,
+.app-product-hero .button.primary:hover {
+  color: var(--color-ink);
+  background: #8ff1ff;
+  border-color: #8ff1ff;
 }
 
 .page-hero {
@@ -781,7 +804,7 @@ ul {
   overflow: hidden;
   background: var(--color-border);
   border: 1px solid var(--color-border);
-  border-radius: 14px;
+  border-radius: 8px;
 }
 
 .state-table {
@@ -819,8 +842,8 @@ ul {
   height: 72px;
   color: var(--color-brand-deep);
   background: var(--color-brand-primary-soft);
-  border: 1px solid #bdeff8;
-  border-radius: 14px;
+  border: 1px solid #d3eef4;
+  border-radius: 8px;
   font-weight: 900;
 }
 
@@ -829,7 +852,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  background: var(--color-brand-primary-soft);
+  background: #f4fafc;
   border-top: 1px solid var(--color-border);
 }
 
@@ -894,10 +917,7 @@ textarea {
 
 .app-product-hero {
   color: #ffffff;
-  background:
-    linear-gradient(90deg, rgba(20, 216, 255, 0.055) 0 1px, transparent 1px),
-    #0b3340;
-  background-size: 42px 42px, auto;
+  background: linear-gradient(135deg, #102033 0%, #0b3a48 100%);
 }
 
 .app-hero-inner {
@@ -928,9 +948,9 @@ textarea {
   min-height: 52px;
   margin-bottom: 20px;
   padding: 12px 14px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
 }
 
 .app-logo-block img,
@@ -950,9 +970,10 @@ textarea {
 .app-screen-hero {
   min-height: 500px;
   padding: 28px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 3px solid rgba(20, 216, 255, 0.36);
+  border-radius: 8px;
 }
 
 .app-screen-hero img:nth-child(2) {
@@ -983,7 +1004,7 @@ textarea {
   padding: 22px;
   background: #ffffff;
   border: 1px solid var(--color-border);
-  border-radius: 14px;
+  border-radius: 8px;
 }
 
 .app-flow-row img {
@@ -1184,7 +1205,7 @@ textarea {
   .beamcash-visual,
   .app-screen-hero {
     padding: 18px;
-    border-radius: 14px;
+    border-radius: 8px;
   }
 
   .product-window-top {
