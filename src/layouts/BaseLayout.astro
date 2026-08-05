@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { CONTACT_EMAIL, INTEREST_LIST_URL, navigationItems } from "../content/site";
 
 const {
   title = "SkanPay - QR Payment Gateway",
@@ -7,13 +8,7 @@ const {
   activePath = "/"
 } = Astro.props;
 
-const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/qr-payments/", label: "Technology" },
-  { href: "/beamcash-demo/", label: "BeamCash" },
-  { href: "/about/", label: "About" },
-  { href: "/contact/", label: "Contact" }
-];
+const navItems = navigationItems;
 ---
 <!doctype html>
 <html lang="en">
@@ -40,7 +35,7 @@ const navItems = [
           <a href={item.href} aria-current={activePath === item.href ? "page" : undefined}>{item.label}</a>
         ))}
       </nav>
-      <a class="header-cta" href="/contact/">Contact</a>
+      <a class="header-cta" href={INTEREST_LIST_URL}>Join interest list</a>
     </header>
     <main>
       <slot />
@@ -51,16 +46,17 @@ const navItems = [
           <img class="brand-logo" src="/skanpay-logo.svg" alt="" aria-hidden="true" />
           <span>SkanPay</span>
         </a>
-        <p>QR payment gateway support for in-store commerce, wallet partnerships, and merchant payment experiences.</p>
+        <p>SkanPay explores QR-based payment and redemption flows. BeamCash is the small-seller QR payment product under the SkanPay brand.</p>
       </div>
       <div class="footer-links">
-        <a href="/qr-payments/">Technology</a>
-        <a href="/beamcash-demo/">BeamCash Demo</a>
+        <a href="/#beamcash">BeamCash</a>
+        <a href="/#skanpay">SkanPay</a>
+        <a href="/#use-cases">Use Cases</a>
         <a href="/privacy/">Privacy</a>
       </div>
       <div>
         <p class="footer-contact">For questions or cooperation:</p>
-        <a href="mailto:support@skanpay.us">support@skanpay.us</a>
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
       </div>
       <p class="copyright">Copyright &copy; 2026 SkanPay Inc. All rights reserved.</p>
     </footer>

@@ -1,8 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const subject = encodeURIComponent("SkanPay inquiry");
-const body = encodeURIComponent("Name:\nEmail:\nCompany:\nInquiry type:\n\nMessage:\n");
+import { CONTACT_EMAIL, CONTACT_URL } from "../content/site";
 ---
 <BaseLayout
   title="Contact - SkanPay"
@@ -19,10 +17,10 @@ const body = encodeURIComponent("Name:\nEmail:\nCompany:\nInquiry type:\n\nMessa
     <div class="split-panel">
       <h2>For questions or cooperation</h2>
       <p>Share the business context, checkout use case, or partnership question. The team will follow up directly.</p>
-      <p><strong>Email:</strong> <a href="mailto:support@skanpay.us">support@skanpay.us</a></p>
+      <p><strong>Email:</strong> <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
     </div>
 
-    <form class="contact-form" action={`mailto:support@skanpay.us?subject=${subject}&body=${body}`} method="post" enctype="text/plain">
+    <form class="contact-form" action={CONTACT_URL} method="post" enctype="text/plain">
       <div class="field-grid">
         <label>
           Name
@@ -51,7 +49,7 @@ const body = encodeURIComponent("Name:\nEmail:\nCompany:\nInquiry type:\n\nMessa
         Message
         <textarea name="message" required></textarea>
       </label>
-      <p class="form-note">This form opens an email draft to support@skanpay.us so your inquiry can be reviewed directly.</p>
+      <p class="form-note">This form opens an email draft to {CONTACT_EMAIL} so your inquiry can be reviewed directly.</p>
       <button class="button primary" type="submit">Send Inquiry</button>
     </form>
   </section>

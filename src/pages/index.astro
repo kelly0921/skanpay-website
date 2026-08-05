@@ -1,162 +1,273 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  CONTACT_URL,
+  FEEDBACK_FORM_URL,
+  INTEREST_LIST_URL,
+  PRODUCT_STATUS,
+  beamcashFlow,
+  beamcashHighlights,
+  faqs,
+  problemPoints,
+  productDirections,
+  roadmapItems,
+  skanpayFlow,
+  useCases
+} from "../content/site";
 ---
 <BaseLayout
-  title="SkanPay - QR Checkout Gateway"
-  description="SkanPay helps merchants and payment partners coordinate QR checkout requests, customer approval, coupon or voucher logic, and merchant-readable results."
+  title="SkanPay - BeamCash QR Payments"
+  description="SkanPay is the broader QR payment and redemption vision. BeamCash is a QR-first payment product direction for small sellers and real-world transactions."
   activePath="/"
 >
-  <section class="product-hero">
-    <div class="product-hero-copy">
-      <div class="brand-kicker">
-        <img src="/skanpay-logo.svg" alt="" aria-hidden="true" />
-        <span>SkanPay QR Payment Gateway</span>
-      </div>
-      <h1>Turn a QR scan into a checkout result the store can trust.</h1>
-      <p class="lead-copy">
-        SkanPay is building patent-pending QR payment gateway technology for in-store checkout, customer approval, coupon or voucher logic, and partner handoff.
+  <section class="landing-hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">SkanPay presents BeamCash</p>
+      <h1>QR checkout for real-world sellers.</h1>
+      <p class="hero-subhead">
+        BeamCash is a QR-first payment experience for small sellers, student fundraisers, artists, pop-up vendors, and local communities. SkanPay is the broader vision behind it: simpler checkout flows that can connect payment, redemption, and confirmation in one place.
       </p>
-      <div class="button-row">
-        <a class="button primary" href="/contact/">Start a Conversation</a>
-        <a class="button secondary" href="/qr-payments/">View Technology</a>
+      <div class="hero-actions">
+        <a class="button primary" href={INTEREST_LIST_URL}>Join interest list</a>
+        <a class="button secondary" href="#beamcash">Explore BeamCash</a>
       </div>
-      <dl class="hero-facts" aria-label="SkanPay focus">
-        <div>
-          <dt>Audience</dt>
-          <dd>Merchants, banks, wallets, loyalty and payment partners</dd>
-        </div>
-        <div>
-          <dt>Stage</dt>
-          <dd>Patent-pending gateway invention with BeamCash demo available</dd>
-        </div>
-      </dl>
+      <div class="status-badge" aria-label={`Product status: ${PRODUCT_STATUS.label}`}>
+        <span>Status</span>
+        <strong>{PRODUCT_STATUS.label}</strong>
+      </div>
     </div>
-    <aside class="checkout-brief" aria-label="SkanPay checkout packet example">
-      <div class="brief-header">
-        <span>Checkout packet</span>
-        <strong>Store counter / QR request</strong>
+
+    <aside class="product-mockup" aria-label="BeamCash and SkanPay checkout concept mockup">
+      <div class="mockup-card seller-card">
+        <div class="mockup-topline">
+          <span>Seller QR</span>
+          <strong>BeamCash</strong>
+        </div>
+        <div class="qr-panel" aria-hidden="true">
+          {Array.from({ length: 49 }).map((_, index) => (
+            <span class:list={[index % 3 === 0 || index === 8 || index === 22 || index === 31 || index === 43 ? "filled" : ""]}></span>
+          ))}
+        </div>
+        <p>Scan to pay this seller</p>
       </div>
-      <div class="brief-lines">
-        <div>
-          <span>01</span>
-          <p>Merchant creates request with amount and session reference.</p>
+
+      <div class="mockup-card buyer-card">
+        <div class="mockup-topline">
+          <span>Buyer checkout</span>
+          <strong>$18.00</strong>
         </div>
-        <div>
-          <span>02</span>
-          <p>Customer scans and reviews merchant, amount, and checkout context.</p>
+        <div class="amount-field">Enter amount</div>
+        <div class="method-row">
+          <span>Available method</span>
+          <strong>To be configured</strong>
         </div>
-        <div>
-          <span>03</span>
-          <p>Payment, wallet, coupon, or voucher logic returns a decision.</p>
+        <div class="coupon-row">
+          <span>Optional SkanPay layer</span>
+          <strong>Coupon / reward applied</strong>
         </div>
-        <div>
-          <span>04</span>
-          <p>Store receives a readable result: confirmed, redeemed, cancelled, or expired.</p>
-        </div>
-      </div>
-      <div class="brief-result">
-        <span>Merchant result</span>
-        <strong>Clear enough for staff to close or retry the sale.</strong>
+        <div class="confirm-row">Confirmation ready for buyer and seller</div>
       </div>
     </aside>
   </section>
 
-  <section class="section business-section">
-    <div class="business-heading">
-      <span>Why SkanPay</span>
-      <h2>QR payment needs more than a code on a counter.</h2>
+  <section class="section relationship-section">
+    <div class="section-title-block">
+      <span>Product architecture</span>
+      <h2>One brand, two product directions.</h2>
+      <p>SkanPay is the broader payment and redemption vision. BeamCash is the lightweight QR payment product built for small sellers and everyday transactions.</p>
     </div>
-    <div class="comparison-table" aria-label="QR checkout before and with SkanPay">
-      <div class="comparison-row heading">
-        <span>Common QR setup</span>
-        <span>SkanPay approach</span>
+    <div class="product-stack">
+      {productDirections.map((product) => (
+        <article class="product-panel">
+          <div>
+            <span>{product.label}</span>
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
+          </div>
+          <div>
+            <strong>Status: {product.status}</strong>
+            <ul>
+              {product.bestFor.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section problem-section">
+    <div class="section-title-block compact">
+      <span>Problem</span>
+      <h2>Checkout should not be this complicated.</h2>
+      <p>Small sellers often rely on fragmented payment methods, manual confirmation, and awkward handoffs. Merchants using coupons, vouchers, gift cards, or stored value often deal with separate redemption and payment steps.</p>
+    </div>
+    <ul class="problem-list">
+      {problemPoints.map((point) => <li>{point}</li>)}
+    </ul>
+  </section>
+
+  <section class="section beamcash-section" id="beamcash">
+    <div class="section-title-block">
+      <span>BeamCash</span>
+      <h2>QR payments for small sellers and everyday transactions.</h2>
+      <p>BeamCash is designed around a simple idea: a seller shares a QR code, a buyer scans it, enters the amount, and completes the payment flow with clear confirmation.</p>
+    </div>
+
+    <div class="audience-row" aria-label="BeamCash audiences">
+      {productDirections[1].bestFor.map((audience) => <span>{audience}</span>)}
+    </div>
+
+    <div class="beamcash-product-layout">
+      <div class="flow-strip" aria-label="BeamCash payment flow">
+        {beamcashFlow.map((step, index) => (
+          <div>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{step}</strong>
+          </div>
+        ))}
       </div>
-      <div class="comparison-row">
-        <p>Static QR code leaves staff asking whether a customer actually completed the action.</p>
-        <p>Each checkout request has a state the merchant can read.</p>
+      <div class="beamcash-screens" aria-label="BeamCash product screens">
+        <img src="/beamcash/beamcash-seller-dashboard-mobile.png" alt="BeamCash seller dashboard with QR code and activity status" />
+        <img src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen with merchant and amount details" />
       </div>
-      <div class="comparison-row">
-        <p>Coupon or voucher redemption becomes a separate manual process.</p>
-        <p>Offer logic can be coordinated inside the checkout handoff.</p>
+    </div>
+
+    <div class="feature-lines">
+      {beamcashHighlights.map((feature) => (
+        <div>
+          <h3>{feature.title}</h3>
+          <p>{feature.copy}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="interest-panel">
+      <div>
+        <h3>Interested in using BeamCash?</h3>
+        <p>If you sell at events, fundraise for a student group, create art, run pop-ups, or frequently collect small payments, we would love to learn from your current payment flow.</p>
       </div>
-      <div class="comparison-row">
-        <p>Wallet, payment, loyalty, and merchant systems blur responsibilities.</p>
-        <p>Partners can discuss a defined request, decision, and result boundary.</p>
+      <div class="cta-group">
+        <a class="button primary" href={INTEREST_LIST_URL}>Join interest list</a>
+        <a class="button secondary" href={FEEDBACK_FORM_URL}>Give feedback</a>
+        <a class="button ghost" href={CONTACT_URL}>Contact us</a>
       </div>
     </div>
   </section>
 
-  <section class="section fit-section">
-    <div class="business-heading narrow">
-      <span>Where it fits</span>
-      <h2>Built for checkout conversations with merchants and partners.</h2>
+  <section class="section skanpay-vision-section" id="skanpay">
+    <div class="section-title-block">
+      <span>SkanPay</span>
+      <h2>One scan for payment and redemption.</h2>
+      <p>SkanPay explores how QR-based checkout can combine payment, coupon redemption, voucher usage, reward value, or gift card value into one simpler flow.</p>
     </div>
-    <div class="fit-columns">
+    <div class="before-after-flow" aria-label="SkanPay current flow and product direction">
       <div>
-        <span>Merchant</span>
-        <h3>Store-facing confirmation</h3>
-        <p>Staff need to see whether a request is open, pending, confirmed, redeemed, cancelled, or expired.</p>
+        <span>Current flow</span>
+        <p>Coupon or voucher check</p>
+        <p>Manual validation</p>
+        <p>Payment</p>
+        <p>Separate confirmation</p>
       </div>
       <div>
-        <span>Customer</span>
-        <h3>Approval with context</h3>
-        <p>The customer should know who they are paying, what they are approving, and what value is applied.</p>
-      </div>
-      <div>
-        <span>Partner</span>
-        <h3>Defined handoff</h3>
-        <p>Banks, wallets, loyalty apps, and payment partners can evaluate their role before integration work begins.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section demo-feature">
-    <div>
-      <div class="demo-feature-label">
-        <img src="/beamcash/beamcash-logo.svg" alt="BeamCash" />
-      </div>
-      <h2>BeamCash is the working demo under SkanPay.</h2>
-      <p>
-        BeamCash gives partners something tangible to review: a seller QR surface, a customer checkout screen, and a simple approval flow.
-      </p>
-      <a class="text-link" href="/beamcash-demo/">Review the BeamCash demo</a>
-    </div>
-    <div class="screen-pair" aria-label="BeamCash demo screens">
-      <figure>
-        <img src="/beamcash/beamcash-seller-dashboard-mobile.png" alt="BeamCash seller dashboard with QR code" />
-      </figure>
-      <figure>
-        <img src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen" />
-      </figure>
-    </div>
-  </section>
-
-  <section class="section stage-section">
-    <div>
-      <span>Current stage</span>
-      <h2>Patent-pending gateway work, ready for serious review.</h2>
-    </div>
-    <div class="stage-list">
-      <div>
-        <strong>Technology</strong>
-        <p>QR checkout coordination, coupon or voucher redemption paths, app handoff, and merchant-readable results.</p>
-      </div>
-      <div>
-        <strong>Demo</strong>
-        <p>BeamCash is used to show seller setup, QR display, customer scan, and checkout approval.</p>
-      </div>
-      <div>
-        <strong>Next conversations</strong>
-        <p>Merchant pilots, wallet participation, bank or processor fit, and loyalty or offer program use cases.</p>
+        <span>SkanPay direction</span>
+        <p>Scan</p>
+        <p>Apply eligible value</p>
+        <p>Pay</p>
+        <p>Confirm</p>
       </div>
     </div>
   </section>
 
-  <section class="business-cta">
+  <section class="section flow-section">
+    <div class="section-title-block compact">
+      <span>How it works</span>
+      <h2>Two related flows, one checkout idea.</h2>
+    </div>
+    <div class="flow-tabs">
+      <article>
+        <span>BeamCash flow</span>
+        {beamcashFlow.map((step, index) => (
+          <p><strong>{index + 1}</strong>{step}</p>
+        ))}
+      </article>
+      <article>
+        <span>SkanPay flow</span>
+        {skanpayFlow.map((step, index) => (
+          <p><strong>{index + 1}</strong>{step}</p>
+        ))}
+      </article>
+    </div>
+  </section>
+
+  <section class="section use-case-section" id="use-cases">
+    <div class="section-title-block">
+      <span>Use cases</span>
+      <h2>Built around real-world payment moments.</h2>
+      <p>SkanPay and BeamCash are designed around everyday checkout situations where simplicity matters.</p>
+    </div>
+    <div class="use-case-grid">
+      {useCases.map((useCase) => (
+        <article>
+          <span>{useCase.bestFit}</span>
+          <h3>{useCase.title}</h3>
+          <p>{useCase.need}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section status-section">
+    <div class="section-title-block compact">
+      <span>Product status</span>
+      <h2>Where we are now.</h2>
+      <p>{PRODUCT_STATUS.detail}</p>
+    </div>
+    <div class="roadmap-list">
+      {roadmapItems.map((item) => (
+        <div>
+          <span>{item.status}</span>
+          <strong>{item.title}</strong>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section founder-note-section" id="vision">
+    <div class="section-title-block compact">
+      <span>Vision</span>
+      <h2>Why SkanPay exists.</h2>
+    </div>
+    <div class="note-panel">
+      <p>Payments are not just about moving money. They shape whether a seller can participate, whether a buyer feels comfortable, and whether checkout feels simple or frustrating.</p>
+      <p>SkanPay began from an interest in combining mobile payment and coupon redemption into a more connected QR-based experience. BeamCash brings that thinking into a focused product direction for small sellers and everyday payment moments.</p>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="section-title-block compact">
+      <span>FAQ</span>
+      <h2>Clear answers before you reach out.</h2>
+    </div>
+    <div class="faq-list">
+      {faqs.map((faq) => (
+        <details>
+          <summary>{faq.question}</summary>
+          <p>{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="final-cta" id="contact">
     <div>
       <span>Contact</span>
-      <h2>Discuss a merchant, wallet, bank, or partner use case.</h2>
+      <h2>Help shape simpler payment flows.</h2>
+      <p>We are looking to learn from sellers, students, creators, local vendors, community organizers, and people who care about easier checkout experiences.</p>
     </div>
-    <a class="button primary" href="/contact/">Contact SkanPay</a>
+    <div class="cta-group">
+      <a class="button primary" href={INTEREST_LIST_URL}>Join interest list</a>
+      <a class="button secondary" href={FEEDBACK_FORM_URL}>Give product feedback</a>
+      <a class="button ghost" href={CONTACT_URL}>Contact us</a>
+    </div>
   </section>
 </BaseLayout>
