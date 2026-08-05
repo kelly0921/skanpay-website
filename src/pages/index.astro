@@ -12,32 +12,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <img src="/skanpay-logo.svg" alt="" aria-hidden="true" />
         <span>QR payment gateway</span>
       </div>
-      <h1>Make QR checkout clear enough to trust</h1>
+      <h1>QR checkout that shows what happened</h1>
       <p class="hero-copy">
-        SkanPay helps merchants and payment partners turn a scan into a structured checkout request: customer approval, optional coupon or voucher logic, and a result staff can read.
+        SkanPay turns a scan into a visible checkout flow: request created, customer reviewed, partner logic handled, and store result returned.
       </p>
       <div class="button-row">
         <a class="button primary" href="/contact/">Contact SkanPay</a>
         <a class="button secondary" href="/beamcash-demo/">View BeamCash</a>
       </div>
       <div class="hero-check-list" aria-label="SkanPay checkout priorities">
-        <span>Merchant sees checkout status</span>
-        <span>Customer confirms the request</span>
-        <span>Partners get a defined handoff</span>
-      </div>
-      <div class="trust-strip" aria-label="SkanPay focus areas">
-        <div class="trust-item">
-          <strong>01</strong>
-          Request
-        </div>
-        <div class="trust-item">
-          <strong>02</strong>
-          Approval
-        </div>
-        <div class="trust-item">
-          <strong>03</strong>
-          Result
-        </div>
+        <span>Staff can read the status</span>
+        <span>Customers see what they approve</span>
+        <span>Partners know their handoff</span>
       </div>
     </div>
     <aside class="checkout-console" aria-label="SkanPay checkout state example">
@@ -46,27 +32,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <span>Checkout session</span>
           <strong>QR-2847</strong>
         </div>
-        <p>Merchant terminal view</p>
+        <p>Store-facing state</p>
       </div>
       <div class="console-flow">
         <article>
           <span>Request</span>
-          <strong>Amount and merchant reference created</strong>
+          <strong>Amount, merchant, and session reference created</strong>
           <p>Open</p>
         </article>
         <article>
           <span>Scan</span>
-          <strong>Customer reviews the checkout prompt</strong>
+          <strong>Customer opens the payment request</strong>
           <p>Pending</p>
         </article>
         <article>
-          <span>Decision</span>
-          <strong>Payment, wallet, or redemption logic returns</strong>
+          <span>Handoff</span>
+          <strong>Wallet, payment, or redemption logic responds</strong>
           <p>Ready</p>
         </article>
       </div>
       <div class="console-result">
-        <span>Result returned to store</span>
+        <span>Result</span>
         <strong>Confirmed / redeemed / cancelled / expired</strong>
       </div>
     </aside>
@@ -76,32 +62,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="section-heading">
       <div>
         <p class="eyebrow">Pain points</p>
-        <h2>A QR code is easy. The checkout state is the hard part.</h2>
+        <h2>A scan is not enough. The store needs a result.</h2>
       </div>
       <p>
-        SkanPay focuses on the operating layer between the store, customer, payment app, and redemption logic.
+        SkanPay focuses on the state and handoff around QR checkout so the store, customer, and partner systems can agree on what happened.
       </p>
     </div>
     <div class="pain-grid compact-grid">
       <article class="pain-card">
-        <span>Staff</span>
-        <h3>Unclear status slows checkout</h3>
-        <p>Staff need to know whether a request was scanned, approved, cancelled, expired, or completed.</p>
+        <span>At the counter</span>
+        <h3>"Did it go through?"</h3>
+        <p>SkanPay gives staff a readable checkout state instead of leaving the scan as a guess.</p>
       </article>
       <article class="pain-card">
-        <span>Customer</span>
-        <h3>Trust depends on context</h3>
-        <p>The customer should see who they are paying, what they are approving, and what happens next.</p>
+        <span>On the phone</span>
+        <h3>"What am I approving?"</h3>
+        <p>The customer sees merchant and checkout context before approving the request.</p>
       </article>
       <article class="pain-card">
-        <span>Offers</span>
-        <h3>Coupons need coordination</h3>
-        <p>Coupon or voucher value has to be validated without becoming a separate staff process.</p>
+        <span>With offers</span>
+        <h3>"Did the value apply?"</h3>
+        <p>Coupon or voucher logic can be coordinated inside the checkout handoff.</p>
       </article>
       <article class="pain-card">
-        <span>Partners</span>
-        <h3>Each system needs a role</h3>
-        <p>Wallet, payment, loyalty, and merchant systems need a defined checkout boundary.</p>
+        <span>For partners</span>
+        <h3>"Where do we fit?"</h3>
+        <p>Wallet, payment, loyalty, and merchant systems get clearer responsibility boundaries.</p>
       </article>
     </div>
   </section>
@@ -110,16 +96,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="process-layout">
       <div>
         <p class="eyebrow">How it works</p>
-        <h2>Four states make the flow readable</h2>
+        <h2>Four states make the flow easy to review</h2>
         <p class="section-intro">
-          The model is simple enough to explain in a meeting, but structured enough for technical integration planning.
+          The model is simple in a meeting and specific enough for integration planning.
         </p>
       </div>
       <div class="homepage-flow-grid" aria-label="SkanPay checkout flow">
         <article>
           <span>01</span>
           <h3>Create request</h3>
-          <p>The merchant starts a QR checkout request with amount, merchant reference, and session details.</p>
+          <p>The merchant starts a QR checkout request with amount, reference, and session details.</p>
         </article>
         <article>
           <span>02</span>
@@ -129,12 +115,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <article>
           <span>03</span>
           <h3>Coordinate logic</h3>
-          <p>Payment, wallet, coupon, or voucher rules can be evaluated in the checkout handoff.</p>
+          <p>Payment, wallet, coupon, or voucher rules are evaluated in the handoff.</p>
         </article>
         <article>
           <span>04</span>
           <h3>Return result</h3>
-          <p>The merchant receives a readable state such as confirmed, redeemed, cancelled, or expired.</p>
+          <p>The merchant receives a state such as confirmed, redeemed, cancelled, or expired.</p>
         </article>
       </div>
     </div>
@@ -146,9 +132,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <img class="beamcash-wordmark" src="/beamcash/beamcash-logo.svg" alt="BeamCash" />
       </div>
       <p class="eyebrow">Demo app under SkanPay</p>
-      <h2>BeamCash turns the QR concept into a product demo</h2>
+      <h2>BeamCash shows the checkout flow in product form</h2>
       <p class="section-intro">
-        BeamCash is the working app-style demo used to show seller setup, QR display, and buyer approval before a deeper SkanPay integration conversation.
+        BeamCash is the SkanPay demo app for seller setup, QR display, and buyer approval.
       </p>
       <div class="mini-flow-list" aria-label="BeamCash demo flow">
         <span>Set up seller</span>
@@ -173,10 +159,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="section-heading">
       <div>
         <p class="eyebrow">Questions</p>
-        <h2>What partners usually ask first</h2>
+        <h2>Short answers before a deeper conversation</h2>
       </div>
       <p>
-        Short answers for merchants and payment partners evaluating the QR checkout model.
+        Kept brief so the site stays easy to scan.
       </p>
     </div>
     <div class="faq-list">
