@@ -8,7 +8,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 >
   <section class="hero">
     <div>
-      <p class="eyebrow">QR payment gateway</p>
+      <div class="hero-brand-line">
+        <img src="/skanpay-logo.svg" alt="" aria-hidden="true" />
+        <span>QR payment gateway</span>
+      </div>
       <h1>Make QR checkout clear enough to trust</h1>
       <p class="hero-copy">
         SkanPay helps merchants and payment partners turn a scan into a structured checkout request: customer approval, optional coupon or voucher logic, and a result staff can read.
@@ -37,34 +40,34 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
       </div>
     </div>
-    <aside class="hero-panel" aria-label="SkanPay platform overview">
-      <div class="panel-header">
-        <span>Checkout state model</span>
-        <strong>Scan to result</strong>
-      </div>
-      <div class="system-card">
+    <aside class="checkout-console" aria-label="SkanPay checkout state example">
+      <div class="console-header">
         <div>
+          <span>Checkout session</span>
+          <strong>QR-2847</strong>
+        </div>
+        <p>Merchant terminal view</p>
+      </div>
+      <div class="console-flow">
+        <article>
           <span>Request</span>
-          <strong>Amount, merchant reference, session details</strong>
-        </div>
-        <div>
+          <strong>Amount and merchant reference created</strong>
+          <p>Open</p>
+        </article>
+        <article>
           <span>Scan</span>
-          <strong>Customer opens a clear checkout prompt</strong>
-        </div>
-        <div>
+          <strong>Customer reviews the checkout prompt</strong>
+          <p>Pending</p>
+        </article>
+        <article>
           <span>Decision</span>
-          <strong>Approval, redemption, or cancellation state</strong>
-        </div>
-        <div>
-          <span>Merchant result</span>
-          <strong>Confirmed, redeemed, cancelled, or expired</strong>
-        </div>
+          <strong>Payment, wallet, or redemption logic returns</strong>
+          <p>Ready</p>
+        </article>
       </div>
-      <div class="signal-grid">
-        <div><span>Audience</span><strong>Merchants</strong></div>
-        <div><span>Partners</span><strong>Wallets</strong></div>
-        <div><span>Logic</span><strong>Offers</strong></div>
-        <div><span>Scope</span><strong>Gateway</strong></div>
+      <div class="console-result">
+        <span>Result returned to store</span>
+        <strong>Confirmed / redeemed / cancelled / expired</strong>
       </div>
     </aside>
   </section>
@@ -139,7 +142,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <section class="section demo-preview">
     <div class="demo-preview-copy">
-      <img class="beamcash-wordmark" src="/beamcash/beamcash-wordmark.svg" alt="BeamCash" />
+      <div class="beamcash-logo-plate">
+        <img class="beamcash-wordmark" src="/beamcash/beamcash-logo.svg" alt="BeamCash" />
+      </div>
       <p class="eyebrow">Demo app under SkanPay</p>
       <h2>BeamCash turns the QR concept into a product demo</h2>
       <p class="section-intro">
