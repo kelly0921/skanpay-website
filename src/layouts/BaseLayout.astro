@@ -25,7 +25,7 @@ const navItems = [
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={`https://skanpay.us${activePath}`} />
-    <meta name="theme-color" content="#071a30" />
+    <meta name="theme-color" content="#102033" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{title}</title>
   </head>
@@ -40,7 +40,7 @@ const navItems = [
           <a href={item.href} aria-current={activePath === item.href ? "page" : undefined}>{item.label}</a>
         ))}
       </nav>
-      <a class="header-cta" href="/contact/">Contact Sales</a>
+      <a class="header-cta" href="/contact/">Contact</a>
     </header>
     <main>
       <slot />

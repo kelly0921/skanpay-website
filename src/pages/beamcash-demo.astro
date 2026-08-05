@@ -6,236 +6,101 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   description="BeamCash is the app-style SkanPay demo used to show seller QR setup, customer scan, and checkout approval in a concrete product flow."
   activePath="/beamcash-demo/"
 >
-  <section class="beamcash-hero">
-    <div class="beamcash-hero-copy">
-      <div class="beamcash-logo-plate dark">
-        <img class="beamcash-wordmark" src="/beamcash/beamcash-logo.svg" alt="BeamCash" />
+  <section class="app-product-hero">
+    <div>
+      <div class="app-logo-block">
+        <img src="/beamcash/beamcash-logo.svg" alt="BeamCash" />
       </div>
-      <p class="eyebrow">SkanPay demo app</p>
-      <h1>BeamCash shows the scan-to-checkout experience</h1>
-      <p class="hero-copy">
-        BeamCash is the product demo under SkanPay. It helps merchants, banks, and payment partners review the seller screen, customer scan, and approval moment in a real interface.
+      <p class="page-label">Demo app under SkanPay</p>
+      <h1>BeamCash turns the QR checkout concept into screens people can review.</h1>
+      <p class="lead-copy">
+        BeamCash is not the full SkanPay gateway. It is the demo app used to show seller QR display, customer scan, and checkout approval in a product-like flow.
       </p>
-      <div class="hero-check-list beamcash-check-list" aria-label="BeamCash demo highlights">
-        <span>Seller displays QR</span>
-        <span>Customer reviews checkout</span>
-        <span>SkanPay explains the handoff</span>
-      </div>
       <div class="button-row">
-        <a class="button primary" href="#walkthrough">See Walkthrough</a>
+        <a class="button primary" href="#walkthrough">See the Flow</a>
         <a class="button ghost" href="/contact/">Request Demo</a>
       </div>
-      <div class="beamcash-step-strip" aria-label="BeamCash quick flow">
-        <div>
-          <span>Step 1</span>
-          <strong>Display QR</strong>
-        </div>
-        <div>
-          <span>Step 2</span>
-          <strong>Scan code</strong>
-        </div>
-        <div>
-          <span>Step 3</span>
-          <strong>Approve checkout</strong>
-        </div>
-      </div>
     </div>
-    <aside class="beamcash-hero-visual" aria-label="BeamCash demo screens">
-      <div class="demo-device-board">
-        <figure class="phone-shot">
-          <img src="/beamcash/beamcash-seller-dashboard-mobile.png" alt="BeamCash seller dashboard with QR code and activity status" />
-          <figcaption>
-            <span>Seller view</span>
-            QR code ready at the point of interaction.
-          </figcaption>
-        </figure>
-        <figure class="phone-shot">
-          <img src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen with merchant profile and checkout amount" />
-          <figcaption>
-            <span>Customer view</span>
-            Merchant and amount shown before approval.
-          </figcaption>
-        </figure>
-        <div class="qr-callout">
-          <img src="/beamcash/beamcash-logo-mark.svg" alt="" aria-hidden="true" />
-          <div>
-            <span>Demo boundary</span>
-            <strong>BeamCash is the demo. SkanPay is the gateway conversation.</strong>
-          </div>
-        </div>
-      </div>
+    <aside class="app-screen-hero" aria-label="BeamCash app screens">
+      <img class="seller-screen" src="/beamcash/beamcash-seller-dashboard-mobile.png" alt="BeamCash seller dashboard with QR code and activity status" />
+      <img class="buyer-screen" src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen with merchant profile and checkout amount" />
     </aside>
   </section>
 
-  <section class="section">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">Why it matters</p>
-        <h2>BeamCash makes the SkanPay concept visible</h2>
-      </div>
-      <p>
-        It turns an abstract QR payment discussion into screens a merchant or partner can inspect.
-      </p>
-    </div>
-    <div class="beamcash-reason-grid">
-      <article class="pain-card">
-        <span>Merchant</span>
-        <h3>Show the seller side</h3>
-        <p>The seller screen makes the QR surface and readiness status visible.</p>
-      </article>
-      <article class="pain-card">
-        <span>Customer</span>
-        <h3>Show the customer side</h3>
-        <p>The checkout screen shows merchant context, amount, and approval.</p>
-      </article>
-      <article class="pain-card">
-        <span>Partner</span>
-        <h3>Frame the SkanPay handoff</h3>
-        <p>Gateway, wallet, redemption, and merchant status questions become concrete.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section beamcash-context-band">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">Built for review</p>
-        <h2>Use BeamCash when people need to see the flow</h2>
-      </div>
-      <p>
-        The page is designed for quick review in merchant, partner, and investor conversations.
-      </p>
-    </div>
-    <div class="beamcash-placement-grid">
-      <article>
-        <span>Merchant counter</span>
-        <h3>Show the staff surface</h3>
-        <p>QR readiness and activity can be discussed from the seller screen.</p>
-      </article>
-      <article>
-        <span>Partner meeting</span>
-        <h3>Walk through the handoff</h3>
-        <p>Wallet, bank, loyalty, and gateway roles are easier to separate.</p>
-      </article>
-      <article>
-        <span>Investor demo</span>
-        <h3>Make it tangible</h3>
-        <p>The screenshots show the checkout experience beyond slides.</p>
-      </article>
-      <article>
-        <span>Pilot planning</span>
-        <h3>Identify requirements</h3>
-        <p>Discuss request data, approval states, and merchant confirmation.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section beamcash-walkthrough" id="walkthrough">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">Walkthrough</p>
-        <h2>Three screens explain the demo</h2>
-      </div>
-      <p>
-        The flow is intentionally simple: display, scan, approve.
-      </p>
-    </div>
-    <div class="beamcash-flow-board">
-      <article class="beamcash-flow-card">
-        <div>
-          <span>01</span>
-          <h3>Display the QR</h3>
-          <p>The seller has a clear QR surface to present at the point of interaction.</p>
-        </div>
-        <div class="flow-screen">
-          <img src="/beamcash/beamcash-seller-dashboard-mobile.png" alt="BeamCash seller dashboard screen" />
-        </div>
-      </article>
-      <article class="beamcash-flow-card">
-        <div>
-          <span>02</span>
-          <h3>Scan the code</h3>
-          <p>The customer opens the checkout request from the displayed QR code.</p>
-        </div>
-        <div class="flow-screen">
-          <img src="/beamcash/beamcash-find-code-mobile.png" alt="BeamCash QR code lookup screen" />
-        </div>
-      </article>
-      <article class="beamcash-flow-card">
-        <div>
-          <span>03</span>
-          <h3>Approve checkout</h3>
-          <p>The customer reviews merchant and amount context before approving.</p>
-        </div>
-        <div class="flow-screen">
-          <img src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen" />
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">How SkanPay uses it</p>
-        <h2>What BeamCash proves</h2>
-      </div>
-      <p>
-        BeamCash keeps SkanPay discussions grounded in screens, states, and handoffs.
-      </p>
-    </div>
-    <div class="beamcash-use-grid">
-      <article class="card">
-        <h3>Merchant review</h3>
-        <p>Show how a QR checkout surface can appear to staff.</p>
-      </article>
-      <article class="card">
-        <h3>Customer checkout review</h3>
-        <p>Review whether the customer has enough context to continue.</p>
-      </article>
-      <article class="card">
-        <h3>Partner integration review</h3>
-        <p>Use the screens to define wallet, gateway, loyalty, or redemption requirements.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section beamcash-faq-band">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">FAQ</p>
-        <h2>BeamCash boundaries</h2>
-      </div>
-      <p>
-        Short answers for partners reviewing the demo.
-      </p>
-    </div>
-    <div class="faq-list">
-      <details>
-        <summary>Is BeamCash the same as SkanPay?</summary>
-        <p>No. SkanPay is the company and gateway invention. BeamCash is the app-style demo used to make the checkout concept visible.</p>
-      </details>
-      <details>
-        <summary>Does this page claim live payment processing?</summary>
-        <p>No. BeamCash is presented as a product demo for the checkout experience. Live payment-processing scope would be discussed separately.</p>
-      </details>
-      <details>
-        <summary>Who is the demo for?</summary>
-        <p>Merchants, banks, payment partners, wallet teams, loyalty partners, and investors who need to understand the scan-to-checkout flow quickly.</p>
-      </details>
-      <details>
-        <summary>Why include BeamCash on the SkanPay website?</summary>
-        <p>It shows that the team can build a realistic QR checkout experience and gives future partners something concrete to evaluate.</p>
-      </details>
-    </div>
-  </section>
-
-  <section class="cta-band">
+  <section class="section demo-purpose">
     <div>
-      <p class="eyebrow">Next step</p>
-      <h2>Use BeamCash to guide the SkanPay conversation.</h2>
-      <p>Share the merchant, wallet, or partner flow you want to evaluate.</p>
+      <span>Why include BeamCash</span>
+      <h2>SkanPay is the company and gateway invention. BeamCash is the proof surface.</h2>
     </div>
-    <a class="button secondary" href="/contact/">Request a Conversation</a>
+    <p>
+      The demo gives merchants, banks, payment partners, and investors a concrete interface to discuss before deeper gateway requirements are defined.
+    </p>
+  </section>
+
+  <section class="section app-flow-section" id="walkthrough">
+    <div class="business-heading">
+      <span>Demo walkthrough</span>
+      <h2>Display. Scan. Approve.</h2>
+    </div>
+    <div class="app-flow-row">
+      <div>
+        <img src="/beamcash/beamcash-seller-dashboard-mobile.png" alt="BeamCash seller dashboard screen" />
+        <span>01 / Seller</span>
+        <h3>Display the QR surface</h3>
+        <p>The seller has a visible code and status surface at the point of interaction.</p>
+      </div>
+      <div>
+        <img src="/beamcash/beamcash-find-code-mobile.png" alt="BeamCash QR code lookup screen" />
+        <span>02 / Customer</span>
+        <h3>Scan the code</h3>
+        <p>The customer opens the checkout request from the displayed QR surface.</p>
+      </div>
+      <div>
+        <img src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen" />
+        <span>03 / Approval</span>
+        <h3>Review and approve</h3>
+        <p>The buyer sees merchant and amount context before continuing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section demo-use-section">
+    <div class="demo-use-copy">
+      <span>Business use</span>
+      <h2>Use BeamCash to make SkanPay conversations specific.</h2>
+      <p>BeamCash helps a meeting move from "imagine QR checkout" to concrete questions about screens, states, handoffs, and partner roles.</p>
+    </div>
+    <div class="use-list">
+      <div>
+        <strong>Merchant review</strong>
+        <p>What does staff see when a customer scans?</p>
+      </div>
+      <div>
+        <strong>Customer review</strong>
+        <p>Does the buyer have enough context to approve?</p>
+      </div>
+      <div>
+        <strong>Partner review</strong>
+        <p>Where do wallet, bank, loyalty, gateway, and processor responsibilities sit?</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section boundary-section">
+    <div>
+      <span>Important boundary</span>
+      <h2>BeamCash is the demo. SkanPay is the gateway.</h2>
+    </div>
+    <p>
+      The BeamCash page does not claim live processing. It demonstrates the user-facing flow SkanPay can use when speaking with merchants, banks, wallets, loyalty partners, and investors.
+    </p>
+  </section>
+
+  <section class="business-cta">
+    <div>
+      <span>Next step</span>
+      <h2>Review BeamCash in a SkanPay conversation.</h2>
+    </div>
+    <a class="button primary" href="/contact/">Request a Conversation</a>
   </section>
 </BaseLayout>
