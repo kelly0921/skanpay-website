@@ -22,7 +22,7 @@ export const CONTACT_URL = mailto(
 export const PRODUCT_STATUS = {
   label: "Prototype",
   detail:
-    "BeamCash is being used to test the clearest QR payment flow before broader SkanPay partner conversations."
+    "BeamCash demonstrates the core QR payment flow while SkanPay develops the broader payment and redemption model."
 };
 
 export const navigationItems = [
@@ -36,10 +36,10 @@ export const navigationItems = [
 export const productDirections = [
   {
     name: "SkanPay",
-    label: "Broader payment + redemption vision",
+    label: "Payment and redemption layer",
     status: "Concept / product exploration",
     description:
-      "A QR-based checkout concept exploring how payments, coupons, vouchers, rewards, and gift card value can be combined into a simpler flow.",
+      "A QR checkout model for coordinating payment approval, merchant confirmation, and coupon or stored-value redemption.",
     bestFor: [
       "Coupon redemption",
       "Voucher flows",
@@ -50,10 +50,10 @@ export const productDirections = [
   },
   {
     name: "BeamCash",
-    label: "Small-seller QR payment product",
+    label: "QR payment demo",
     status: PRODUCT_STATUS.label,
     description:
-      "A lightweight QR payment experience for sellers who want to collect payments without forcing buyers through complicated setup.",
+      "A focused demo that shows how a seller QR code can lead to a clear buyer review and confirmation flow.",
     bestFor: [
       "Pop-up vendors",
       "Artists and creators",
@@ -65,124 +65,81 @@ export const productDirections = [
   }
 ];
 
-export const problemPoints = [
-  "Buyers should not need to download another app just to complete a simple payment.",
-  "Sellers should not need a complex storefront or full point-of-sale setup for lightweight transactions.",
-  "Coupon, voucher, reward, and gift card flows should not feel disconnected from checkout.",
-  "Payment confirmation should be clear for both the buyer and the seller.",
-  "Local and temporary sellers need payment tools that match how they actually sell."
-];
-
 export const painSolutions = [
   {
-    pain: "People want to pay, but they do not always carry cash.",
-    response: "BeamCash gives sellers a QR surface buyers can open from the phone already in their hand."
+    pain: "Customers do not always have cash.",
+    response: "A QR request lets the buyer open a checkout flow from the phone already in hand."
   },
   {
-    pain: "Small sellers often need payment acceptance without a full POS setup.",
-    response: "The demo keeps the flow narrow: show code, scan, review amount, choose payment method, confirm."
+    pain: "Small sellers do not need a full POS for every sale.",
+    response: "BeamCash keeps the path narrow: show code, review amount, choose payment, confirm."
   },
   {
-    pain: "Discounts, vouchers, gift cards, and payment can become separate checkout steps.",
-    response: "SkanPay's broader patent-pending work explores payment and redemption as one coordinated request."
+    pain: "Offers and payments often become separate steps.",
+    response: "SkanPay explores payment and redemption as one coordinated checkout request."
   }
 ];
 
 export const beamcashFlow = [
-  "Show QR",
-  "Scan",
-  "Review amount",
-  "Choose payment",
-  "Confirm"
+  "Seller displays QR",
+  "Buyer reviews amount",
+  "Payment option is selected",
+  "Result is confirmed"
 ];
 
 export const skanpayFlow = [
-  "Scan checkout QR",
-  "Apply coupon, voucher, reward, or stored value",
-  "Complete payment",
-  "Confirm redemption and payment"
+  "Create checkout request",
+  "Apply offer or stored value",
+  "Route payment approval",
+  "Return merchant result"
 ];
 
 export const beamcashHighlights = [
   {
-    title: "QR-first selling",
-    copy: "Share a simple QR code in person, online, at a table, or during an event."
+    title: "QR request",
+    copy: "A seller presents one code for the payment moment."
   },
   {
-    title: "Lightweight buyer flow",
-    copy: "Designed around reducing buyer friction, especially for one-time or casual payments."
+    title: "Buyer review",
+    copy: "The buyer sees seller context and amount before continuing."
   },
   {
-    title: "Clear confirmation",
-    copy: "Both sides should understand whether a payment was completed, pending, or failed."
+    title: "Clear result",
+    copy: "The experience is shaped around completed, pending, failed, or cancelled outcomes."
   },
   {
-    title: "Built for small, real-world transactions",
-    copy: "BeamCash is shaped around sellers who do not need a full storefront or complex POS setup."
-  }
-];
-
-export const useCases = [
-  {
-    title: "Pop-up vendors",
-    need: "Accept quick payments without a full point-of-sale setup.",
-    bestFit: "BeamCash"
-  },
-  {
-    title: "Student fundraisers",
-    need: "Collect small payments at tabling events, club fundraisers, campus markets, or community events.",
-    bestFit: "BeamCash"
-  },
-  {
-    title: "Artists and creators",
-    need: "Accept tips, sales, or event payments through a simple QR.",
-    bestFit: "BeamCash"
-  },
-  {
-    title: "Garage sales and casual sellers",
-    need: "Collect one-time payments without complicated setup.",
-    bestFit: "BeamCash"
-  },
-  {
-    title: "Local merchants",
-    need: "Connect payment with coupons, vouchers, gift cards, or redemption flows.",
-    bestFit: "SkanPay"
-  },
-  {
-    title: "Redemption-heavy businesses",
-    need: "Reduce friction between discount validation, stored value, and payment.",
-    bestFit: "SkanPay"
+    title: "Real-world selling",
+    copy: "Built for pop-ups, fundraisers, artists, local events, and lightweight sales."
   }
 ];
 
 export const roadmapItems = [
-  { status: "Complete", title: "Prototype product flow" },
-  { status: "In progress", title: "Collect seller feedback" },
-  { status: "Exploring", title: "Test lightweight QR checkout use cases" },
-  { status: "Planned", title: "Refine payment confirmation experience" },
-  { status: "Exploring", title: "Evaluate redemption and coupon flow opportunities" }
+  { status: "Built", title: "BeamCash QR payment demo" },
+  { status: "Refining", title: "Seller and buyer confirmation states" },
+  { status: "Exploring", title: "Merchant, wallet, and redemption handoffs" },
+  { status: "Next", title: "Feedback from sellers and payment partners" }
 ];
 
 export const faqs = [
   {
     question: "What is the relationship between SkanPay and BeamCash?",
     answer:
-      "SkanPay is the broader payment and redemption vision. BeamCash is a product direction under SkanPay focused on lightweight QR payments for small sellers."
+      "SkanPay is the broader QR payment and redemption company. BeamCash is the demo product used to show the payment flow."
   },
   {
     question: "Who is BeamCash for?",
     answer:
-      "BeamCash is for small sellers, artists, student fundraisers, pop-up vendors, local events, garage sales, and other people collecting simple real-world payments."
+      "BeamCash is designed around small sellers, artists, student fundraisers, pop-up vendors, local events, and casual in-person payments."
   },
   {
     question: "Is BeamCash live?",
     answer:
-      "BeamCash is currently presented as a prototype product direction and is looking for feedback from potential sellers and partners."
+      "BeamCash is currently presented as a prototype demo and is being used for feedback from sellers, merchants, and partners."
   },
   {
     question: "Do buyers need to create an account?",
     answer:
-      "BeamCash is being designed around a lightweight buyer flow. Final account requirements depend on the product implementation."
+      "The demo is designed around a lightweight buyer flow. Final account requirements depend on implementation decisions."
   },
   {
     question: "What payment methods are supported?",

@@ -9,17 +9,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="page-hero">
     <p class="eyebrow">Technology</p>
     <h1>The gateway model behind QR checkout</h1>
-    <p>A technical view of the request, scan, redemption logic, decision, and merchant result.</p>
+    <p>A technical view of request creation, buyer approval, redemption logic, and merchant confirmation.</p>
   </section>
 
   <section class="section">
     <div class="section-heading">
       <div>
         <p class="eyebrow">State model</p>
-        <h2>Keep every checkout request readable</h2>
+        <h2>Keep each payment request readable</h2>
       </div>
       <p>
-        The value of QR payment is not the code. It is the state model behind the code.
+        The value of QR payment is not the code alone. It is the state model behind the request.
       </p>
     </div>
     <div class="state-table">
@@ -30,18 +30,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </article>
       <article>
         <span>Scanned</span>
-        <strong>Customer opens request</strong>
-        <p>A supported wallet or app reads the request and shows the customer what they are approving.</p>
+        <strong>Buyer opens request</strong>
+        <p>A supported app reads the request and shows the buyer what they are approving.</p>
       </article>
       <article>
         <span>Decided</span>
         <strong>App returns outcome</strong>
-        <p>The request can be authorized, cancelled, expired, or left pending.</p>
+        <p>The request can be approved, cancelled, expired, failed, or left pending.</p>
       </article>
       <article>
         <span>Confirmed</span>
-        <strong>Store receives result</strong>
-        <p>Counter staff get a readable result before closing the sale.</p>
+        <strong>Seller receives result</strong>
+        <p>The merchant or seller gets a readable result before closing the sale.</p>
       </article>
     </div>
   </section>
@@ -50,17 +50,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="section-heading">
       <div>
         <p class="eyebrow">Gateway role</p>
-        <h2>Coordinate checkout without replacing the processor</h2>
+        <h2>Coordinate checkout without hiding the processor</h2>
       </div>
       <p>
-        SkanPay is best explained as the coordination layer between checkout, wallet participation, redemption logic, and payment processing.
+        SkanPay is best explained as the coordination layer between checkout, app participation, redemption logic, and payment processing.
       </p>
     </div>
     <div class="grid three">
       <article class="card route-card">
         <span>Gateway</span>
         <h3>Route the request</h3>
-        <p>A gateway helps collect and route checkout information so the right systems know what should happen next.</p>
+        <p>Collect and route checkout information so the right systems know what should happen next.</p>
       </article>
       <article class="card route-card">
         <span>Processor</span>
@@ -70,7 +70,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <article class="card route-card">
         <span>Redemption</span>
         <h3>Validate offers in context</h3>
-        <p>Coupon or voucher logic can be coordinated with the checkout request instead of being treated as a separate afterthought.</p>
+        <p>Coupon or voucher logic can be coordinated with the checkout request.</p>
       </article>
     </div>
   </section>
@@ -79,20 +79,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="section-heading">
       <div>
         <p class="eyebrow">Responsibilities</p>
-        <h2>Separate merchant, customer, and partner roles</h2>
+        <h2>Separate seller, buyer, and partner roles</h2>
       </div>
       <p>Clear roles make QR checkout easier to explain, support, and integrate.</p>
     </div>
     <div class="grid three">
       <article class="card route-card">
-        <span>Merchant</span>
+        <span>Seller</span>
         <h3>Present request and read status</h3>
-        <p>The store needs a clean checkout prompt and a final result staff can trust.</p>
+        <p>The seller needs a clean checkout prompt and a result they can trust.</p>
       </article>
       <article class="card route-card">
-        <span>Customer</span>
+        <span>Buyer</span>
         <h3>Review and approve</h3>
-        <p>The customer needs merchant details, amount, and a familiar app approval experience.</p>
+        <p>The buyer needs seller details, amount, and a familiar approval experience.</p>
       </article>
       <article class="card route-card">
         <span>Partner</span>
@@ -109,7 +109,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <h2>Where deeper technical conversations begin</h2>
       </div>
       <p>
-        SkanPay keeps public claims focused, then uses direct conversations to discuss partner-specific requirements.
+        SkanPay keeps public claims focused, then uses direct discussions to review partner-specific requirements.
       </p>
     </div>
     <div class="integration-list">

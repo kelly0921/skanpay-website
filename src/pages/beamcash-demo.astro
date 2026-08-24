@@ -10,13 +10,13 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
   <section class="app-product-hero">
     <div class="app-hero-inner">
       <div class="app-hero-copy">
-        <div class="app-logo-block">
-          <img src="/beamcash/beamcash-wordmark.svg" alt="BeamCash" />
+        <div class="app-logo-block square-logo-block">
+          <img class="beamcash-brand-icon" src="/beamcash/beamcash-logo-mark.svg" alt="BeamCash logo" />
         </div>
         <p class="page-label">Demo product under SkanPay</p>
-        <h1>A concrete demo for scan-to-pay moments.</h1>
+        <h1>A focused QR payment demo for seller checkout.</h1>
         <p class="lead-copy">
-          BeamCash makes the SkanPay concept easier to evaluate: seller QR display, buyer review, payment choice, and checkout confirmation.
+          BeamCash shows the core acceptance flow: seller QR display, buyer amount review, payment choice, and confirmation.
         </p>
         <div class="button-row">
           <a class="button primary" href={INTEREST_LIST_URL}>Join interest list</a>
@@ -35,10 +35,10 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
     <div class="section-inner demo-purpose-inner">
       <div>
         <span>Why BeamCash exists</span>
-        <h2>BeamCash is the proof surface. SkanPay is the company and gateway invention.</h2>
+        <h2>BeamCash makes SkanPay's payment model concrete.</h2>
       </div>
       <p>
-        The demo gives merchants, banks, payment partners, and investors something specific to review before deeper gateway and redemption requirements are discussed.
+        The demo gives merchants, banks, wallet partners, and investors a visible payment flow before deeper gateway and redemption requirements are defined.
       </p>
     </div>
   </section>
@@ -47,26 +47,26 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
     <div class="section-inner">
       <div class="section-heading">
         <span>Demo walkthrough</span>
-        <h2>Display. Scan. Review.</h2>
+        <h2>Display. Review. Confirm.</h2>
       </div>
       <div class="app-flow-row">
         <article>
           <img src="/beamcash/beamcash-seller-dashboard-mobile.png" alt="BeamCash seller dashboard screen" />
           <span>01 / Seller</span>
-          <h3>Show the QR surface</h3>
-          <p>The seller has a visible code and a simple status area at the point of interaction.</p>
+          <h3>Display the payment QR</h3>
+          <p>The seller has a visible code and status surface at the point of sale.</p>
         </article>
         <article>
           <img src="/beamcash/beamcash-find-code-mobile.png" alt="BeamCash QR code lookup screen" />
           <span>02 / Buyer</span>
-          <h3>Open the checkout</h3>
-          <p>The buyer scans the code and lands on a focused payment flow.</p>
+          <h3>Open the checkout request</h3>
+          <p>The buyer scans and sees seller context before choosing how to pay.</p>
         </article>
         <article>
           <img src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen" />
           <span>03 / Review</span>
-          <h3>Confirm the amount</h3>
-          <p>The buyer sees merchant and amount context before continuing.</p>
+          <h3>Review and confirm</h3>
+          <p>The buyer checks the amount, then the flow can return a clear result.</p>
         </article>
       </div>
     </div>
@@ -76,21 +76,21 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
     <div class="section-inner demo-use-inner">
       <div class="demo-use-copy">
         <span>Business use</span>
-        <h2>Use BeamCash to make SkanPay conversations specific.</h2>
-        <p>BeamCash keeps the discussion grounded in screens, states, handoffs, and partner responsibilities.</p>
+        <h2>Use BeamCash to review the payment handoff.</h2>
+        <p>BeamCash keeps the discussion grounded in screens, states, buyer approval, and partner responsibilities.</p>
       </div>
       <div class="use-list">
         <div>
           <strong>Merchant review</strong>
-          <p>What does staff see before and after scan?</p>
+          <p>What does the seller see before and after the buyer scans?</p>
         </div>
         <div>
           <strong>Customer review</strong>
-          <p>Does the buyer have enough context to approve?</p>
+          <p>Does the buyer have enough context to approve the amount?</p>
         </div>
         <div>
           <strong>Partner review</strong>
-          <p>Where do wallet, loyalty, gateway, and processor roles sit?</p>
+          <p>Where do wallet, redemption, gateway, and processor roles sit?</p>
         </div>
       </div>
     </div>
@@ -100,7 +100,7 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
     <div class="business-cta-inner">
       <div>
         <span>Feedback</span>
-        <h2>Review the demo and help shape the next version.</h2>
+        <h2>Review the payment flow and help shape the next version.</h2>
       </div>
       <div class="cta-group">
         <a class="button primary" href={FEEDBACK_FORM_URL}>Give feedback</a>

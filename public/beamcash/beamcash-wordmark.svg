@@ -3,7 +3,7 @@
   <desc id="desc">BeamCash horizontal logo with the cyan QR-dollar mark and dark wordmark text.</desc>
   <rect width="900" height="240" rx="32" fill="#FFFFFF"/>
   <g transform="translate(56 56) scale(0.27766)">
-    <rect width="461" height="461" rx="72" fill="#14D8FF"/>
+    <rect width="461" height="461" rx="72" fill="#00C8B3"/>
     <path d="M269.4 135.096H139.029V171.428H269.4V135.096Z" fill="white"/>
     <path d="M175.394 213.163V135.154H139.061V213.163H175.394Z" fill="white"/>
     <path d="M139.061 249.496H213.864V213.163H139.061V249.496Z" fill="white"/>

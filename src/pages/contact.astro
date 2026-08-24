@@ -9,14 +9,14 @@ import { CONTACT_EMAIL, CONTACT_URL } from "../content/site";
 >
   <section class="page-hero">
     <p class="eyebrow">Contact</p>
-    <h1>Start a SkanPay conversation</h1>
-    <p>Tell us a little about your business, payment use case, or partnership question. SkanPay can follow up with the right next step.</p>
+    <h1>Start a payment conversation</h1>
+    <p>Tell us about the seller, merchant, wallet, redemption, or QR checkout use case you want to review.</p>
   </section>
 
   <section class="section contact-grid">
     <div class="split-panel">
-      <h2>For questions or cooperation</h2>
-      <p>Share the business context, checkout use case, or partnership question. The team will follow up directly.</p>
+      <h2>For merchants, partners, and payment experts</h2>
+      <p>Share the checkout context, approval flow, redemption need, or partnership question. The team will follow up directly.</p>
       <p><strong>Email:</strong> <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
     </div>
 
@@ -41,7 +41,7 @@ import { CONTACT_EMAIL, CONTACT_URL } from "../content/site";
           <option value="">Select an inquiry type</option>
           <option>Merchant QR payment inquiry</option>
           <option>Partner or wallet inquiry</option>
-          <option>Gateway service question</option>
+          <option>Payment or redemption question</option>
           <option>General cooperation</option>
         </select>
       </label>
@@ -50,7 +50,7 @@ import { CONTACT_EMAIL, CONTACT_URL } from "../content/site";
         <textarea name="message" required></textarea>
       </label>
       <p class="form-note">This form opens an email draft to {CONTACT_EMAIL} so your inquiry can be reviewed directly.</p>
-      <button class="button primary" type="submit">Send Inquiry</button>
+      <button class="button primary" type="submit">Send inquiry</button>
     </form>
   </section>
 </BaseLayout>

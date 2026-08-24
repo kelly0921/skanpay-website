@@ -11,8 +11,7 @@ import {
   painSolutions,
   productDirections,
   roadmapItems,
-  skanpayFlow,
-  useCases
+  skanpayFlow
 } from "../content/site";
 ---
 <BaseLayout
@@ -24,15 +23,15 @@ import {
     <div class="hero-inner">
       <div class="hero-content">
         <p class="hero-eyebrow">SkanPay presents BeamCash</p>
-        <h1>QR checkout for sellers who cannot rely on cash.</h1>
+        <h1>QR payment acceptance for real-world sellers.</h1>
         <p class="hero-subhead">
-          BeamCash is the focused product demo: a seller shows a QR code, a buyer reviews the payment, and both sides get a clearer checkout moment.
+          BeamCash shows the core payment moment: the seller displays a QR code, the buyer reviews the amount, and the checkout result is easy to confirm.
         </p>
 
         <div class="hero-proof">
-          <span>No heavy storefront</span>
-          <span>Buyer-first checkout</span>
-          <span>Built for real-world selling</span>
+          <span>QR request</span>
+          <span>Buyer approval</span>
+          <span>Merchant confirmation</span>
         </div>
 
         <div class="hero-actions">
@@ -49,7 +48,7 @@ import {
       <aside class="hero-product" aria-label="BeamCash prototype screens">
         <div class="product-window">
           <div class="product-window-top">
-            <img src="/beamcash/beamcash-wordmark.svg" alt="BeamCash" />
+            <img class="beamcash-brand-icon" src="/beamcash/beamcash-logo-mark.svg" alt="BeamCash logo" />
             <span>Seller QR to buyer checkout</span>
           </div>
           <div class="screen-showcase">
@@ -57,11 +56,11 @@ import {
             <img src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen with merchant and amount details" />
           </div>
           <div class="product-steps" aria-label="BeamCash checkout sequence">
-            <span>Show QR</span>
-            <span>Buyer reviews</span>
-            <span>Confirm result</span>
+            <span>Request</span>
+            <span>Approve</span>
+            <span>Confirm</span>
           </div>
-          <p>Prototype screens shown for product conversations.</p>
+          <p>Prototype screens showing the payment request and buyer checkout.</p>
         </div>
       </aside>
     </div>
@@ -71,7 +70,7 @@ import {
     <div class="section-inner">
       <div class="section-heading">
         <span>The problem</span>
-        <h2>Small payments break down when checkout feels bigger than the sale.</h2>
+        <h2>Checkout should feel smaller than the payment.</h2>
       </div>
       <div class="pain-grid">
         {painSolutions.map((item) => (
@@ -86,17 +85,16 @@ import {
 
   <section class="section beamcash-section" id="beamcash">
     <div class="section-inner beamcash-layout">
-      <div class="beamcash-visual" aria-label="BeamCash mobile flow preview">
-        <img src="/beamcash/beamcash-find-code-mobile.png" alt="BeamCash QR code lookup screen" />
-        <img src="/beamcash/beamcash-buyer-checkout-mobile.png" alt="BeamCash buyer checkout screen" />
+      <div class="beamcash-visual single-screen" aria-label="BeamCash seller dashboard preview">
+        <img src="/beamcash/beamcash-seller-dashboard-mobile.png" alt="BeamCash seller dashboard screen with payment QR code" />
       </div>
 
       <div>
         <div class="section-heading">
           <span>BeamCash</span>
-          <h2>A simple product surface for everyday sellers.</h2>
+          <h2>A focused demo for seller QR payments.</h2>
           <p>
-            BeamCash turns the SkanPay idea into something people can see, test, and react to before deeper bank, merchant, or partner requirements are finalized.
+            BeamCash makes the payment flow visible: seller setup, buyer review, and a result both sides can understand.
           </p>
         </div>
 
@@ -125,9 +123,9 @@ import {
     <div class="section-inner skanpay-layout">
       <div class="section-heading">
         <span>SkanPay</span>
-        <h2>The broader QR payment and redemption system.</h2>
+        <h2>The broader checkout layer behind the demo.</h2>
         <p>
-          SkanPay is the company and patent-pending invention behind the larger vision: one checkout request that can coordinate payment, coupon, voucher, reward, or stored-value redemption.
+          SkanPay is the patent-pending payment and redemption model behind the broader vision: one QR checkout request for payment approval, offer value, and merchant confirmation.
         </p>
       </div>
 
@@ -146,7 +144,7 @@ import {
     <div class="section-inner">
       <div class="section-heading">
         <span>Where it fits</span>
-        <h2>One company, two levels of conversation.</h2>
+        <h2>One company, two product layers.</h2>
       </div>
       <div class="fit-grid">
         {productDirections.map((product) => (
@@ -168,9 +166,9 @@ import {
       <div>
         <div class="section-heading">
           <span>Current status</span>
-          <h2>Prototype now. Feedback next.</h2>
+          <h2>Prototype now. Payment feedback next.</h2>
           <p>
-            The website should help people understand the direction quickly, then open the right conversation with sellers, merchants, partners, and investors.
+            The current priority is validating the payment flow with sellers, merchants, wallet partners, and payment experts.
           </p>
         </div>
         <div class="roadmap-list">
@@ -204,8 +202,8 @@ import {
     <div class="final-cta-inner">
       <div>
         <span>Next step</span>
-        <h2>Help shape the QR checkout flow.</h2>
-        <p>Join the interest list, send product feedback, or start a SkanPay conversation.</p>
+        <h2>Help shape a clearer QR payment flow.</h2>
+        <p>Join the interest list, send product feedback, or start a SkanPay payment conversation.</p>
       </div>
       <div class="cta-group">
         <a class="button primary" href={INTEREST_LIST_URL}>Join interest list</a>
