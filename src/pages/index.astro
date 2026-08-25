@@ -2,10 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import {
   CONTACT_URL,
-  PRODUCT_STATUS,
   beamcashFlow,
-  painSolutions,
-  productDirections,
+  checkoutProblems,
+  relationshipMap,
   skanpayFlow
 } from "../content/site";
 ---
@@ -17,24 +16,24 @@ import {
   <section class="home-hero">
     <div class="home-hero-inner">
       <div class="home-hero-copy motion-item">
-        <p class="brand-kicker">SkanPay company / BeamCash demo</p>
-        <h1>SkanPay builds QR payment infrastructure. BeamCash shows it working.</h1>
+        <p class="brand-kicker">QR checkout infrastructure</p>
+        <h1>Turn a QR scan into a trackable checkout request.</h1>
         <p class="premium-lead">
-          SkanPay is the patent-pending infrastructure direction for QR checkout and redemption. BeamCash is the demo product under SkanPay that makes the payment flow visible.
+          SkanPay is the patent-pending system direction for QR checkout requests. BeamCash is the working demo that shows the seller QR, buyer review, and seller status flow.
         </p>
 
         <div class="premium-actions">
-          <a class="button primary premium-primary" href="/qr-payments/">Understand SkanPay</a>
+          <a class="button primary premium-primary" href="/qr-payments/">See how SkanPay works</a>
           <a class="button secondary premium-secondary" href="/beamcash-demo/">View BeamCash demo</a>
         </div>
 
         <div class="scan-principles" aria-label="SkanPay payment principles">
-          <span>Display QR</span>
-          <span>Review amount</span>
-          <span>Return status</span>
+          <span>Create request</span>
+          <span>Buyer reviews</span>
+          <span>Seller sees status</span>
         </div>
 
-        <p class="product-status-line">{PRODUCT_STATUS.detail}</p>
+        <p class="product-status-line">A scan should carry context, route, and result status, not just open a page.</p>
       </div>
 
       <aside class="open-payment-field motion-item" aria-label="BeamCash QR checkout product scene">
@@ -55,39 +54,62 @@ import {
     </div>
   </section>
 
-  <section class="company-split">
-    <div class="company-split-inner">
-      <div class="company-split-heading motion-item">
-        <span>The clean distinction</span>
-        <h2>One company direction. One proof product.</h2>
-        <p>SkanPay is the infrastructure model for merchants, banks, wallets, and payment partners. BeamCash is the practical demo used to show the seller and buyer experience.</p>
+  <section class="relationship-section">
+    <div class="relationship-inner">
+      <div class="relationship-heading motion-item">
+        <span>How the pieces fit</span>
+        <h2>SkanPay is the system. BeamCash is the proof.</h2>
+        <p>SkanPay defines the checkout request layer. BeamCash demonstrates it with screens a seller, buyer, and partner can review.</p>
       </div>
-      <div class="split-ledger">
-        {productDirections.map((product) => (
-          <article class="motion-item">
-            <span>{product.name}</span>
-            <h3>{product.label}</h3>
-            <p>{product.description}</p>
+      <div class="relationship-map" aria-label="SkanPay and BeamCash relationship">
+        {relationshipMap.map((item, index) => (
+          <article class="relationship-row motion-item">
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{item.name}</strong>
+            <em>{item.role}</em>
+            <p>{item.description}</p>
           </article>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="pain-ledger">
-    <div class="pain-ledger-inner">
-      <div class="pain-ledger-heading motion-item">
+  <section class="problem-flow">
+    <div class="problem-flow-inner">
+      <div class="problem-heading motion-item">
         <span>The payment problem</span>
-        <h2>A QR code is only useful when every party knows what happened.</h2>
+        <h2>The hard part is not the scan. It is what happens after.</h2>
+        <p>A QR code can open a page. A payment product has to carry context, decisions, and status across the whole handoff.</p>
       </div>
-      <div class="pain-lines" aria-label="QR payment pain points and SkanPay response">
-        {painSolutions.map((item, index) => (
+      <div class="problem-lines" aria-label="QR checkout problem and response">
+        {checkoutProblems.map((item, index) => (
           <article class="motion-item">
             <span>{String(index + 1).padStart(2, "0")}</span>
             <div>
-              <strong>{item.pain}</strong>
-              <p>{item.response}</p>
+              <strong>{item.problem}</strong>
+              <p>{item.solution}</p>
             </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="system-blueprint" id="skanpay">
+    <div class="system-blueprint-inner">
+      <div class="system-copy motion-item">
+        <span>SkanPay</span>
+        <h2>Define the request before the payment handoff.</h2>
+        <p>
+          SkanPay focuses on the layer around a QR checkout: what request was created, what the buyer reviewed, which partner route applies, and what status the seller can trust.
+        </p>
+      </div>
+
+      <div class="blueprint-rail" aria-label="SkanPay checkout direction">
+        {skanpayFlow.map((step, index) => (
+          <article class="motion-item">
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{step}</strong>
           </article>
         ))}
       </div>
@@ -104,9 +126,9 @@ import {
 
       <div class="scan-story-copy motion-item">
         <span>BeamCash product proof</span>
-        <h2>Show the payment moment, screen by screen.</h2>
+        <h2>Make SkanPay visible through a real demo flow.</h2>
         <p>
-          BeamCash turns SkanPay's model into a concrete checkout path that merchants, banks, and payment partners can inspect without guessing.
+          BeamCash is the product demo we use when the SkanPay flow needs to be shown, not just explained.
         </p>
 
         <div class="story-line-list" aria-label="BeamCash payment walkthrough">
@@ -123,32 +145,11 @@ import {
     </div>
   </section>
 
-  <section class="system-blueprint" id="skanpay">
-    <div class="system-blueprint-inner">
-      <div class="system-copy motion-item">
-        <span>SkanPay</span>
-        <h2>The infrastructure layer behind the demo.</h2>
-        <p>
-          SkanPay focuses on request creation, partner routing, payment or redemption coordination, and result states that can support merchant review.
-        </p>
-      </div>
-
-      <div class="blueprint-rail" aria-label="SkanPay checkout direction">
-        {skanpayFlow.map((step, index) => (
-          <article class="motion-item">
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <strong>{step}</strong>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <section class="final-cta" id="contact">
     <div class="final-cta-inner">
       <div>
         <span>Next step</span>
-        <h2>Review the payment flow with us.</h2>
+        <h2>Start with the flow. Then define the integration.</h2>
         <p>Share a seller workflow, merchant use case, or payment partner question.</p>
       </div>
       <div class="cta-group">

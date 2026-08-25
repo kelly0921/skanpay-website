@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { skanpayDefinitions } from "../content/site";
 ---
 <BaseLayout
   title="SkanPay Infrastructure"
@@ -10,9 +11,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="tech-hero-inner">
       <div class="tech-hero-copy motion-item">
         <p class="eyebrow">SkanPay</p>
-        <h1>The infrastructure direction behind BeamCash.</h1>
+        <h1>SkanPay turns a QR scan into a checkout request.</h1>
         <p>
-          SkanPay is not the demo app. It is the patent-pending infrastructure model for QR checkout requests, buyer context, partner routing, redemption coordination, and seller-readable status.
+          BeamCash shows the experience. SkanPay is the patent-pending infrastructure model behind it: request creation, buyer context, partner routing, redemption context, and seller-readable status.
         </p>
       </div>
 
@@ -26,12 +27,35 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
+  <section class="definition-section">
+    <div class="definition-inner">
+      <div class="tech-section-heading motion-item">
+        <p class="eyebrow">Definition</p>
+        <h2>Keep the boundary clear.</h2>
+        <p>SkanPay should be understood as the system layer around the checkout request, not as the BeamCash app or a replacement for every payment system.</p>
+      </div>
+
+      <div class="definition-lines" aria-label="What SkanPay is and is not">
+        {skanpayDefinitions.map((group) => (
+          <article class="motion-item">
+            <h3>{group.label}</h3>
+            <ul>
+              {group.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="state-machine">
     <div class="state-machine-inner">
       <div class="tech-section-heading motion-item">
         <p class="eyebrow">State model</p>
-        <h2>What SkanPay is responsible for.</h2>
-        <p>The QR opens a request. The request moves through observable states.</p>
+        <h2>The request has to move through clear states.</h2>
+        <p>A scan is the start of the checkout request, not the whole payment experience.</p>
       </div>
 
       <div class="state-rail" aria-label="SkanPay checkout state model">
@@ -63,7 +87,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="protocol-split-inner">
       <div class="protocol-copy motion-item">
         <p class="eyebrow">Boundary</p>
-        <h2>Coordinate the handoff without pretending to be every system.</h2>
+        <h2>Define the boundary between checkout requests and payment systems.</h2>
         <p>
           SkanPay sits around the request and state layer. Processors, banks, wallets, and offer systems stay explicit where they authorize money movement or validate value.
         </p>
@@ -93,7 +117,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="integration-runway-inner">
       <div class="tech-section-heading motion-item">
         <p class="eyebrow">Integration touchpoints</p>
-        <h2>Where technical review begins.</h2>
+        <h2>What partners can evaluate.</h2>
         <p>Public details should stay focused. Partner-specific requirements belong in direct review.</p>
       </div>
 
