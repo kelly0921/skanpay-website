@@ -28,8 +28,7 @@ export const PRODUCT_STATUS = {
 export const navigationItems = [
   { href: "/beamcash-demo/", label: "BeamCash" },
   { href: "/qr-payments/", label: "Technology" },
-  { href: "/partners/", label: "Partners" },
-  { href: "/contact/", label: "Contact" }
+  { href: "/partners/", label: "Partners" }
 ];
 
 export const productDirections = [
@@ -66,49 +65,49 @@ export const productDirections = [
 
 export const painSolutions = [
   {
-    pain: "Cash is no longer the default.",
-    response: "A seller can present a QR request and let the buyer continue from the phone already in hand."
+    pain: "Seller uncertainty",
+    response: "The seller needs to know whether a scan turned into a real checkout result."
   },
   {
-    pain: "QR codes need payment context.",
-    response: "The buyer should see who they are paying, the amount, and the action before continuing."
+    pain: "Buyer trust",
+    response: "The buyer needs merchant and amount context before approving a payment."
   },
   {
-    pain: "Partners need defined states.",
-    response: "Created, scanned, approved, failed, cancelled, and confirmed states make the handoff supportable."
+    pain: "Partner handoff",
+    response: "Payment and redemption partners need clear states they can support."
   }
 ];
 
 export const beamcashFlow = [
-  "Seller presents code",
-  "Buyer reviews merchant and amount",
-  "Payment choice opens",
-  "Checkout status returns"
+  "Seller displays a QR request",
+  "Buyer scans and reviews amount",
+  "Checkout continues through a payment option",
+  "Seller receives a readable status"
 ];
 
 export const skanpayFlow = [
   "Create checkout request",
-  "Attach amount and merchant reference",
-  "Coordinate payment or redemption path",
+  "Attach merchant and amount context",
+  "Coordinate payment or redemption route",
   "Return seller-readable status"
 ];
 
 export const beamcashHighlights = [
   {
-    title: "Seller surface",
-    copy: "Dashboard, QR code, and payout context stay in one lightweight view."
+    title: "Seller view",
+    copy: "A simple surface for showing the active QR request."
   },
   {
-    title: "Buyer confidence",
-    copy: "Merchant details and amount are visible before the buyer continues."
+    title: "Buyer review",
+    copy: "Merchant and amount details appear before checkout continues."
   },
   {
-    title: "Payment states",
-    copy: "The product is designed around readable pending, complete, failed, and cancelled outcomes."
+    title: "Status return",
+    copy: "The seller sees a result state they can act on."
   },
   {
-    title: "Reviewable proof",
-    copy: "Merchants and partners can evaluate the handoff through real screens."
+    title: "Product proof",
+    copy: "Partners can evaluate the handoff through real screens."
   }
 ];
 

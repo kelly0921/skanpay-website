@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/site";
+import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL, beamcashFlow } from "../content/site";
 ---
 <BaseLayout
   title="BeamCash Demo - SkanPay"
-  description="BeamCash is the SkanPay product demo for seller setup, Scan to Pay QR, buyer amount review, and checkout status."
+  description="BeamCash is the SkanPay product proof for QR payment requests, buyer review, and seller-readable checkout status."
   activePath="/beamcash-demo/"
 >
   <section class="app-product-hero">
@@ -13,35 +13,27 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
         <div class="app-logo-block square-logo-block">
           <img class="beamcash-brand-icon" src="/beamcash/beamcash-logo-mark.svg" alt="BeamCash logo" />
         </div>
-        <p class="page-label">BeamCash demo</p>
-        <h1>Scan-to-pay checkout, shown through the critical screens.</h1>
+        <p class="page-label">BeamCash by SkanPay</p>
+        <h1>QR checkout for quick in-person payments.</h1>
         <p class="lead-copy">
-          BeamCash turns the SkanPay handoff into something reviewable: seller setup, Scan to Pay QR, buyer amount review, and checkout status.
+          BeamCash shows the core payment handoff: a seller displays a QR request, the buyer reviews the recipient and amount, and the seller gets a clear result.
         </p>
-        <div class="hero-proof hero-proof-dark">
-          <span>Seller surface</span>
+        <div class="hero-proof">
+          <span>Seller QR</span>
           <span>Buyer review</span>
-          <span>Status handoff</span>
-        </div>
-        <div class="demo-signal-list" aria-label="BeamCash demo checkpoints">
-          <span>01 Seller QR prepared</span>
-          <span>02 Buyer amount reviewed</span>
-          <span>03 Checkout status returned</span>
+          <span>Status result</span>
         </div>
         <div class="button-row">
-          <a class="button primary" href={INTEREST_LIST_URL}>Join interest list</a>
-          <a class="button secondary" href="#walkthrough">Review demo</a>
+          <a class="button primary" href="#walkthrough">See the flow</a>
+          <a class="button secondary" href={FEEDBACK_FORM_URL}>Give feedback</a>
         </div>
       </div>
 
       <aside class="app-screen-hero" aria-label="BeamCash app screens">
-        <div class="handoff-trace" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="demo-hero-frame">
+          <img src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard with Scan to Pay QR code" />
+          <img src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash checkout screen with merchant profile and payment amount options" />
         </div>
-        <img src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard with Scan to Pay QR code" />
-        <img src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash checkout screen with merchant profile and payment amount options" />
       </aside>
     </div>
   </section>
@@ -50,38 +42,87 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
     <div class="section-inner demo-purpose-inner">
       <div>
         <span>Why BeamCash exists</span>
-        <h2>Concrete screens make the gateway easier to evaluate.</h2>
+        <h2>A product proof for the SkanPay model.</h2>
       </div>
       <p>
-        Instead of asking partners to imagine the checkout layer, BeamCash shows the seller view, buyer approval surface, and status boundary.
+        BeamCash is not separate from SkanPay. It makes the QR checkout idea visible so merchants, banks, and payment partners can evaluate the flow.
       </p>
     </div>
   </section>
 
   <section class="section app-flow-section" id="walkthrough">
     <div class="section-inner">
-      <div class="section-heading">
-        <span>Demo walkthrough</span>
-        <h2>Three screens, one payment handoff.</h2>
+      <div class="section-heading split-heading">
+        <div>
+          <span>How it works</span>
+          <h2>Four steps from QR request to seller status.</h2>
+        </div>
+        <p>
+          The demo keeps the payment moment easy to inspect. Each screen has one job.
+        </p>
       </div>
+
+      <div class="demo-steps" aria-label="BeamCash checkout steps">
+        {beamcashFlow.map((step, index) => (
+          <article>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{step}</strong>
+          </article>
+        ))}
+      </div>
+
       <div class="app-flow-row">
         <article>
           <img src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard screen" />
-          <span>01 / Set up</span>
-          <h3>Prepare the seller surface</h3>
-          <p>The seller sees balance, payout readiness, activity, and the payment code area.</p>
+          <span>Seller view</span>
+          <h3>Prepare the request</h3>
+          <p>The seller starts from a simple dashboard and opens the payment code.</p>
         </article>
         <article>
           <img src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash seller Scan to Pay QR code screen" />
-          <span>02 / Present</span>
+          <span>QR view</span>
           <h3>Show the Scan to Pay code</h3>
-          <p>The QR screen carries merchant identity, code actions, and alert preferences.</p>
+          <p>The QR screen is focused on the code, seller identity, and request state.</p>
         </article>
         <article>
           <img src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash buyer checkout screen" />
-          <span>03 / Review</span>
-          <h3>Confirm seller and amount</h3>
-          <p>The buyer reviews the merchant profile and amount before continuing to secure checkout.</p>
+          <span>Buyer view</span>
+          <h3>Review seller and amount</h3>
+          <p>The buyer sees who they are paying and the amount before continuing.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section placement-section">
+    <div class="section-inner">
+      <div class="section-heading split-heading">
+        <div>
+          <span>Use cases</span>
+          <h2>Built around quick, in-person payment moments.</h2>
+        </div>
+        <p>BeamCash is useful as a demo because the same flow can be evaluated across real seller contexts.</p>
+      </div>
+      <div class="placement-grid">
+        <article>
+          <span>01</span>
+          <h3>Pop-up vendors</h3>
+          <p>A seller can display a code at a table or counter.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Creators and performers</h3>
+          <p>A code can sit on a sign, stand, or printed card.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Student fundraisers</h3>
+          <p>Teams can show a payment request without complex checkout setup.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Local events</h3>
+          <p>Organizers can review how buyer context and seller status should work.</p>
         </article>
       </div>
     </div>
@@ -90,9 +131,9 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
   <section class="section demo-use-section">
     <div class="section-inner demo-use-inner">
       <div class="demo-use-copy">
-        <span>Business use</span>
-        <h2>Use BeamCash to evaluate the handoff.</h2>
-        <p>BeamCash keeps the conversation grounded in visible screens instead of abstract gateway diagrams.</p>
+        <span>What we are validating</span>
+        <h2>The demo keeps product conversations concrete.</h2>
+        <p>BeamCash helps separate what the seller sees, what the buyer trusts, and where partner systems fit.</p>
       </div>
       <div class="use-list">
         <div>
@@ -115,10 +156,11 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
     <div class="business-cta-inner">
       <div>
         <span>Feedback</span>
-        <h2>Evaluate BeamCash with us.</h2>
+        <h2>Review the BeamCash flow with us.</h2>
       </div>
       <div class="cta-group">
         <a class="button primary" href={FEEDBACK_FORM_URL}>Give feedback</a>
+        <a class="button ghost" href={INTEREST_LIST_URL}>Join interest list</a>
         <a class="button ghost" href={CONTACT_URL}>Request a conversation</a>
       </div>
     </div>

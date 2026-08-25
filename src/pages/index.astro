@@ -2,15 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import {
   CONTACT_URL,
-  FEEDBACK_FORM_URL,
   INTEREST_LIST_URL,
   PRODUCT_STATUS,
   beamcashFlow,
   beamcashHighlights,
-  faqs,
   painSolutions,
   productDirections,
-  roadmapItems,
   skanpayFlow
 } from "../content/site";
 ---
@@ -22,36 +19,21 @@ import {
   <section class="landing-hero">
     <div class="hero-inner">
       <div class="hero-content">
-        <p class="hero-eyebrow">SkanPay presents BeamCash</p>
-        <h1>A clearer QR payment handoff from scan to confirmation.</h1>
+        <p class="hero-eyebrow">SkanPay + BeamCash</p>
+        <h1>Make the QR payment handoff obvious.</h1>
         <p class="hero-subhead">
-          SkanPay is building patent-pending QR checkout infrastructure. BeamCash is the product demo that shows a seller code, buyer amount review, and seller-ready status.
+          SkanPay is developing patent-pending QR checkout infrastructure. BeamCash is the product proof: a seller QR, buyer review screen, and seller-readable status.
         </p>
 
         <div class="hero-proof">
-          <span>Seller QR</span>
-          <span>Buyer review</span>
-          <span>Payment states</span>
-        </div>
-
-        <div class="hero-stats" aria-label="BeamCash checkout signals">
-          <div>
-            <span>Request</span>
-            <strong>Scan to Pay</strong>
-          </div>
-          <div>
-            <span>Review</span>
-            <strong>Merchant + amount</strong>
-          </div>
-          <div>
-            <span>Result</span>
-            <strong>Status returned</strong>
-          </div>
+          <span>Display QR</span>
+          <span>Review amount</span>
+          <span>Return status</span>
         </div>
 
         <div class="hero-actions">
-          <a class="button primary" href={INTEREST_LIST_URL}>Join interest list</a>
-          <a class="button secondary" href="/beamcash-demo/">View BeamCash demo</a>
+          <a class="button primary" href="/beamcash-demo/">View BeamCash</a>
+          <a class="button secondary" href={CONTACT_URL}>Contact SkanPay</a>
         </div>
 
         <div class="status-note">
@@ -61,62 +43,53 @@ import {
       </div>
 
       <aside class="hero-product" aria-label="BeamCash prototype screens">
-        <div class="product-window">
-          <div class="product-window-top">
-            <img class="beamcash-brand-icon" src="/beamcash/beamcash-logo-mark.svg" alt="BeamCash logo" />
-            <span>BeamCash payment demo</span>
+        <div class="product-stage">
+          <div class="product-stage-header">
+            <div>
+              <img class="beamcash-brand-icon" src="/beamcash/beamcash-logo-mark.svg" alt="BeamCash logo" />
+              <span>BeamCash demo</span>
+            </div>
+            <strong>QR request active</strong>
           </div>
-          <div class="signal-row" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
+
+          <div class="phone-cluster">
+            <img class="phone-shot-main" src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard with Scan to Pay QR code" />
+            <div class="request-card" aria-label="QR request summary">
+              <span>Seller code</span>
+              <strong>Scan to Pay</strong>
+              <p>Merchant and amount context stay attached to the request.</p>
+            </div>
+            <img class="phone-shot-secondary" src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash checkout screen with merchant profile and payment amount options" />
           </div>
-          <div class="payment-rail" aria-label="BeamCash payment status preview">
-            <div><span>Seller</span><strong>QR active</strong></div>
-            <div><span>Buyer</span><strong>Amount review</strong></div>
-            <div><span>Status</span><strong>Ready</strong></div>
+
+          <div class="status-strip" aria-label="BeamCash checkout sequence">
+            {beamcashFlow.slice(0, 3).map((step, index) => (
+              <div>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{step}</strong>
+              </div>
+            ))}
           </div>
-          <div class="screen-showcase">
-            <img src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard with Scan to Pay QR code" />
-            <img src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash checkout screen with merchant profile and payment amount options" />
-          </div>
-          <div class="product-steps" aria-label="BeamCash checkout sequence">
-            <span>Display</span>
-            <span>Review</span>
-            <span>Status</span>
-          </div>
-          <p>Updated BeamCash screens showing the seller request and buyer checkout surface.</p>
         </div>
       </aside>
-    </div>
-    <div class="payment-marquee" aria-hidden="true">
-      <div>
-        <span>Scan</span>
-        <span>Review amount</span>
-        <span>Choose payment</span>
-        <span>Return status</span>
-        <span>Confirm seller</span>
-        <span>Coordinate redemption</span>
-        <span>Scan</span>
-        <span>Review amount</span>
-        <span>Choose payment</span>
-        <span>Return status</span>
-        <span>Confirm seller</span>
-        <span>Coordinate redemption</span>
-      </div>
     </div>
   </section>
 
   <section class="section pain-section">
     <div class="section-inner">
-      <div class="section-heading">
-        <span>The problem</span>
-        <h2>Small payments still need a trusted handoff.</h2>
-        <p>BeamCash narrows the moment to what matters: who is paying, what amount is requested, and what status returns.</p>
+      <div class="section-heading split-heading">
+        <div>
+          <span>The problem</span>
+          <h2>QR payments fail when the handoff is unclear.</h2>
+        </div>
+        <p>
+          A QR code is easy to display. The harder part is giving sellers, buyers, and partners the right context at the right moment.
+        </p>
       </div>
-      <div class="pain-grid">
-        {painSolutions.map((item) => (
+      <div class="pain-grid problem-grid">
+        {painSolutions.map((item, index) => (
           <article>
+            <span>{String(index + 1).padStart(2, "0")}</span>
             <strong>{item.pain}</strong>
             <p>{item.response}</p>
           </article>
@@ -126,38 +99,46 @@ import {
   </section>
 
   <section class="section beamcash-section" id="beamcash">
-    <div class="section-inner beamcash-layout">
-      <div class="beamcash-visual single-screen" aria-label="BeamCash seller dashboard preview">
-        <img src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash seller Scan to Pay QR code screen" />
+    <div class="section-inner">
+      <div class="section-heading split-heading">
+        <div>
+          <span>BeamCash product proof</span>
+          <h2>Show the flow instead of describing it.</h2>
+        </div>
+        <p>
+          BeamCash turns SkanPay's checkout model into screens that sellers, merchants, and payment partners can review.
+        </p>
       </div>
 
-      <div>
-        <div class="section-heading">
-          <span>BeamCash</span>
-          <h2>Screens make the payment handoff visible.</h2>
-          <p>
-            A seller displays a Scan to Pay code. The buyer reviews merchant context and amount. The seller gets a status they can act on.
-          </p>
-        </div>
-
-        <div class="flow-list compact-flow" aria-label="BeamCash flow">
-          {beamcashFlow.map((step, index) => (
-            <div>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <strong>{step}</strong>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-
-    <div class="section-inner feature-row">
-      {beamcashHighlights.map((feature) => (
+      <div class="walkthrough-grid" aria-label="BeamCash payment walkthrough">
         <article>
-          <h3>{feature.title}</h3>
-          <p>{feature.copy}</p>
+          <img src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard screen" />
+          <span>Seller</span>
+          <h3>Open the request</h3>
+          <p>The seller can see the active payment surface before presenting the code.</p>
         </article>
-      ))}
+        <article>
+          <img src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash seller Scan to Pay QR code screen" />
+          <span>QR</span>
+          <h3>Display the code</h3>
+          <p>The buyer scans a clear Scan to Pay request tied to the seller.</p>
+        </article>
+        <article>
+          <img src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash buyer checkout screen" />
+          <span>Buyer</span>
+          <h3>Review before checkout</h3>
+          <p>The buyer sees merchant and amount context before continuing.</p>
+        </article>
+      </div>
+
+      <div class="feature-row">
+        {beamcashHighlights.map((feature) => (
+          <article>
+            <h3>{feature.title}</h3>
+            <p>{feature.copy}</p>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -165,9 +146,9 @@ import {
     <div class="section-inner skanpay-layout">
       <div class="section-heading">
         <span>SkanPay</span>
-        <h2>A state model for QR checkout infrastructure.</h2>
+        <h2>The infrastructure idea behind the demo.</h2>
         <p>
-          SkanPay extends the same handoff into partner discussions: request format, payment or redemption path, timeout behavior, and merchant result.
+          SkanPay focuses on the request, routing, and result states that make QR checkout supportable for merchant and partner conversations.
         </p>
       </div>
 
@@ -184,9 +165,12 @@ import {
 
   <section class="section use-case-section">
     <div class="section-inner">
-      <div class="section-heading">
+      <div class="section-heading split-heading">
+        <div>
         <span>Where it fits</span>
-        <h2>What belongs where.</h2>
+          <h2>Company layer and product proof.</h2>
+        </div>
+        <p>BeamCash helps people see the current payment experience. SkanPay frames the larger checkout and redemption opportunity.</p>
       </div>
       <div class="fit-grid">
         {productDirections.map((product) => (
@@ -203,54 +187,16 @@ import {
     </div>
   </section>
 
-  <section class="section status-faq-section" id="status">
-    <div class="section-inner status-layout">
-      <div>
-        <div class="section-heading">
-          <span>Current status</span>
-          <h2>Built demo. Partner review next.</h2>
-          <p>
-            The current priority is reviewing the seller and buyer handoff with people who understand real checkout.
-          </p>
-        </div>
-        <div class="roadmap-list">
-          {roadmapItems.slice(0, 4).map((item) => (
-            <div>
-              <span>{item.status}</span>
-              <strong>{item.title}</strong>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <div class="section-heading small-heading">
-          <span>FAQ</span>
-          <h2>Quick answers.</h2>
-        </div>
-        <div class="faq-list">
-          {faqs.slice(0, 4).map((faq) => (
-            <details>
-              <summary>{faq.question}</summary>
-              <p>{faq.answer}</p>
-            </details>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="final-cta" id="contact">
     <div class="final-cta-inner">
       <div>
         <span>Next step</span>
         <h2>Review the QR checkout handoff.</h2>
-        <p>Join the interest list, send product feedback, or start a SkanPay partner conversation.</p>
+        <p>Share a seller workflow, merchant use case, or payment partner question.</p>
       </div>
       <div class="cta-group">
-        <a class="button primary" href={INTEREST_LIST_URL}>Join interest list</a>
-        <a class="button secondary" href={FEEDBACK_FORM_URL}>Give feedback</a>
-        <a class="button ghost" href={CONTACT_URL}>Contact us</a>
+        <a class="button primary" href={CONTACT_URL}>Contact SkanPay</a>
+        <a class="button ghost" href={INTEREST_LIST_URL}>Join interest list</a>
       </div>
     </div>
   </section>
