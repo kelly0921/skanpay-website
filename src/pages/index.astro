@@ -16,13 +16,13 @@ import {
   description="SkanPay is developing QR checkout infrastructure. BeamCash is the product demo showing seller QR, buyer review, and checkout status."
   activePath="/"
 >
-  <section class="premium-hero">
-    <div class="premium-hero-inner">
-      <div class="premium-hero-copy motion-item">
+  <section class="home-hero">
+    <div class="home-hero-inner">
+      <div class="home-hero-copy motion-item">
         <p class="brand-kicker">SkanPay infrastructure / BeamCash proof</p>
-        <h1>QR checkout that shows what happens after the scan.</h1>
+        <h1>Make QR checkout clear from scan to status.</h1>
         <p class="premium-lead">
-          SkanPay is developing patent-pending QR checkout infrastructure. BeamCash makes the flow visible: display a seller QR, let the buyer review the amount, and return a seller-readable status.
+          SkanPay is developing patent-pending QR checkout infrastructure for payment and redemption flows. BeamCash is the working demo that makes the seller request, buyer review, and payment status visible.
         </p>
 
         <div class="premium-actions">
@@ -30,7 +30,7 @@ import {
           <a class="button secondary premium-secondary" href={CONTACT_URL}>Contact SkanPay</a>
         </div>
 
-        <div class="hero-proof proof-row">
+        <div class="scan-principles" aria-label="SkanPay payment principles">
           <span>Display QR</span>
           <span>Review amount</span>
           <span>Return status</span>
@@ -39,122 +39,83 @@ import {
         <p class="product-status-line">{PRODUCT_STATUS.detail}</p>
       </div>
 
-      <aside class="payment-scene motion-item" aria-label="BeamCash QR checkout scene">
-        <div class="scene-panel">
-          <div class="scene-topbar">
-            <div>
-              <img src="/beamcash/beamcash-logo-mark.svg" alt="BeamCash logo" />
-              <span>BeamCash request</span>
-            </div>
-            <strong>Live demo</strong>
-          </div>
-
-          <div class="scene-grid">
-            <img class="scene-phone scene-phone-seller" src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash seller Scan to Pay QR code screen" />
-            <div class="scene-copy-card">
-              <span>Scan to Pay</span>
-              <strong>Seller code is open</strong>
-              <p>Merchant identity, amount context, and request state travel together.</p>
-            </div>
-            <img class="scene-phone scene-phone-buyer" src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash buyer checkout screen with merchant and amount review" />
-          </div>
-
-          <div class="scene-status">
-            {beamcashFlow.slice(0, 3).map((step, index) => (
-              <div>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{step}</strong>
-              </div>
-            ))}
-          </div>
+      <aside class="open-payment-field motion-item" aria-label="BeamCash QR checkout product scene">
+        <div class="field-status-chip">
+          <span>BeamCash demo</span>
+          <strong>Request ready for buyer review</strong>
+        </div>
+        <div class="scan-beam" aria-hidden="true"></div>
+        <img class="field-phone field-dashboard" src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard screen" />
+        <img class="field-phone field-code" src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash seller Scan to Pay QR code screen" />
+        <img class="field-phone field-buyer" src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash buyer checkout screen with seller and amount review" />
+        <div class="field-state-line">
+          <span>Seller</span>
+          <span>Buyer</span>
+          <span>Status</span>
         </div>
       </aside>
     </div>
   </section>
 
-  <section class="proof-band">
-    <div class="proof-band-inner">
-      <div>
+  <section class="pain-ledger">
+    <div class="pain-ledger-inner">
+      <div class="pain-ledger-heading motion-item">
         <span>The payment problem</span>
-        <h2>A scan alone is not enough.</h2>
+        <h2>A QR code is only useful when every party knows what happened.</h2>
       </div>
-      <div class="proof-problems">
+      <div class="pain-lines" aria-label="QR payment pain points and SkanPay response">
         {painSolutions.map((item, index) => (
           <article class="motion-item">
             <span>{String(index + 1).padStart(2, "0")}</span>
-            <strong>{item.pain}</strong>
-            <p>{item.response}</p>
+            <div>
+              <strong>{item.pain}</strong>
+              <p>{item.response}</p>
+            </div>
           </article>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="product-story" id="beamcash">
-    <div class="product-story-inner">
-      <div class="story-copy motion-item">
+  <section class="scan-story" id="beamcash">
+    <div class="scan-story-inner">
+      <div class="scan-story-visual motion-item" aria-label="BeamCash screen progression">
+        <img class="story-device story-device-dashboard" src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard screen" />
+        <img class="story-device story-device-code" src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash seller QR code screen" />
+        <img class="story-device story-device-checkout" src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash buyer checkout screen" />
+      </div>
+
+      <div class="scan-story-copy motion-item">
         <span>BeamCash product proof</span>
         <h2>Show the payment moment, screen by screen.</h2>
         <p>
-          BeamCash turns the SkanPay model into a concrete checkout path that sellers, merchants, and payment partners can evaluate.
+          BeamCash turns SkanPay's model into a concrete checkout path that merchants, banks, and payment partners can inspect without guessing.
         </p>
-        <a class="text-link" href="/beamcash-demo/">Explore the BeamCash page</a>
-      </div>
 
-      <div class="story-steps" aria-label="BeamCash payment walkthrough">
-        <article class="motion-item">
-          <img src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard screen" />
-          <div>
-            <span>01 / Seller</span>
-            <h3>Open the request</h3>
-            <p>The seller starts from a simple dashboard and opens the payment code.</p>
-          </div>
-        </article>
-        <article class="motion-item">
-          <img src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash seller Scan to Pay QR code screen" />
-          <div>
-            <span>02 / QR</span>
-            <h3>Display the code</h3>
-            <p>The buyer scans a request tied to the seller and payment context.</p>
-          </div>
-        </article>
-        <article class="motion-item">
-          <img src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash buyer checkout screen" />
-          <div>
-            <span>03 / Buyer</span>
-            <h3>Review before checkout</h3>
-            <p>The buyer sees merchant and amount context before continuing.</p>
-          </div>
-        </article>
+        <div class="story-line-list" aria-label="BeamCash payment walkthrough">
+          {beamcashFlow.map((step, index) => (
+            <div>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{step}</strong>
+            </div>
+          ))}
+        </div>
+
+        <a class="text-link" href="/beamcash-demo/">Explore the BeamCash page</a>
       </div>
     </div>
   </section>
 
-  <section class="payment-moment">
-    <div class="payment-moment-inner">
-      <div class="moment-visual motion-item" aria-label="BeamCash QR display concept">
-        <div class="counter-card">
-          <img src="/beamcash/beamcash-logo-mark.svg" alt="BeamCash logo" />
-          <strong>Scan to Pay</strong>
-          <p>BeamCash Demo Stall</p>
-          <div class="qr-window">
-            <img src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash QR payment screen" />
-          </div>
-        </div>
-        <div class="buyer-mini-card">
-          <span>Buyer screen</span>
-          <strong>Review amount first</strong>
-        </div>
-      </div>
-
-      <div class="moment-copy motion-item">
+  <section class="checkout-floor">
+    <div class="checkout-floor-inner">
+      <div class="checkout-copy motion-item">
         <span>Show, don't tell</span>
-        <h2>Make the payment context visible before money moves.</h2>
+        <h2>The buyer sees context before checkout continues.</h2>
         <p>
-          BeamCash is useful because the demo makes trust moments inspectable: where the QR appears, what the buyer sees, and what the seller gets back.
+          The demo focuses on the real trust moment: where the QR appears, what the buyer sees after scanning, and what the seller gets back.
         </p>
-        <div class="moment-list">
-          {beamcashHighlights.map((feature) => (
+        <div class="highlight-lines">
+          {beamcashHighlights.slice(0, 3).map((feature) => (
             <div>
               <strong>{feature.title}</strong>
               <p>{feature.copy}</p>
@@ -162,20 +123,34 @@ import {
           ))}
         </div>
       </div>
+
+      <div class="counter-scene motion-item" aria-label="QR payment counter scene">
+        <div class="counter-surface" aria-hidden="true"></div>
+        <div class="qr-stand">
+          <img src="/beamcash/beamcash-logo-mark.svg" alt="BeamCash logo" />
+          <span>BeamCash Demo Stall</span>
+          <strong>Scan to Pay</strong>
+          <div class="qr-crop">
+            <img src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash QR payment request" />
+          </div>
+        </div>
+        <img class="counter-phone" src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash buyer checkout screen" />
+        <div class="counter-status">Buyer reviews seller and amount</div>
+      </div>
     </div>
   </section>
 
-  <section class="skanpay-system" id="skanpay">
-    <div class="skanpay-system-inner">
+  <section class="system-blueprint" id="skanpay">
+    <div class="system-blueprint-inner">
       <div class="system-copy motion-item">
         <span>SkanPay</span>
         <h2>The infrastructure layer behind the demo.</h2>
         <p>
-          SkanPay focuses on request creation, payment or redemption routing, and result states that can support merchant and partner review.
+          SkanPay focuses on request creation, partner routing, payment or redemption coordination, and result states that can support merchant review.
         </p>
       </div>
 
-      <div class="system-flow" aria-label="SkanPay checkout direction">
+      <div class="blueprint-rail" aria-label="SkanPay checkout direction">
         {skanpayFlow.map((step, index) => (
           <article class="motion-item">
             <span>{String(index + 1).padStart(2, "0")}</span>
@@ -186,24 +161,19 @@ import {
     </div>
   </section>
 
-  <section class="section use-case-section refined-fit">
-    <div class="section-inner">
-      <div class="section-heading split-heading">
-        <div>
-        <span>Where it fits</span>
-          <h2>One company layer. One product proof.</h2>
-        </div>
-        <p>BeamCash helps people see the current payment experience. SkanPay frames the larger checkout and redemption opportunity.</p>
+  <section class="company-split">
+    <div class="company-split-inner">
+      <div class="company-split-heading motion-item">
+        <span>Company and product</span>
+        <h2>SkanPay is the platform direction. BeamCash is the proof.</h2>
+        <p>That separation keeps the website clear: BeamCash demonstrates payment competence; SkanPay frames the larger checkout and redemption opportunity.</p>
       </div>
-      <div class="fit-grid">
+      <div class="split-ledger">
         {productDirections.map((product) => (
           <article class="motion-item">
             <span>{product.name}</span>
             <h3>{product.label}</h3>
             <p>{product.description}</p>
-            <ul>
-              {product.bestFor.slice(0, 4).map((item) => <li>{item}</li>)}
-            </ul>
           </article>
         ))}
       </div>
