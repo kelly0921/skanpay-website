@@ -16,22 +16,22 @@ import {
 ---
 <BaseLayout
   title="SkanPay - BeamCash QR Payments"
-  description="SkanPay is the broader QR payment and redemption vision. BeamCash is a QR-first payment product direction for small sellers and real-world transactions."
+  description="SkanPay is developing QR checkout infrastructure. BeamCash is the product demo showing seller QR, buyer review, and checkout status."
   activePath="/"
 >
   <section class="landing-hero">
     <div class="hero-inner">
       <div class="hero-content">
         <p class="hero-eyebrow">SkanPay presents BeamCash</p>
-        <h1>QR payment acceptance for real-world sellers.</h1>
+        <h1>A clearer QR payment handoff from scan to confirmation.</h1>
         <p class="hero-subhead">
-          BeamCash shows the core payment moment: the seller displays a QR code, the buyer reviews the amount, and the checkout result is easy to confirm.
+          SkanPay is building patent-pending QR checkout infrastructure. BeamCash is the product demo that shows a seller code, buyer amount review, and seller-ready status.
         </p>
 
         <div class="hero-proof">
-          <span>QR request</span>
-          <span>Buyer approval</span>
-          <span>Merchant confirmation</span>
+          <span>Seller QR</span>
+          <span>Buyer review</span>
+          <span>Payment states</span>
         </div>
 
         <div class="hero-actions">
@@ -49,18 +49,23 @@ import {
         <div class="product-window">
           <div class="product-window-top">
             <img class="beamcash-brand-icon" src="/beamcash/beamcash-logo-mark.svg" alt="BeamCash logo" />
-            <span>Seller QR to buyer checkout</span>
+            <span>BeamCash payment demo</span>
+          </div>
+          <div class="payment-rail" aria-label="BeamCash payment status preview">
+            <div><span>Seller</span><strong>QR active</strong></div>
+            <div><span>Buyer</span><strong>Amount review</strong></div>
+            <div><span>Status</span><strong>Ready</strong></div>
           </div>
           <div class="screen-showcase">
             <img src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard with Scan to Pay QR code" />
             <img src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash checkout screen with merchant profile and payment amount options" />
           </div>
           <div class="product-steps" aria-label="BeamCash checkout sequence">
-            <span>Request</span>
-            <span>Approve</span>
-            <span>Confirm</span>
+            <span>Display</span>
+            <span>Review</span>
+            <span>Status</span>
           </div>
-          <p>Prototype screens showing the payment request and buyer checkout.</p>
+          <p>Updated BeamCash screens showing the seller request and buyer checkout surface.</p>
         </div>
       </aside>
     </div>
@@ -70,7 +75,8 @@ import {
     <div class="section-inner">
       <div class="section-heading">
         <span>The problem</span>
-        <h2>Checkout should feel smaller than the payment.</h2>
+        <h2>Small payments still need a trusted handoff.</h2>
+        <p>BeamCash narrows the moment to what matters: who is paying, what amount is requested, and what status returns.</p>
       </div>
       <div class="pain-grid">
         {painSolutions.map((item) => (
@@ -92,9 +98,9 @@ import {
       <div>
         <div class="section-heading">
           <span>BeamCash</span>
-          <h2>A focused demo for seller QR payments.</h2>
+          <h2>Screens make the payment handoff visible.</h2>
           <p>
-            BeamCash makes the payment flow visible: seller setup, buyer review, and a result both sides can understand.
+            A seller displays a Scan to Pay code. The buyer reviews merchant context and amount. The seller gets a status they can act on.
           </p>
         </div>
 
@@ -123,9 +129,9 @@ import {
     <div class="section-inner skanpay-layout">
       <div class="section-heading">
         <span>SkanPay</span>
-        <h2>The broader checkout layer behind the demo.</h2>
+        <h2>A state model for QR checkout infrastructure.</h2>
         <p>
-          SkanPay is the patent-pending payment and redemption model behind the broader vision: one QR checkout request for payment approval, offer value, and merchant confirmation.
+          SkanPay extends the same handoff into partner discussions: request format, payment or redemption path, timeout behavior, and merchant result.
         </p>
       </div>
 
@@ -144,7 +150,7 @@ import {
     <div class="section-inner">
       <div class="section-heading">
         <span>Where it fits</span>
-        <h2>One company, two product layers.</h2>
+        <h2>What belongs where.</h2>
       </div>
       <div class="fit-grid">
         {productDirections.map((product) => (
@@ -166,9 +172,9 @@ import {
       <div>
         <div class="section-heading">
           <span>Current status</span>
-          <h2>Prototype now. Payment feedback next.</h2>
+          <h2>Built demo. Partner review next.</h2>
           <p>
-            The current priority is validating the payment flow with sellers, merchants, wallet partners, and payment experts.
+            The current priority is reviewing the seller and buyer handoff with people who understand real checkout.
           </p>
         </div>
         <div class="roadmap-list">
@@ -202,8 +208,8 @@ import {
     <div class="final-cta-inner">
       <div>
         <span>Next step</span>
-        <h2>Help shape a clearer QR payment flow.</h2>
-        <p>Join the interest list, send product feedback, or start a SkanPay payment conversation.</p>
+        <h2>Review the QR checkout handoff.</h2>
+        <p>Join the interest list, send product feedback, or start a SkanPay partner conversation.</p>
       </div>
       <div class="cta-group">
         <a class="button primary" href={INTEREST_LIST_URL}>Join interest list</a>

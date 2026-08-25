@@ -20,26 +20,25 @@ export const CONTACT_URL = mailto(
 );
 
 export const PRODUCT_STATUS = {
-  label: "Prototype",
+  label: "Current stage",
   detail:
-    "BeamCash demonstrates the core QR payment flow while SkanPay develops the broader payment and redemption model."
+    "BeamCash is ready for product feedback. SkanPay is being shaped for merchant, wallet, and redemption conversations."
 };
 
 export const navigationItems = [
-  { href: "/#beamcash", label: "BeamCash" },
-  { href: "/#skanpay", label: "SkanPay" },
-  { href: "/beamcash-demo/", label: "Demo" },
-  { href: "/about/", label: "About" },
+  { href: "/beamcash-demo/", label: "BeamCash" },
+  { href: "/qr-payments/", label: "Technology" },
+  { href: "/partners/", label: "Partners" },
   { href: "/contact/", label: "Contact" }
 ];
 
 export const productDirections = [
   {
     name: "SkanPay",
-    label: "Payment and redemption layer",
+    label: "Infrastructure model",
     status: "Concept / product exploration",
     description:
-      "A QR checkout model for coordinating payment approval, merchant confirmation, and coupon or stored-value redemption.",
+      "A partner-facing model for QR checkout requests, payment states, merchant results, and redemption coordination.",
     bestFor: [
       "Coupon redemption",
       "Voucher flows",
@@ -50,10 +49,10 @@ export const productDirections = [
   },
   {
     name: "BeamCash",
-    label: "QR payment demo",
+    label: "Product proof",
     status: PRODUCT_STATUS.label,
     description:
-      "A focused demo that shows how a seller QR code can lead to a clear buyer review and confirmation flow.",
+      "A working demo that turns the seller QR and buyer approval handoff into screens people can review.",
     bestFor: [
       "Pop-up vendors",
       "Artists and creators",
@@ -67,64 +66,64 @@ export const productDirections = [
 
 export const painSolutions = [
   {
-    pain: "Customers do not always have cash.",
-    response: "A QR request lets the buyer open a checkout flow from the phone already in hand."
+    pain: "Cash is no longer the default.",
+    response: "A seller can present a QR request and let the buyer continue from the phone already in hand."
   },
   {
-    pain: "Small sellers do not need a full POS for every sale.",
-    response: "BeamCash keeps the path narrow: show code, review amount, choose payment, confirm."
+    pain: "QR codes need payment context.",
+    response: "The buyer should see who they are paying, the amount, and the action before continuing."
   },
   {
-    pain: "Offers and payments often become separate steps.",
-    response: "SkanPay explores payment and redemption as one coordinated checkout request."
+    pain: "Partners need defined states.",
+    response: "Created, scanned, approved, failed, cancelled, and confirmed states make the handoff supportable."
   }
 ];
 
 export const beamcashFlow = [
-  "Seller displays QR",
-  "Buyer reviews amount",
-  "Payment option is selected",
-  "Result is confirmed"
+  "Seller presents code",
+  "Buyer reviews merchant and amount",
+  "Payment choice opens",
+  "Checkout status returns"
 ];
 
 export const skanpayFlow = [
   "Create checkout request",
-  "Apply offer or stored value",
-  "Route payment approval",
-  "Return merchant result"
+  "Attach amount and merchant reference",
+  "Coordinate payment or redemption path",
+  "Return seller-readable status"
 ];
 
 export const beamcashHighlights = [
   {
-    title: "QR request",
-    copy: "A seller presents one code for the payment moment."
+    title: "Seller surface",
+    copy: "Dashboard, QR code, and payout context stay in one lightweight view."
   },
   {
-    title: "Buyer review",
-    copy: "The buyer sees seller context and amount before continuing."
+    title: "Buyer confidence",
+    copy: "Merchant details and amount are visible before the buyer continues."
   },
   {
-    title: "Clear result",
-    copy: "The experience is shaped around completed, pending, failed, or cancelled outcomes."
+    title: "Payment states",
+    copy: "The product is designed around readable pending, complete, failed, and cancelled outcomes."
   },
   {
-    title: "Real-world selling",
-    copy: "Built for pop-ups, fundraisers, artists, local events, and lightweight sales."
+    title: "Reviewable proof",
+    copy: "Merchants and partners can evaluate the handoff through real screens."
   }
 ];
 
 export const roadmapItems = [
-  { status: "Built", title: "BeamCash QR payment demo" },
-  { status: "Refining", title: "Seller and buyer confirmation states" },
-  { status: "Exploring", title: "Merchant, wallet, and redemption handoffs" },
-  { status: "Next", title: "Feedback from sellers and payment partners" }
+  { status: "Built", title: "BeamCash seller and buyer screens" },
+  { status: "Refining", title: "Confirmation and exception states" },
+  { status: "Exploring", title: "Wallet, merchant, and redemption boundaries" },
+  { status: "Next", title: "Feedback from payment partners" }
 ];
 
 export const faqs = [
   {
     question: "What is the relationship between SkanPay and BeamCash?",
     answer:
-      "SkanPay is the broader QR payment and redemption company. BeamCash is the demo product used to show the payment flow."
+      "SkanPay is the broader payment and redemption company. BeamCash is the demo product that proves the QR checkout handoff."
   },
   {
     question: "Who is BeamCash for?",
@@ -134,7 +133,7 @@ export const faqs = [
   {
     question: "Is BeamCash live?",
     answer:
-      "BeamCash is currently presented as a prototype demo and is being used for feedback from sellers, merchants, and partners."
+      "BeamCash is currently presented for feedback from sellers, merchants, and payment partners."
   },
   {
     question: "Do buyers need to create an account?",

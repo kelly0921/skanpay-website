@@ -4,7 +4,7 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
 ---
 <BaseLayout
   title="BeamCash Demo - SkanPay"
-  description="BeamCash is the SkanPay product demo for seller QR setup, customer scan, and checkout approval."
+  description="BeamCash is the SkanPay product demo for seller setup, Scan to Pay QR, buyer amount review, and checkout status."
   activePath="/beamcash-demo/"
 >
   <section class="app-product-hero">
@@ -13,14 +13,19 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
         <div class="app-logo-block square-logo-block">
           <img class="beamcash-brand-icon" src="/beamcash/beamcash-logo-mark.svg" alt="BeamCash logo" />
         </div>
-        <p class="page-label">Demo product under SkanPay</p>
-        <h1>A focused QR payment demo for seller checkout.</h1>
+        <p class="page-label">BeamCash demo</p>
+        <h1>Scan-to-pay checkout, shown through the critical screens.</h1>
         <p class="lead-copy">
-          BeamCash shows the core acceptance flow: seller QR display, buyer amount review, payment choice, and confirmation.
+          BeamCash turns the SkanPay handoff into something reviewable: seller setup, Scan to Pay QR, buyer amount review, and checkout status.
         </p>
+        <div class="hero-proof hero-proof-dark">
+          <span>Seller surface</span>
+          <span>Buyer review</span>
+          <span>Status handoff</span>
+        </div>
         <div class="button-row">
           <a class="button primary" href={INTEREST_LIST_URL}>Join interest list</a>
-          <a class="button secondary" href="#walkthrough">See the flow</a>
+          <a class="button secondary" href="#walkthrough">Review demo</a>
         </div>
       </div>
 
@@ -35,10 +40,10 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
     <div class="section-inner demo-purpose-inner">
       <div>
         <span>Why BeamCash exists</span>
-        <h2>BeamCash makes SkanPay's payment model concrete.</h2>
+        <h2>Concrete screens make the gateway easier to evaluate.</h2>
       </div>
       <p>
-        The demo gives merchants, banks, wallet partners, and investors a visible payment flow before deeper gateway and redemption requirements are defined.
+        Instead of asking partners to imagine the checkout layer, BeamCash shows the seller view, buyer approval surface, and status boundary.
       </p>
     </div>
   </section>
@@ -47,26 +52,26 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
     <div class="section-inner">
       <div class="section-heading">
         <span>Demo walkthrough</span>
-        <h2>Display. Review. Confirm.</h2>
+        <h2>Three screens, one payment handoff.</h2>
       </div>
       <div class="app-flow-row">
         <article>
           <img src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard screen" />
-          <span>01 / Seller</span>
-          <h3>Display the payment QR</h3>
-          <p>The seller has a visible code and status surface at the point of sale.</p>
+          <span>01 / Set up</span>
+          <h3>Prepare the seller surface</h3>
+          <p>The seller sees balance, payout readiness, activity, and the payment code area.</p>
         </article>
         <article>
           <img src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash seller Scan to Pay QR code screen" />
-          <span>02 / Buyer</span>
-          <h3>Open the checkout request</h3>
-          <p>The buyer scans and sees seller context before choosing how to pay.</p>
+          <span>02 / Present</span>
+          <h3>Show the Scan to Pay code</h3>
+          <p>The QR screen carries merchant identity, code actions, and alert preferences.</p>
         </article>
         <article>
           <img src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash buyer checkout screen" />
           <span>03 / Review</span>
-          <h3>Review and confirm</h3>
-          <p>The buyer checks the amount, then the flow can return a clear result.</p>
+          <h3>Confirm seller and amount</h3>
+          <p>The buyer reviews the merchant profile and amount before continuing to secure checkout.</p>
         </article>
       </div>
     </div>
@@ -76,21 +81,21 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
     <div class="section-inner demo-use-inner">
       <div class="demo-use-copy">
         <span>Business use</span>
-        <h2>Use BeamCash to review the payment handoff.</h2>
-        <p>BeamCash keeps the discussion grounded in screens, states, buyer approval, and partner responsibilities.</p>
+        <h2>Use BeamCash to evaluate the handoff.</h2>
+        <p>BeamCash keeps the conversation grounded in visible screens instead of abstract gateway diagrams.</p>
       </div>
       <div class="use-list">
         <div>
-          <strong>Merchant review</strong>
-          <p>What does the seller see before and after the buyer scans?</p>
+          <strong>Seller signals</strong>
+          <p>What must the seller know before and after a buyer scans?</p>
         </div>
         <div>
-          <strong>Customer review</strong>
-          <p>Does the buyer have enough context to approve the amount?</p>
+          <strong>Buyer trust</strong>
+          <p>Is the merchant, amount, and approval action clear enough?</p>
         </div>
         <div>
-          <strong>Partner review</strong>
-          <p>Where do wallet, redemption, gateway, and processor roles sit?</p>
+          <strong>Partner boundary</strong>
+          <p>Where do wallet, redemption, processor, and support roles sit?</p>
         </div>
       </div>
     </div>
@@ -100,7 +105,7 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
     <div class="business-cta-inner">
       <div>
         <span>Feedback</span>
-        <h2>Review the payment flow and help shape the next version.</h2>
+        <h2>Evaluate BeamCash with us.</h2>
       </div>
       <div class="cta-group">
         <a class="button primary" href={FEEDBACK_FORM_URL}>Give feedback</a>

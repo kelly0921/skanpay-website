@@ -4,19 +4,25 @@ import { CONTACT_EMAIL, CONTACT_URL } from "../content/site";
 ---
 <BaseLayout
   title="Contact - SkanPay"
-  description="Contact SkanPay for questions, cooperation, merchant conversations, and QR payment partnership inquiries."
+  description="Contact SkanPay to review a QR checkout, wallet, redemption, merchant, or BeamCash product conversation."
   activePath="/contact/"
 >
   <section class="page-hero">
     <p class="eyebrow">Contact</p>
-    <h1>Start a payment conversation</h1>
-    <p>Tell us about the seller, merchant, wallet, redemption, or QR checkout use case you want to review.</p>
+    <h1>Talk through a checkout handoff</h1>
+    <p>Share the seller, buyer, wallet, redemption, or partner context you want SkanPay to review.</p>
   </section>
 
   <section class="section contact-grid">
     <div class="split-panel">
-      <h2>For merchants, partners, and payment experts</h2>
-      <p>Share the checkout context, approval flow, redemption need, or partnership question. The team will follow up directly.</p>
+      <h2>Useful context to include</h2>
+      <p>The clearest inquiries describe the checkout moment, who participates, and what status needs to return.</p>
+      <div class="contact-checklist">
+        <span>Seller type</span>
+        <span>Buyer payment path</span>
+        <span>Wallet or partner role</span>
+        <span>Redemption or offer need</span>
+      </div>
       <p><strong>Email:</strong> <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
     </div>
 
@@ -39,9 +45,10 @@ import { CONTACT_EMAIL, CONTACT_URL } from "../content/site";
         Inquiry type
         <select name="inquiry_type" required>
           <option value="">Select an inquiry type</option>
-          <option>Merchant QR payment inquiry</option>
-          <option>Partner or wallet inquiry</option>
-          <option>Payment or redemption question</option>
+          <option>Merchant or seller checkout</option>
+          <option>Wallet or payment app partnership</option>
+          <option>Coupon, voucher, or redemption</option>
+          <option>BeamCash product feedback</option>
           <option>General cooperation</option>
         </select>
       </label>
@@ -49,7 +56,7 @@ import { CONTACT_EMAIL, CONTACT_URL } from "../content/site";
         Message
         <textarea name="message" required></textarea>
       </label>
-      <p class="form-note">This form opens an email draft to {CONTACT_EMAIL} so your inquiry can be reviewed directly.</p>
+      <p class="form-note">This opens an email draft to {CONTACT_EMAIL}. A connected form endpoint can be added later.</p>
       <button class="button primary" type="submit">Send inquiry</button>
     </form>
   </section>
