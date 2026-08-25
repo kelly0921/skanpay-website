@@ -62,5 +62,45 @@ const navItems = navigationItems;
       </div>
       <p class="copyright">Copyright &copy; 2026 SkanPay Inc. All rights reserved.</p>
     </footer>
+    <script is:inline>
+      (() => {
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (reducedMotion || !("IntersectionObserver" in window)) {
+          return;
+        }
+
+        const targets = document.querySelectorAll(
+          ".section-heading, .pain-grid article, .feature-row article, .platform-flow article, .fit-grid article, .roadmap-list div, .faq-list details, .app-flow-row article, .use-list div, .card, .team-card, .split-panel"
+        );
+
+        targets.forEach((target, index) => {
+          target.classList.add("reveal");
+          target.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 55}ms`);
+        });
+
+        document.documentElement.classList.add("motion-ready");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: "0px 0px -12% 0px", threshold: 0.12 }
+        );
+
+        targets.forEach((target) => {
+          const rect = target.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            target.classList.add("is-visible");
+            return;
+          }
+          observer.observe(target);
+        });
+      })();
+    </script>
   </body>
 </html>

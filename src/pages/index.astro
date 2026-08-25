@@ -34,6 +34,21 @@ import {
           <span>Payment states</span>
         </div>
 
+        <div class="hero-stats" aria-label="BeamCash checkout signals">
+          <div>
+            <span>Request</span>
+            <strong>Scan to Pay</strong>
+          </div>
+          <div>
+            <span>Review</span>
+            <strong>Merchant + amount</strong>
+          </div>
+          <div>
+            <span>Result</span>
+            <strong>Status returned</strong>
+          </div>
+        </div>
+
         <div class="hero-actions">
           <a class="button primary" href={INTEREST_LIST_URL}>Join interest list</a>
           <a class="button secondary" href="/beamcash-demo/">View BeamCash demo</a>
@@ -50,6 +65,11 @@ import {
           <div class="product-window-top">
             <img class="beamcash-brand-icon" src="/beamcash/beamcash-logo-mark.svg" alt="BeamCash logo" />
             <span>BeamCash payment demo</span>
+          </div>
+          <div class="signal-row" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
           <div class="payment-rail" aria-label="BeamCash payment status preview">
             <div><span>Seller</span><strong>QR active</strong></div>
@@ -68,6 +88,22 @@ import {
           <p>Updated BeamCash screens showing the seller request and buyer checkout surface.</p>
         </div>
       </aside>
+    </div>
+    <div class="payment-marquee" aria-hidden="true">
+      <div>
+        <span>Scan</span>
+        <span>Review amount</span>
+        <span>Choose payment</span>
+        <span>Return status</span>
+        <span>Confirm seller</span>
+        <span>Coordinate redemption</span>
+        <span>Scan</span>
+        <span>Review amount</span>
+        <span>Choose payment</span>
+        <span>Return status</span>
+        <span>Confirm seller</span>
+        <span>Coordinate redemption</span>
+      </div>
     </div>
   </section>
 

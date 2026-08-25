@@ -23,6 +23,11 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
           <span>Buyer review</span>
           <span>Status handoff</span>
         </div>
+        <div class="demo-signal-list" aria-label="BeamCash demo checkpoints">
+          <span>01 Seller QR prepared</span>
+          <span>02 Buyer amount reviewed</span>
+          <span>03 Checkout status returned</span>
+        </div>
         <div class="button-row">
           <a class="button primary" href={INTEREST_LIST_URL}>Join interest list</a>
           <a class="button secondary" href="#walkthrough">Review demo</a>
@@ -30,6 +35,11 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL } from "../content/si
       </div>
 
       <aside class="app-screen-hero" aria-label="BeamCash app screens">
+        <div class="handoff-trace" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <img src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard with Scan to Pay QR code" />
         <img src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash checkout screen with merchant profile and payment amount options" />
       </aside>
