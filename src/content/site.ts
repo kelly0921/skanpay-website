@@ -22,7 +22,7 @@ export const CONTACT_URL = mailto(
 export const PRODUCT_STATUS = {
   label: "Current stage",
   detail:
-    "SkanPay is the system direction. BeamCash is the working demo used to make the checkout flow visible."
+    "SkanPay is the broader payment-and-redemption direction. BeamCash is the working demo used to learn from real checkout behavior."
 };
 
 export const navigationItems = [
@@ -34,10 +34,10 @@ export const navigationItems = [
 export const productDirections = [
   {
     name: "SkanPay",
-    label: "Company and infrastructure",
+    label: "Payment and redemption orchestration",
     status: "Concept / product exploration",
     description:
-      "The patent-pending QR checkout infrastructure direction: request creation, buyer context, partner routing, redemption coordination, and seller status.",
+      "A platform direction for helping participating wallets, merchant checkout systems, and gateway paths coordinate eligible value and final payment.",
     bestFor: [
       "Coupon redemption",
       "Voucher flows",
@@ -48,10 +48,10 @@ export const productDirections = [
   },
   {
     name: "BeamCash",
-    label: "Demo product",
+    label: "Small-seller demo product",
     status: PRODUCT_STATUS.label,
     description:
-      "The working demo under SkanPay that shows a seller QR, buyer review screen, and seller-readable checkout result.",
+      "A lightweight QR checkout demo under SkanPay for learning about setup, scan behavior, buyer trust, and seller confirmation.",
     bestFor: [
       "Pop-up vendors",
       "Artists and creators",
@@ -66,21 +66,21 @@ export const productDirections = [
 export const relationshipMap = [
   {
     name: "SkanPay",
-    role: "Checkout request infrastructure",
+    role: "Payment + redemption platform direction",
     description:
-      "Creates and tracks the QR checkout request, buyer context, partner route, redemption context, and seller-readable status."
+      "Helps participating wallets, merchant checkout, and payment partners coordinate eligible value, final balance, and confirmation."
   },
   {
     name: "BeamCash",
-    role: "Working demo product",
+    role: "Small-seller learning product",
     description:
-      "Shows the SkanPay flow through real seller and buyer screens: display QR, review amount, continue checkout, return status."
+      "Shows the simpler human moment first: seller displays a QR, buyer reviews the details, seller sees a result."
   },
   {
     name: "Partners",
-    role: "Future integration path",
+    role: "Pilot path",
     description:
-      "Banks, wallets, processors, offer systems, and merchants can evaluate where authorization, redemption, and support responsibilities sit."
+      "A gateway, wallet, merchant platform, or promotion owner can start with one defined checkout or redemption problem."
   }
 ];
 
@@ -101,48 +101,48 @@ export const painSolutions = [
 
 export const checkoutProblems = [
   {
-    problem: "A seller sees a scan, but not a reliable result.",
-    solution: "SkanPay treats the scan as a request with observable states."
+    problem: "Offers and wallet value often fail at checkout.",
+    solution: "SkanPay is focused on helping eligible value apply inside one coordinated payment flow."
   },
   {
-    problem: "A buyer needs to know who they are paying and why.",
-    solution: "The request carries merchant and amount context before checkout continues."
+    problem: "Merchants do not want a new integration for every wallet or coupon source.",
+    solution: "The model is designed around participating systems sharing only the checkout information they need."
   },
   {
-    problem: "A partner needs clear handoff points.",
-    solution: "The model separates checkout status, payment authorization, and redemption decisions."
+    problem: "Promotion owners need to know whether value was actually redeemed.",
+    solution: "A completed flow should show what was applied, what was paid, and what result came back."
   }
 ];
 
 export const beamcashFlow = [
-  "Seller displays a QR request",
-  "Buyer scans and reviews amount",
-  "Checkout continues through a payment option",
-  "Seller receives a readable status"
+  "Seller shows a BeamCash QR",
+  "Buyer reviews seller and amount",
+  "Buyer continues checkout",
+  "Seller sees confirmation status"
 ];
 
 export const skanpayFlow = [
-  "Create checkout request",
-  "Attach merchant and amount context",
-  "Coordinate payment or redemption route",
-  "Return seller-readable status"
+  "Customer presents a participating wallet or code",
+  "Eligible value is checked at checkout",
+  "Merchant finalizes the invoice",
+  "Final payment and confirmation are returned"
 ];
 
 export const skanpayDefinitions = [
   {
-    label: "What it is",
+    label: "Helps with",
     items: [
-      "A QR checkout request layer",
-      "A state model for scan, review, decision, and result",
-      "A coordination path for payment and redemption partners"
+      "Participating wallet and offer acceptance",
+      "Coupon, voucher, gift-card, or loyalty value at checkout",
+      "Clear confirmation of redeemed value and final payment"
     ]
   },
   {
     label: "What it is not",
     items: [
       "Not a consumer wallet brand",
-      "Not a processor replacement claim",
-      "Not the BeamCash demo itself"
+      "Not the default money mover",
+      "Not a promise that every app or merchant works without integration"
     ]
   }
 ];

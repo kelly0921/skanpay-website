@@ -3,26 +3,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { skanpayDefinitions } from "../content/site";
 ---
 <BaseLayout
-  title="SkanPay Infrastructure"
-  description="SkanPay is the QR checkout infrastructure direction behind BeamCash, focused on request creation, buyer context, partner routing, redemption coordination, and seller status."
+  title="SkanPay - Payment and Redemption"
+  description="SkanPay helps participating wallets, merchant checkout, and payment partners coordinate eligible value, final balance, and confirmation in one checkout flow."
   activePath="/qr-payments/"
 >
   <section class="tech-hero">
     <div class="tech-hero-inner">
       <div class="tech-hero-copy motion-item">
         <p class="eyebrow">SkanPay</p>
-        <h1>SkanPay turns a QR scan into a checkout request.</h1>
+        <h1>One flow for offers, checkout, and payment.</h1>
         <p>
-          BeamCash shows the experience. SkanPay is the patent-pending infrastructure model behind it: request creation, buyer context, partner routing, redemption context, and seller-readable status.
+          SkanPay is the broader product direction behind BeamCash: a patent-pending payment-and-redemption platform for participating systems that need eligible value applied, final balance paid, and results confirmed in one checkout flow.
         </p>
       </div>
 
-      <div class="request-object motion-item" aria-label="Example QR checkout request fields">
-        <div><span>request.id</span><strong>sp_req_2048</strong></div>
-        <div><span>merchant</span><strong>BeamCash Demo Stall</strong></div>
-        <div><span>amount</span><strong>buyer reviewed</strong></div>
-        <div><span>state</span><strong>awaiting decision</strong></div>
-        <div><span>result</span><strong>seller-readable status</strong></div>
+      <div class="request-object motion-item" aria-label="SkanPay checkout outcome snapshot">
+        <div><span>Customer</span><strong>Uses a participating wallet or value source</strong></div>
+        <div><span>Merchant</span><strong>Keeps checkout and invoice authority</strong></div>
+        <div><span>Value</span><strong>Eligible coupon, voucher, gift card, or loyalty benefit</strong></div>
+        <div><span>Payment</span><strong>Final balance moves through the supported path</strong></div>
+        <div><span>Result</span><strong>Authorized parties receive confirmation</strong></div>
       </div>
     </div>
   </section>
@@ -31,8 +31,8 @@ import { skanpayDefinitions } from "../content/site";
     <div class="definition-inner">
       <div class="tech-section-heading motion-item">
         <p class="eyebrow">Definition</p>
-        <h2>Keep the boundary clear.</h2>
-        <p>SkanPay should be understood as the system layer around the checkout request, not as the BeamCash app or a replacement for every payment system.</p>
+        <h2>A practical layer for one coordinated checkout.</h2>
+        <p>SkanPay should be understood by the problem it solves, not by the transport method. QR can be one way to start the flow, but the product value is the coordinated checkout outcome.</p>
       </div>
 
       <div class="definition-lines" aria-label="What SkanPay is and is not">
@@ -53,31 +53,31 @@ import { skanpayDefinitions } from "../content/site";
   <section class="state-machine">
     <div class="state-machine-inner">
       <div class="tech-section-heading motion-item">
-        <p class="eyebrow">State model</p>
-        <h2>The request has to move through clear states.</h2>
-        <p>A scan is the start of the checkout request, not the whole payment experience.</p>
+        <p class="eyebrow">Checkout flow</p>
+        <h2>What the customer and merchant should experience.</h2>
+        <p>The flow should feel simple even when several business systems participate behind the scenes.</p>
       </div>
 
-      <div class="state-rail" aria-label="SkanPay checkout state model">
+      <div class="state-rail" aria-label="SkanPay checkout flow">
         <article class="motion-item">
-          <span>Created</span>
-          <strong>Seller starts request</strong>
-          <p>Amount, seller reference, session details, and optional redemption data are prepared.</p>
+          <span>Present</span>
+          <strong>Customer presents value</strong>
+          <p>A participating app, QR, barcode, NFC signal, or other supported method can begin the checkout flow.</p>
         </article>
         <article class="motion-item">
-          <span>Scanned</span>
-          <strong>Buyer opens request</strong>
-          <p>The buyer sees seller and amount context before choosing an approval path.</p>
+          <span>Apply</span>
+          <strong>Eligible value is checked</strong>
+          <p>The merchant checkout determines what coupon, voucher, gift-card, or loyalty value can apply.</p>
         </article>
         <article class="motion-item">
-          <span>Decided</span>
-          <strong>Partner returns decision</strong>
-          <p>The request can be approved, cancelled, expired, failed, or remain pending.</p>
+          <span>Pay</span>
+          <strong>Final balance is paid</strong>
+          <p>The checkout continues through the supported payment path after the eligible value is handled.</p>
         </article>
         <article class="motion-item">
-          <span>Confirmed</span>
-          <strong>Seller receives status</strong>
-          <p>The merchant or seller gets a readable result before closing the sale.</p>
+          <span>Confirm</span>
+          <strong>Results are confirmed</strong>
+          <p>The right participants can receive confirmation of what was redeemed, charged, and completed.</p>
         </article>
       </div>
     </div>
@@ -86,28 +86,28 @@ import { skanpayDefinitions } from "../content/site";
   <section class="protocol-split">
     <div class="protocol-split-inner">
       <div class="protocol-copy motion-item">
-        <p class="eyebrow">Boundary</p>
-        <h2>Define the boundary between checkout requests and payment systems.</h2>
+        <p class="eyebrow">For partners</p>
+        <h2>Start with one measurable checkout problem.</h2>
         <p>
-          SkanPay sits around the request and state layer. Processors, banks, wallets, and offer systems stay explicit where they authorize money movement or validate value.
+          The best first use case is narrow: one wallet or value source, one participating merchant environment, one gateway path, and one redemption type with a clear success measure.
         </p>
       </div>
 
       <div class="boundary-map motion-item" aria-label="Gateway and partner responsibilities">
         <div>
-          <span>SkanPay</span>
-          <strong>Request + state layer</strong>
-          <p>Structures the checkout context and status result.</p>
+          <span>Wallet or offer owner</span>
+          <strong>Extend accepted value</strong>
+          <p>Give customers a reason to use an existing account, coupon, voucher, gift card, or loyalty benefit.</p>
         </div>
         <div>
-          <span>Processor / bank</span>
-          <strong>Money movement</strong>
-          <p>Handles authorization, clearing, and settlement where applicable.</p>
+          <span>Merchant or platform</span>
+          <strong>Preserve checkout control</strong>
+          <p>Keep invoice logic, eligibility, and merchant operations inside the systems that already own them.</p>
         </div>
         <div>
-          <span>Offer system</span>
-          <strong>Redemption logic</strong>
-          <p>Coordinates coupon, voucher, loyalty, or stored-value decisions.</p>
+          <span>Gateway path</span>
+          <strong>Coordinate the handoff</strong>
+          <p>Support a controlled flow without building a separate direct connection between every wallet and merchant.</p>
         </div>
       </div>
     </div>
@@ -116,17 +116,17 @@ import { skanpayDefinitions } from "../content/site";
   <section class="integration-runway">
     <div class="integration-runway-inner">
       <div class="tech-section-heading motion-item">
-        <p class="eyebrow">Integration touchpoints</p>
-        <h2>What partners can evaluate.</h2>
-        <p>Public details should stay focused. Partner-specific requirements belong in direct review.</p>
+        <p class="eyebrow">Pilot scope</p>
+        <h2>What we would define before a pilot.</h2>
+        <p>Public messaging should stay clear and measured. The detailed operating model belongs in a partner review.</p>
       </div>
 
       <ol class="runway-list">
-        <li class="motion-item"><span>01</span><strong>QR request format</strong></li>
-        <li class="motion-item"><span>02</span><strong>Supported app or wallet behavior</strong></li>
-        <li class="motion-item"><span>03</span><strong>Status and timeout handling</strong></li>
-        <li class="motion-item"><span>04</span><strong>Coupon or voucher validation</strong></li>
-        <li class="motion-item"><span>05</span><strong>Merchant confirmation display</strong></li>
+        <li class="motion-item"><span>01</span><strong>Participating wallet or value source</strong></li>
+        <li class="motion-item"><span>02</span><strong>Merchant checkout environment</strong></li>
+        <li class="motion-item"><span>03</span><strong>Coupon, voucher, gift-card, or loyalty rule</strong></li>
+        <li class="motion-item"><span>04</span><strong>Confirmation and support states</strong></li>
+        <li class="motion-item"><span>05</span><strong>Success measure and data boundaries</strong></li>
       </ol>
     </div>
   </section>

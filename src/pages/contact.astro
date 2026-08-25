@@ -4,24 +4,24 @@ import { CONTACT_EMAIL, CONTACT_URL } from "../content/site";
 ---
 <BaseLayout
   title="Contact - SkanPay"
-  description="Contact SkanPay to review a QR checkout, wallet, redemption, merchant, or BeamCash product conversation."
+  description="Contact SkanPay to discuss a checkout, wallet, merchant, redemption, or BeamCash product conversation."
   activePath="/contact/"
 >
   <section class="page-hero">
     <p class="eyebrow">Contact</p>
-    <h1>Talk through a checkout handoff</h1>
-    <p>Share the seller, buyer, wallet, redemption, or partner context you want SkanPay to review.</p>
+    <h1>Talk through a checkout or redemption problem</h1>
+    <p>Share the wallet, merchant, offer, seller, or partner context you want SkanPay to review.</p>
   </section>
 
   <section class="section contact-grid">
     <div class="split-panel">
       <h2>Useful context to include</h2>
-      <p>The clearest inquiries describe the checkout moment, who participates, and what status needs to return.</p>
+      <p>The clearest inquiries describe what value needs to apply, where checkout happens, and who needs confirmation.</p>
       <div class="contact-checklist">
-        <span>Seller type</span>
-        <span>Buyer payment path</span>
-        <span>Wallet or partner role</span>
-        <span>Redemption or offer need</span>
+        <span>Merchant or seller type</span>
+        <span>Wallet or value source</span>
+        <span>Coupon, voucher, gift card, or loyalty need</span>
+        <span>Confirmation or reporting gap</span>
       </div>
       <p><strong>Email:</strong> <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
     </div>
@@ -48,6 +48,7 @@ import { CONTACT_EMAIL, CONTACT_URL } from "../content/site";
           <option>Merchant or seller checkout</option>
           <option>Wallet or payment app partnership</option>
           <option>Coupon, voucher, or redemption</option>
+          <option>Gateway, POS, or platform conversation</option>
           <option>BeamCash product feedback</option>
           <option>General cooperation</option>
         </select>

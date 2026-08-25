@@ -9,31 +9,31 @@ import {
 } from "../content/site";
 ---
 <BaseLayout
-  title="SkanPay - BeamCash QR Payments"
-  description="SkanPay is developing QR checkout infrastructure. BeamCash is the product demo showing seller QR, buyer review, and checkout status."
+  title="SkanPay - Payment and Redemption Checkout"
+  description="SkanPay helps participating wallets, merchants, and payment partners coordinate eligible value and final payment in one checkout flow. BeamCash is the small-seller demo."
   activePath="/"
 >
   <section class="home-hero">
     <div class="home-hero-inner">
       <div class="home-hero-copy motion-item">
-        <p class="brand-kicker">QR checkout infrastructure</p>
-        <h1>Turn a QR scan into a trackable checkout request.</h1>
+        <p class="brand-kicker">Payment + redemption checkout</p>
+        <h1>Make wallet offers work at checkout.</h1>
         <p class="premium-lead">
-          SkanPay is the patent-pending system direction for QR checkout requests. BeamCash is the working demo that shows the seller QR, buyer review, and seller status flow.
+          SkanPay helps participating wallets, merchants, payment partners, and promotion programs coordinate eligible value and final payment in one flow. BeamCash is the small-seller demo that makes the scan-to-confirmation moment visible.
         </p>
 
         <div class="premium-actions">
-          <a class="button primary premium-primary" href="/qr-payments/">See how SkanPay works</a>
+          <a class="button primary premium-primary" href="/qr-payments/">Explore SkanPay</a>
           <a class="button secondary premium-secondary" href="/beamcash-demo/">View BeamCash demo</a>
         </div>
 
         <div class="scan-principles" aria-label="SkanPay payment principles">
-          <span>Create request</span>
-          <span>Buyer reviews</span>
-          <span>Seller sees status</span>
+          <span>Present value</span>
+          <span>Apply at checkout</span>
+          <span>Confirm payment</span>
         </div>
 
-        <p class="product-status-line">A scan should carry context, route, and result status, not just open a page.</p>
+        <p class="product-status-line">The point is not another QR code. The point is a smoother handoff between value, checkout, payment, and confirmation.</p>
       </div>
 
       <aside class="open-payment-field motion-item" aria-label="BeamCash QR checkout product scene">
@@ -58,8 +58,8 @@ import {
     <div class="relationship-inner">
       <div class="relationship-heading motion-item">
         <span>How the pieces fit</span>
-        <h2>SkanPay is the system. BeamCash is the proof.</h2>
-        <p>SkanPay defines the checkout request layer. BeamCash demonstrates it with screens a seller, buyer, and partner can review.</p>
+        <h2>SkanPay is the platform direction. BeamCash is the visible demo.</h2>
+        <p>SkanPay is the bigger payment-and-redemption thesis. BeamCash keeps the user experience concrete while the broader platform path is validated with partners.</p>
       </div>
       <div class="relationship-map" aria-label="SkanPay and BeamCash relationship">
         {relationshipMap.map((item, index) => (
@@ -78,8 +78,8 @@ import {
     <div class="problem-flow-inner">
       <div class="problem-heading motion-item">
         <span>The payment problem</span>
-        <h2>The hard part is not the scan. It is what happens after.</h2>
-        <p>A QR code can open a page. A payment product has to carry context, decisions, and status across the whole handoff.</p>
+        <h2>Offers, wallets, and checkout still break apart.</h2>
+        <p>Coupons, vouchers, gift cards, loyalty value, merchant invoices, and payment processing often live in separate systems. The value can disappear at the exact moment it should be used.</p>
       </div>
       <div class="problem-lines" aria-label="QR checkout problem and response">
         {checkoutProblems.map((item, index) => (
@@ -99,9 +99,9 @@ import {
     <div class="system-blueprint-inner">
       <div class="system-copy motion-item">
         <span>SkanPay</span>
-        <h2>Define the request before the payment handoff.</h2>
+        <h2>Coordinate value, payment, and confirmation in one checkout flow.</h2>
         <p>
-          SkanPay focuses on the layer around a QR checkout: what request was created, what the buyer reviewed, which partner route applies, and what status the seller can trust.
+          SkanPay is built around a simple public idea: a participating customer app should be able to apply eligible value at a participating merchant, pay the final balance, and confirm the result to the right parties.
         </p>
       </div>
 
@@ -126,9 +126,9 @@ import {
 
       <div class="scan-story-copy motion-item">
         <span>BeamCash product proof</span>
-        <h2>Make SkanPay visible through a real demo flow.</h2>
+        <h2>Start with the payment moment people can see.</h2>
         <p>
-          BeamCash is the product demo we use when the SkanPay flow needs to be shown, not just explained.
+          BeamCash focuses on a small-seller QR checkout because it is easy to understand: show the code, let the buyer review, and return a clear status to the seller.
         </p>
 
         <div class="story-line-list" aria-label="BeamCash payment walkthrough">
@@ -149,8 +149,8 @@ import {
     <div class="final-cta-inner">
       <div>
         <span>Next step</span>
-        <h2>Start with the flow. Then define the integration.</h2>
-        <p>Share a seller workflow, merchant use case, or payment partner question.</p>
+        <h2>Have a checkout or redemption problem to test?</h2>
+        <p>Share the wallet, merchant, offer, or seller workflow you want to make simpler.</p>
       </div>
       <div class="cta-group">
         <a class="button primary" href={CONTACT_URL}>Contact SkanPay</a>

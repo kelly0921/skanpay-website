@@ -4,7 +4,7 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL, beamcashFlow } from 
 ---
 <BaseLayout
   title="BeamCash Demo - SkanPay"
-  description="BeamCash is the SkanPay product proof for QR payment requests, buyer review, and seller-readable checkout status."
+  description="BeamCash is SkanPay's small-seller QR checkout demo for showing a code, buyer review, and seller confirmation."
   activePath="/beamcash-demo/"
 >
   <section class="beam-landing">
@@ -12,14 +12,14 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL, beamcashFlow } from 
       <div class="beam-hero-copy motion-item">
         <img class="beam-wordmark" src="/beamcash/beamcash-wordmark.svg" alt="BeamCash" />
         <p class="brand-kicker">BeamCash by SkanPay</p>
-        <h1>BeamCash makes SkanPay visible.</h1>
+        <h1>A QR checkout demo for small sellers.</h1>
         <p class="premium-lead">
-          The demo shows the simplest payment moment: seller displays a QR request, buyer reviews the amount, seller gets a readable status.
+          BeamCash shows the simplest payment moment: a seller displays a code, a buyer reviews who they are paying, and the seller gets a clear confirmation status.
         </p>
         <div class="scan-principles">
-          <span>Seller QR</span>
-          <span>Buyer review</span>
-          <span>Status result</span>
+          <span>Create</span>
+          <span>Display</span>
+          <span>Confirm</span>
         </div>
         <div class="premium-actions">
           <a class="button primary premium-primary" href="#walkthrough">See the flow</a>
@@ -40,10 +40,10 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL, beamcashFlow } from 
     <div class="demo-purpose-inner">
       <div>
         <span>Why BeamCash exists</span>
-        <h2>It proves the user experience, not the whole infrastructure.</h2>
+        <h2>It makes the checkout experience easy to see and test.</h2>
       </div>
       <p>
-        BeamCash is the proof product under SkanPay. It helps sellers, merchants, and payment partners see the checkout handoff before technical integration conversations go deeper.
+        BeamCash is not the full SkanPay platform. It is the learning product for seller setup, scan behavior, buyer trust, confirmation, duplicate handling, and other real checkout moments.
       </p>
     </div>
   </section>
@@ -52,8 +52,8 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL, beamcashFlow } from 
     <div class="beam-walkthrough-inner">
       <div class="walkthrough-heading motion-item">
         <span>How it works</span>
-        <h2>Three screens explain the payment handoff.</h2>
-        <p>Seller shows the request. Buyer checks the details. Seller sees the result.</p>
+        <h2>Create a code. Let the buyer review. Confirm the result.</h2>
+        <p>The page stays focused on what a seller and buyer can understand quickly.</p>
       </div>
 
       <div class="demo-flow-editorial">
@@ -89,7 +89,7 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL, beamcashFlow } from 
       <div class="placement-copy motion-item">
         <span>Where the QR lives</span>
         <h2>Designed for a real counter, table, booth, or event.</h2>
-        <p>The QR should be easy to scan, but the checkout still needs merchant, amount, and status context.</p>
+        <p>Like a simple sign or checkout placard, the code should be easy to find while the buyer still sees who they are paying and what happens next.</p>
       </div>
 
       <div class="placement-marquee" aria-label="BeamCash seller use cases">
@@ -106,7 +106,7 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL, beamcashFlow } from 
     <div class="beam-final-cta-inner">
       <div>
         <span>Feedback</span>
-        <h2>Help us refine the demo flow.</h2>
+        <h2>Help us make the demo clearer.</h2>
       </div>
       <div class="cta-group">
         <a class="button primary" href={FEEDBACK_FORM_URL}>Give feedback</a>
