@@ -2,10 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import {
   CONTACT_URL,
-  INTEREST_LIST_URL,
   PRODUCT_STATUS,
   beamcashFlow,
-  beamcashHighlights,
   painSolutions,
   productDirections,
   skanpayFlow
@@ -19,15 +17,15 @@ import {
   <section class="home-hero">
     <div class="home-hero-inner">
       <div class="home-hero-copy motion-item">
-        <p class="brand-kicker">SkanPay infrastructure / BeamCash proof</p>
-        <h1>Make QR checkout clear from scan to status.</h1>
+        <p class="brand-kicker">SkanPay company / BeamCash demo</p>
+        <h1>SkanPay builds QR payment infrastructure. BeamCash shows it working.</h1>
         <p class="premium-lead">
-          SkanPay is developing patent-pending QR checkout infrastructure for payment and redemption flows. BeamCash is the working demo that makes the seller request, buyer review, and payment status visible.
+          SkanPay is the patent-pending infrastructure direction for QR checkout and redemption. BeamCash is the demo product under SkanPay that makes the payment flow visible.
         </p>
 
         <div class="premium-actions">
-          <a class="button primary premium-primary" href="/beamcash-demo/">View BeamCash</a>
-          <a class="button secondary premium-secondary" href={CONTACT_URL}>Contact SkanPay</a>
+          <a class="button primary premium-primary" href="/qr-payments/">Understand SkanPay</a>
+          <a class="button secondary premium-secondary" href="/beamcash-demo/">View BeamCash demo</a>
         </div>
 
         <div class="scan-principles" aria-label="SkanPay payment principles">
@@ -54,6 +52,25 @@ import {
           <span>Status</span>
         </div>
       </aside>
+    </div>
+  </section>
+
+  <section class="company-split">
+    <div class="company-split-inner">
+      <div class="company-split-heading motion-item">
+        <span>The clean distinction</span>
+        <h2>One company direction. One proof product.</h2>
+        <p>SkanPay is the infrastructure model for merchants, banks, wallets, and payment partners. BeamCash is the practical demo used to show the seller and buyer experience.</p>
+      </div>
+      <div class="split-ledger">
+        {productDirections.map((product) => (
+          <article class="motion-item">
+            <span>{product.name}</span>
+            <h3>{product.label}</h3>
+            <p>{product.description}</p>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -106,40 +123,6 @@ import {
     </div>
   </section>
 
-  <section class="checkout-floor">
-    <div class="checkout-floor-inner">
-      <div class="checkout-copy motion-item">
-        <span>Show, don't tell</span>
-        <h2>The buyer sees context before checkout continues.</h2>
-        <p>
-          The demo focuses on the real trust moment: where the QR appears, what the buyer sees after scanning, and what the seller gets back.
-        </p>
-        <div class="highlight-lines">
-          {beamcashHighlights.slice(0, 3).map((feature) => (
-            <div>
-              <strong>{feature.title}</strong>
-              <p>{feature.copy}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div class="counter-scene motion-item" aria-label="QR payment counter scene">
-        <div class="counter-surface" aria-hidden="true"></div>
-        <div class="qr-stand">
-          <img src="/beamcash/beamcash-logo-mark.svg" alt="BeamCash logo" />
-          <span>BeamCash Demo Stall</span>
-          <strong>Scan to Pay</strong>
-          <div class="qr-crop">
-            <img src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash QR payment request" />
-          </div>
-        </div>
-        <img class="counter-phone" src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash buyer checkout screen" />
-        <div class="counter-status">Buyer reviews seller and amount</div>
-      </div>
-    </div>
-  </section>
-
   <section class="system-blueprint" id="skanpay">
     <div class="system-blueprint-inner">
       <div class="system-copy motion-item">
@@ -161,25 +144,6 @@ import {
     </div>
   </section>
 
-  <section class="company-split">
-    <div class="company-split-inner">
-      <div class="company-split-heading motion-item">
-        <span>Company and product</span>
-        <h2>SkanPay is the platform direction. BeamCash is the proof.</h2>
-        <p>That separation keeps the website clear: BeamCash demonstrates payment competence; SkanPay frames the larger checkout and redemption opportunity.</p>
-      </div>
-      <div class="split-ledger">
-        {productDirections.map((product) => (
-          <article class="motion-item">
-            <span>{product.name}</span>
-            <h3>{product.label}</h3>
-            <p>{product.description}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <section class="final-cta" id="contact">
     <div class="final-cta-inner">
       <div>
@@ -189,7 +153,7 @@ import {
       </div>
       <div class="cta-group">
         <a class="button primary" href={CONTACT_URL}>Contact SkanPay</a>
-        <a class="button ghost" href={INTEREST_LIST_URL}>Join interest list</a>
+        <a class="button ghost" href="/beamcash-demo/">View BeamCash demo</a>
       </div>
     </div>
   </section>

@@ -22,22 +22,22 @@ export const CONTACT_URL = mailto(
 export const PRODUCT_STATUS = {
   label: "Current stage",
   detail:
-    "BeamCash is ready for product feedback. SkanPay is being shaped for merchant, wallet, and redemption conversations."
+    "SkanPay is the infrastructure direction. BeamCash is the demo product used to prove and explain the checkout flow."
 };
 
 export const navigationItems = [
-  { href: "/beamcash-demo/", label: "BeamCash" },
-  { href: "/qr-payments/", label: "Technology" },
-  { href: "/partners/", label: "Partners" }
+  { href: "/qr-payments/", label: "SkanPay" },
+  { href: "/beamcash-demo/", label: "BeamCash Demo" },
+  { href: "/about/", label: "About" }
 ];
 
 export const productDirections = [
   {
     name: "SkanPay",
-    label: "Infrastructure model",
+    label: "Company and infrastructure",
     status: "Concept / product exploration",
     description:
-      "A partner-facing model for QR checkout requests, payment states, merchant results, and redemption coordination.",
+      "The patent-pending QR checkout infrastructure direction: request creation, buyer context, partner routing, redemption coordination, and seller status.",
     bestFor: [
       "Coupon redemption",
       "Voucher flows",
@@ -48,10 +48,10 @@ export const productDirections = [
   },
   {
     name: "BeamCash",
-    label: "Product proof",
+    label: "Demo product",
     status: PRODUCT_STATUS.label,
     description:
-      "A working demo that turns the seller QR and buyer approval handoff into screens people can review.",
+      "The working demo under SkanPay that shows a seller QR, buyer review screen, and seller-readable checkout result.",
     bestFor: [
       "Pop-up vendors",
       "Artists and creators",

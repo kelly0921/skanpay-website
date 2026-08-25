@@ -2,17 +2,17 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout
-  title="Technology - SkanPay"
-  description="Review SkanPay's QR checkout state model, gateway boundary, redemption support, and integration touchpoints."
+  title="SkanPay Infrastructure"
+  description="SkanPay is the QR checkout infrastructure direction behind BeamCash, focused on request creation, buyer context, partner routing, redemption coordination, and seller status."
   activePath="/qr-payments/"
 >
   <section class="tech-hero">
     <div class="tech-hero-inner">
       <div class="tech-hero-copy motion-item">
-        <p class="eyebrow">Technology</p>
-        <h1>QR checkout is a state machine, not just a code.</h1>
+        <p class="eyebrow">SkanPay</p>
+        <h1>The infrastructure direction behind BeamCash.</h1>
         <p>
-          SkanPay focuses on the request record behind each scan: who created it, what the buyer sees, how partners participate, and what status returns to the seller.
+          SkanPay is not the demo app. It is the patent-pending infrastructure model for QR checkout requests, buyer context, partner routing, redemption coordination, and seller-readable status.
         </p>
       </div>
 
@@ -30,7 +30,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="state-machine-inner">
       <div class="tech-section-heading motion-item">
         <p class="eyebrow">State model</p>
-        <h2>Make every request traceable.</h2>
+        <h2>What SkanPay is responsible for.</h2>
         <p>The QR opens a request. The request moves through observable states.</p>
       </div>
 
@@ -62,10 +62,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="protocol-split">
     <div class="protocol-split-inner">
       <div class="protocol-copy motion-item">
-        <p class="eyebrow">Gateway role</p>
-        <h2>Coordinate the handoff without hiding who moves the money.</h2>
+        <p class="eyebrow">Boundary</p>
+        <h2>Coordinate the handoff without pretending to be every system.</h2>
         <p>
-          SkanPay sits around request creation, buyer context, partner routing, redemption coordination, and seller status. Processors and banks stay explicit where they authorize, clear, or settle funds.
+          SkanPay sits around the request and state layer. Processors, banks, wallets, and offer systems stay explicit where they authorize money movement or validate value.
         </p>
       </div>
 
@@ -84,34 +84,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <span>Offer system</span>
           <strong>Redemption logic</strong>
           <p>Coordinates coupon, voucher, loyalty, or stored-value decisions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="responsibility-flow">
-    <div class="responsibility-flow-inner">
-      <div class="tech-section-heading motion-item">
-        <p class="eyebrow">Responsibilities</p>
-        <h2>Separate the experience by participant.</h2>
-        <p>Each party needs a different surface, but the state record keeps them aligned.</p>
-      </div>
-
-      <div class="participant-lines" aria-label="Seller buyer and partner responsibilities">
-        <div class="motion-item">
-          <span>Seller</span>
-          <strong>Present request and read status</strong>
-          <p>The seller needs a clean checkout prompt and an actionable result.</p>
-        </div>
-        <div class="motion-item">
-          <span>Buyer</span>
-          <strong>Review and approve</strong>
-          <p>The buyer needs seller details, amount, and a familiar approval experience.</p>
-        </div>
-        <div class="motion-item">
-          <span>Partner</span>
-          <strong>Handle participation</strong>
-          <p>Wallet, payment, loyalty, or offer apps need a defined checkout boundary.</p>
         </div>
       </div>
     </div>
