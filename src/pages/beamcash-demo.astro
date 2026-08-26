@@ -7,32 +7,51 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL, beamcashFlow } from 
   description="BeamCash is SkanPay's small-seller QR checkout demo for showing a code, buyer review, and seller confirmation."
   activePath="/beamcash-demo/"
 >
-  <section class="beam-landing">
-    <div class="beam-landing-inner">
-      <div class="beam-hero-copy motion-item">
+  <section class="product-hero beamcash-page">
+    <div class="product-hero-inner">
+      <div class="product-hero-copy motion-item">
         <img class="beam-wordmark" src="/beamcash/beamcash-wordmark.svg" alt="BeamCash" />
-        <p class="brand-kicker">BeamCash by SkanPay</p>
+        <p class="eyebrow">BeamCash by SkanPay</p>
         <h1>A QR checkout demo for small sellers.</h1>
-        <p class="premium-lead">
-          BeamCash shows the simplest payment moment: a seller displays a code, a buyer reviews who they are paying, and the seller gets a clear confirmation status.
+        <p class="hero-lede">
+          BeamCash shows the payment moment in the simplest possible way: a seller displays a code, a buyer reviews the details, and the seller sees a clear status.
         </p>
-        <div class="scan-principles">
-          <span>Create</span>
-          <span>Display</span>
-          <span>Confirm</span>
+
+        <div class="hero-checks" aria-label="BeamCash product outcomes">
+          <span>Visible QR checkout</span>
+          <span>Buyer review before payment</span>
+          <span>Seller confirmation status</span>
         </div>
-        <div class="premium-actions">
+
+        <div class="product-actions">
           <a class="button primary premium-primary" href="#walkthrough">See the flow</a>
           <a class="button secondary premium-secondary" href={FEEDBACK_FORM_URL}>Give feedback</a>
         </div>
       </div>
 
-      <aside class="beam-stage-field motion-item" aria-label="BeamCash app screens">
-        <div class="beam-stage-ribbon">Ready for buyer review</div>
-        <img class="beam-stage-phone beam-stage-code" src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash seller Scan to Pay QR code screen" />
-        <img class="beam-stage-phone beam-stage-buyer" src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash checkout screen with merchant profile and payment amount options" />
-        <div class="beam-stage-line" aria-hidden="true"></div>
+      <aside class="beamcash-qr-scene motion-item" aria-label="BeamCash QR checkout scene">
+        <div class="seller-placard">
+          <span>Seller display</span>
+          <strong>Scan to pay</strong>
+          <img src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash seller QR code screen" />
+        </div>
+        <img class="buyer-phone" src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash buyer checkout review screen" />
+        <div class="seller-status">
+          <span>Seller view</span>
+          <strong>Waiting for buyer review</strong>
+        </div>
       </aside>
+    </div>
+  </section>
+
+  <section class="step-band beamcash-steps" aria-label="BeamCash checkout flow">
+    <div class="step-band-inner">
+      {beamcashFlow.map((step, index) => (
+        <article class="motion-item">
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <strong>{step}</strong>
+        </article>
+      ))}
     </div>
   </section>
 
@@ -48,16 +67,15 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL, beamcashFlow } from 
     </div>
   </section>
 
-  <section class="beam-walkthrough" id="walkthrough">
-    <div class="beam-walkthrough-inner">
-      <div class="walkthrough-heading motion-item">
+  <section class="beam-walkthrough product-walkthrough" id="walkthrough">
+    <div class="product-section-inner">
+      <div class="section-intro motion-item">
         <span>How it works</span>
         <h2>Create a code. Let the buyer review. Confirm the result.</h2>
-        <p>The page stays focused on what a seller and buyer can understand quickly.</p>
+        <p>The demo keeps the seller and buyer experience easy to see, even while the payment details are still being refined.</p>
       </div>
 
-      <div class="demo-flow-editorial">
-        <div class="demo-screen-stack motion-item" aria-label="BeamCash app walkthrough screens">
+      <div class="demo-screen-row motion-item" aria-label="BeamCash app walkthrough screens">
           <figure>
             <img src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard screen" />
             <figcaption>Seller starts</figcaption>
@@ -70,16 +88,6 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL, beamcashFlow } from 
             <img src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash buyer checkout screen" />
             <figcaption>Buyer reviews</figcaption>
           </figure>
-        </div>
-
-        <div class="demo-flow-lines" aria-label="BeamCash checkout steps">
-          {beamcashFlow.map((step, index) => (
-            <article class="motion-item">
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <strong>{step}</strong>
-            </article>
-          ))}
-        </div>
       </div>
     </div>
   </section>
@@ -92,12 +100,36 @@ import { CONTACT_URL, FEEDBACK_FORM_URL, INTEREST_LIST_URL, beamcashFlow } from 
         <p>Like a simple sign or checkout placard, the code should be easy to find while the buyer still sees who they are paying and what happens next.</p>
       </div>
 
-      <div class="placement-marquee" aria-label="BeamCash seller use cases">
-        <span>Pop-up vendors</span>
-        <span>Creators</span>
-        <span>Student fundraisers</span>
-        <span>Local events</span>
-        <span>Small service sellers</span>
+      <div class="placement-list" aria-label="BeamCash seller use cases">
+        <article class="motion-item"><span>01</span><strong>Pop-up vendors</strong></article>
+        <article class="motion-item"><span>02</span><strong>Creators</strong></article>
+        <article class="motion-item"><span>03</span><strong>Student fundraisers</strong></article>
+        <article class="motion-item"><span>04</span><strong>Local events</strong></article>
+        <article class="motion-item"><span>05</span><strong>Small service sellers</strong></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo-validation">
+    <div class="demo-validation-inner">
+      <div class="validation-copy motion-item">
+        <span>What the demo proves</span>
+        <h2>BeamCash is a product test under SkanPay.</h2>
+        <p>It helps us learn from the details that make a payment flow feel trustworthy in the real world.</p>
+      </div>
+      <div class="validation-lines" aria-label="BeamCash product learning areas">
+        <div class="motion-item">
+          <span>Buyer confidence</span>
+          <strong>Who am I paying, and what amount am I approving?</strong>
+        </div>
+        <div class="motion-item">
+          <span>Seller clarity</span>
+          <strong>Did the scan become a payment action I can trust?</strong>
+        </div>
+        <div class="motion-item">
+          <span>Partner proof</span>
+          <strong>Can the checkout state be explained, measured, and improved?</strong>
+        </div>
       </div>
     </div>
   </section>

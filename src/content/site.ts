@@ -26,6 +26,7 @@ export const PRODUCT_STATUS = {
 };
 
 export const navigationItems = [
+  { href: "/", label: "Home" },
   { href: "/qr-payments/", label: "SkanPay" },
   { href: "/beamcash-demo/", label: "BeamCash Demo" },
   { href: "/about/", label: "About" }
@@ -128,22 +129,22 @@ export const skanpayFlow = [
   "Confirmation returns to the right parties"
 ];
 
-export const skanpayDefinitions = [
+export const checkoutValueFlow = [
   {
-    label: "Helps with",
-    items: [
-      "Participating wallet and offer acceptance",
-      "Coupon, voucher, gift-card, or loyalty value at checkout",
-      "Clear confirmation of redeemed value and final payment"
-    ]
+    label: "Eligible value",
+    detail: "Wallet, offer, loyalty, coupon, voucher, or gift-card value is identified for the transaction."
   },
   {
-    label: "What it is not",
-    items: [
-      "Not a consumer wallet brand",
-      "Not the default money mover",
-      "Not a promise that every app or merchant works without integration"
-    ]
+    label: "Checkout rules",
+    detail: "The merchant checkout decides what can be applied to the current basket or invoice."
+  },
+  {
+    label: "Final payment",
+    detail: "The customer pays the remaining balance through the participating payment path."
+  },
+  {
+    label: "Shared confirmation",
+    detail: "The result shows what value was applied, what was paid, and what each party needs to know."
   }
 ];
 

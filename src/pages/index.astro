@@ -2,7 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import {
   CONTACT_URL,
-  beamcashFlow,
   checkoutProblems,
   relationshipMap,
   skanpayFlow
@@ -13,75 +12,82 @@ import {
   description="SkanPay helps participating wallets, merchants, and payment partners apply eligible value before final payment. BeamCash is the small-seller QR checkout demo."
   activePath="/"
 >
-  <section class="home-hero">
-    <div class="home-hero-inner">
-      <div class="home-hero-copy motion-item">
-        <p class="brand-kicker">Value at checkout</p>
-        <h1>Apply offers and pay in one checkout.</h1>
-        <p class="premium-lead">
-          SkanPay helps participating wallets, merchants, payment partners, and promotion programs connect eligible coupons, vouchers, gift cards, or loyalty value to the final payment. BeamCash is the small-seller demo that makes the checkout moment visible.
+  <section class="product-hero skanpay-home">
+    <div class="product-hero-inner">
+      <div class="product-hero-copy motion-item">
+        <p class="eyebrow">Payment + redemption checkout</p>
+        <h1>Apply eligible value before the customer pays.</h1>
+        <p class="hero-lede">
+          SkanPay is developing a checkout value platform for participating wallets, merchants, payment partners, and promotion programs. The goal is simple: use the value a customer already has, then pay the remaining balance.
         </p>
 
-        <div class="premium-actions">
-          <a class="button primary premium-primary" href="/qr-payments/">Explore SkanPay</a>
-          <a class="button secondary premium-secondary" href="/beamcash-demo/">View BeamCash demo</a>
+        <div class="hero-checks" aria-label="SkanPay checkout outcomes">
+          <span>Coupon, voucher, gift-card, loyalty, or wallet value</span>
+          <span>One checkout moment</span>
+          <span>Clear result confirmation</span>
         </div>
 
-        <div class="scan-principles" aria-label="SkanPay payment principles">
-          <span>Present offer</span>
-          <span>Apply value</span>
-          <span>Pay balance</span>
+        <div class="product-actions">
+          <a class="button primary" href="/qr-payments/">Explore SkanPay</a>
+          <a class="button secondary" href="/beamcash-demo/">View BeamCash demo</a>
         </div>
-
-        <p class="product-status-line">For the customer, it should feel like one checkout. For partners, each system keeps its role.</p>
       </div>
 
-      <aside class="open-payment-field motion-item" aria-label="BeamCash QR checkout product scene">
-        <div class="field-status-chip">
-          <span>BeamCash demo</span>
-          <strong>Ready for buyer review</strong>
+      <aside class="checkout-scene motion-item" aria-label="SkanPay checkout value scene">
+        <div class="checkout-receipt">
+          <div class="receipt-topline">
+            <span>Merchant checkout</span>
+            <strong>Ready</strong>
+          </div>
+          <div class="receipt-row">
+            <span>Subtotal</span>
+            <strong>$48.00</strong>
+          </div>
+          <div class="receipt-row applied">
+            <span>Eligible value applied</span>
+            <strong>-$15.00</strong>
+          </div>
+          <div class="receipt-row total">
+            <span>Balance to pay</span>
+            <strong>$33.00</strong>
+          </div>
         </div>
-        <div class="scan-beam" aria-hidden="true"></div>
-        <img class="field-phone field-dashboard" src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard screen" />
-        <img class="field-phone field-code" src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash seller Scan to Pay QR code screen" />
-        <img class="field-phone field-buyer" src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash buyer checkout screen with seller and amount review" />
-        <div class="field-state-line">
-          <span>Seller</span>
-          <span>Buyer</span>
-          <span>Status</span>
+
+        <div class="checkout-placard">
+          <span>Scan to review</span>
+          <img src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash seller QR checkout screen" />
+        </div>
+
+        <img class="checkout-phone" src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash buyer checkout review screen" />
+
+        <div class="checkout-confirmation">
+          <span>Confirmation</span>
+          <strong>Value applied. Payment completed.</strong>
         </div>
       </aside>
     </div>
   </section>
 
-  <section class="relationship-section">
-    <div class="relationship-inner">
-      <div class="relationship-heading motion-item">
-        <span>How the pieces fit</span>
-        <h2>SkanPay is the company direction. BeamCash is the demo.</h2>
-        <p>BeamCash shows a simple seller-to-buyer QR checkout. SkanPay is the broader partner path for making wallet and offer value work at participating merchant checkout.</p>
-      </div>
-      <div class="relationship-map" aria-label="SkanPay and BeamCash relationship">
-        {relationshipMap.map((item, index) => (
-          <article class="relationship-row motion-item">
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <strong>{item.name}</strong>
-            <em>{item.role}</em>
-            <p>{item.description}</p>
-          </article>
-        ))}
-      </div>
+  <section class="step-band" aria-label="SkanPay checkout flow">
+    <div class="step-band-inner">
+      {skanpayFlow.map((step, index) => (
+        <article class="motion-item">
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <strong>{step}</strong>
+        </article>
+      ))}
     </div>
   </section>
 
-  <section class="problem-flow">
-    <div class="problem-flow-inner">
-      <div class="problem-heading motion-item">
+  <section class="problem-led-section">
+    <div class="product-section-inner">
+      <div class="section-intro motion-item">
         <span>The payment problem</span>
         <h2>Checkout is where stored value gets lost.</h2>
-        <p>A customer may have a coupon, voucher, gift card, loyalty benefit, or payment account in one app, while the merchant invoice and payment path live somewhere else.</p>
+        <p>A customer may have value in one place while the invoice, merchant rules, and payment path live somewhere else.</p>
       </div>
-      <div class="problem-lines" aria-label="QR checkout problem and response">
+
+      <div class="editorial-lines" aria-label="Checkout problems and SkanPay responses">
         {checkoutProblems.map((item, index) => (
           <article class="motion-item">
             <span>{String(index + 1).padStart(2, "0")}</span>
@@ -95,52 +101,42 @@ import {
     </div>
   </section>
 
-  <section class="system-blueprint" id="skanpay">
-    <div class="system-blueprint-inner">
-      <div class="system-copy motion-item">
-        <span>SkanPay</span>
-        <h2>The SkanPay idea in one flow.</h2>
-        <p>
-          Present eligible value, apply it at checkout, pay the final balance, and confirm what happened. That is the public product story; the partner details can be reviewed case by case.
-        </p>
+  <section class="product-split-section">
+    <div class="product-split-inner">
+      <div class="section-intro motion-item">
+        <span>Company and demo</span>
+        <h2>SkanPay is the platform direction. BeamCash is the proof.</h2>
+        <p>BeamCash makes one QR checkout moment visible, while SkanPay is the broader path for partner checkout value.</p>
       </div>
 
-      <div class="blueprint-rail" aria-label="SkanPay checkout direction">
-        {skanpayFlow.map((step, index) => (
+      <div class="relationship-ledger" aria-label="SkanPay and BeamCash relationship">
+        {relationshipMap.map((item, index) => (
           <article class="motion-item">
             <span>{String(index + 1).padStart(2, "0")}</span>
-            <strong>{step}</strong>
+            <strong>{item.name}</strong>
+            <em>{item.role}</em>
+            <p>{item.description}</p>
           </article>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="scan-story" id="beamcash">
-    <div class="scan-story-inner">
-      <div class="scan-story-visual motion-item" aria-label="BeamCash screen progression">
-        <img class="story-device story-device-dashboard" src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard screen" />
-        <img class="story-device story-device-code" src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash seller QR code screen" />
-        <img class="story-device story-device-checkout" src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash buyer checkout screen" />
+  <section class="beam-proof-section">
+    <div class="beam-proof-inner">
+      <div class="beam-proof-visual motion-item" aria-label="BeamCash product screens">
+        <img src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard screen" />
+        <img src="/beamcash/beamcash-app-seller-code.png" alt="BeamCash seller QR code screen" />
+        <img src="/beamcash/beamcash-app-buyer-checkout.png" alt="BeamCash buyer review screen" />
       </div>
 
-      <div class="scan-story-copy motion-item">
-        <span>BeamCash product proof</span>
-        <h2>Start with the payment moment people can see.</h2>
+      <div class="beam-proof-copy motion-item">
+        <span>BeamCash demo</span>
+        <h2>A visible QR checkout for sellers and buyers.</h2>
         <p>
-          BeamCash focuses on a small-seller QR checkout because it is easy to understand: show the code, let the buyer review, and return a clear status to the seller.
+          BeamCash helps us test setup, scan behavior, buyer review, seller confirmation, and the practical details that payment partners care about.
         </p>
-
-        <div class="story-line-list" aria-label="BeamCash payment walkthrough">
-          {beamcashFlow.map((step, index) => (
-            <div>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <strong>{step}</strong>
-            </div>
-          ))}
-        </div>
-
-        <a class="text-link" href="/beamcash-demo/">Explore the BeamCash page</a>
+        <a class="text-link" href="/beamcash-demo/">Explore BeamCash</a>
       </div>
     </div>
   </section>
