@@ -4,11 +4,15 @@ Source reviewed: `SkanPay_Master_Business_Document.docx` from August 25, 2026.
 
 ## Public Positioning
 
-SkanPay should be explained as payment-and-redemption checkout coordination, not as a QR-code product or a deep technical architecture page.
+SkanPay should be explained as value-at-checkout coordination, not as a QR-code product or a deep technical architecture page.
 
 Plain public version:
 
-SkanPay helps participating wallets, merchants, gateways, and promotion programs coordinate eligible value and final payment in one checkout flow.
+SkanPay helps participating wallets, merchants, payment partners, and promotion programs apply eligible value before the final payment.
+
+Even simpler headline:
+
+Apply offers and pay in one checkout.
 
 BeamCash is different:
 
@@ -20,7 +24,7 @@ BeamCash is the small-seller QR checkout demo under SkanPay. It helps show and t
 - The outcome: eligible value can apply before the final balance is paid, with a clear result for the right participants.
 - The audience: merchants, merchant platforms, wallets, gateways, payment partners, coupon/voucher/loyalty programs, and promotion owners.
 - The product split: SkanPay is the broader platform direction; BeamCash is the visible demo and learning product.
-- The pilot framing: one wallet or value source, one participating merchant environment, one gateway path, one redemption type, and one measurable success metric.
+- The pilot framing: one wallet or value source, one participating merchant environment, one payment path, one redemption type, and one measurable success metric.
 - The invention note: use measured language such as "patent-pending portfolio" only if current status and wording are confirmed.
 
 ## What The Website Should Avoid
@@ -36,7 +40,8 @@ BeamCash is the small-seller QR checkout demo under SkanPay. It helps show and t
 
 Use simple product language:
 
-- "Apply eligible value at checkout."
+- "Apply offers and pay in one checkout."
+- "Apply eligible value before payment."
 - "Pay the final balance."
 - "Confirm what was redeemed and charged."
 - "Participating wallets and merchants."

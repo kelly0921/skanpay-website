@@ -3,26 +3,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { skanpayDefinitions } from "../content/site";
 ---
 <BaseLayout
-  title="SkanPay - Payment and Redemption"
-  description="SkanPay helps participating wallets, merchant checkout, and payment partners coordinate eligible value, final balance, and confirmation in one checkout flow."
+  title="SkanPay - Checkout Value Platform"
+  description="SkanPay helps participating wallets, merchants, and payment partners apply eligible value before the final balance is paid."
   activePath="/qr-payments/"
 >
   <section class="tech-hero">
     <div class="tech-hero-inner">
       <div class="tech-hero-copy motion-item">
         <p class="eyebrow">SkanPay</p>
-        <h1>One flow for offers, checkout, and payment.</h1>
+        <h1>Apply eligible value before the final payment.</h1>
         <p>
-          SkanPay is the broader product direction behind BeamCash: a patent-pending payment-and-redemption platform for participating systems that need eligible value applied, final balance paid, and results confirmed in one checkout flow.
+          SkanPay is the broader product direction behind BeamCash: a patent-pending checkout value platform for participating wallets, merchants, payment partners, and promotion programs.
         </p>
       </div>
 
       <div class="request-object motion-item" aria-label="SkanPay checkout outcome snapshot">
-        <div><span>Customer</span><strong>Uses a participating wallet or value source</strong></div>
-        <div><span>Merchant</span><strong>Keeps checkout and invoice authority</strong></div>
-        <div><span>Value</span><strong>Eligible coupon, voucher, gift card, or loyalty benefit</strong></div>
-        <div><span>Payment</span><strong>Final balance moves through the supported path</strong></div>
-        <div><span>Result</span><strong>Authorized parties receive confirmation</strong></div>
+        <div><span>Customer</span><strong>Presents eligible wallet or offer value</strong></div>
+        <div><span>Merchant</span><strong>Applies value at checkout</strong></div>
+        <div><span>Payment</span><strong>Final balance is paid</strong></div>
+        <div><span>Result</span><strong>Confirmation shows what happened</strong></div>
+        <div><span>Partner</span><strong>Starts with one measured pilot</strong></div>
       </div>
     </div>
   </section>
@@ -31,8 +31,8 @@ import { skanpayDefinitions } from "../content/site";
     <div class="definition-inner">
       <div class="tech-section-heading motion-item">
         <p class="eyebrow">Definition</p>
-        <h2>A practical layer for one coordinated checkout.</h2>
-        <p>SkanPay should be understood by the problem it solves, not by the transport method. QR can be one way to start the flow, but the product value is the coordinated checkout outcome.</p>
+        <h2>The product is the checkout outcome, not the QR code.</h2>
+        <p>The customer should not need to think about separate offer redemption and payment steps. The public promise is simple: apply eligible value, pay the final balance, and confirm the result.</p>
       </div>
 
       <div class="definition-lines" aria-label="What SkanPay is and is not">
@@ -54,20 +54,20 @@ import { skanpayDefinitions } from "../content/site";
     <div class="state-machine-inner">
       <div class="tech-section-heading motion-item">
         <p class="eyebrow">Checkout flow</p>
-        <h2>What the customer and merchant should experience.</h2>
-        <p>The flow should feel simple even when several business systems participate behind the scenes.</p>
+        <h2>What a participating checkout should make possible.</h2>
+        <p>The flow should be easy to repeat: present value, apply value, pay the balance, confirm the result.</p>
       </div>
 
       <div class="state-rail" aria-label="SkanPay checkout flow">
         <article class="motion-item">
           <span>Present</span>
-          <strong>Customer presents value</strong>
-          <p>A participating app, QR, barcode, NFC signal, or other supported method can begin the checkout flow.</p>
+          <strong>Customer presents eligible value</strong>
+          <p>The value may come from a participating wallet, coupon, voucher, gift card, or loyalty program.</p>
         </article>
         <article class="motion-item">
           <span>Apply</span>
-          <strong>Eligible value is checked</strong>
-          <p>The merchant checkout determines what coupon, voucher, gift-card, or loyalty value can apply.</p>
+          <strong>Checkout applies what qualifies</strong>
+          <p>The merchant keeps control of the invoice and determines what can apply to the purchase.</p>
         </article>
         <article class="motion-item">
           <span>Pay</span>
@@ -87,27 +87,27 @@ import { skanpayDefinitions } from "../content/site";
     <div class="protocol-split-inner">
       <div class="protocol-copy motion-item">
         <p class="eyebrow">For partners</p>
-        <h2>Start with one measurable checkout problem.</h2>
+        <h2>Start with one narrow pilot.</h2>
         <p>
-          The best first use case is narrow: one wallet or value source, one participating merchant environment, one gateway path, and one redemption type with a clear success measure.
+          The master business direction is not a universal launch on day one. It is one value source, one merchant environment, one payment path, and one redemption problem with a clear success measure.
         </p>
       </div>
 
       <div class="boundary-map motion-item" aria-label="Gateway and partner responsibilities">
         <div>
           <span>Wallet or offer owner</span>
-          <strong>Extend accepted value</strong>
-          <p>Give customers a reason to use an existing account, coupon, voucher, gift card, or loyalty benefit.</p>
+          <strong>Make value usable</strong>
+          <p>Help customers use an existing account, coupon, voucher, gift card, or loyalty benefit in a new participating checkout.</p>
         </div>
         <div>
           <span>Merchant or platform</span>
-          <strong>Preserve checkout control</strong>
+          <strong>Keep checkout control</strong>
           <p>Keep invoice logic, eligibility, and merchant operations inside the systems that already own them.</p>
         </div>
         <div>
-          <span>Gateway path</span>
-          <strong>Coordinate the handoff</strong>
-          <p>Support a controlled flow without building a separate direct connection between every wallet and merchant.</p>
+          <span>Payment partner</span>
+          <strong>Reduce one-off work</strong>
+          <p>Support a repeatable checkout pattern instead of a custom connection for every wallet, merchant, and offer source.</p>
         </div>
       </div>
     </div>
@@ -117,15 +117,15 @@ import { skanpayDefinitions } from "../content/site";
     <div class="integration-runway-inner">
       <div class="tech-section-heading motion-item">
         <p class="eyebrow">Pilot scope</p>
-        <h2>What we would define before a pilot.</h2>
-        <p>Public messaging should stay clear and measured. The detailed operating model belongs in a partner review.</p>
+        <h2>What we would define before testing.</h2>
+        <p>The useful first conversation is practical: what value should apply, where checkout happens, who confirms the outcome, and how success is measured.</p>
       </div>
 
       <ol class="runway-list">
         <li class="motion-item"><span>01</span><strong>Participating wallet or value source</strong></li>
         <li class="motion-item"><span>02</span><strong>Merchant checkout environment</strong></li>
-        <li class="motion-item"><span>03</span><strong>Coupon, voucher, gift-card, or loyalty rule</strong></li>
-        <li class="motion-item"><span>04</span><strong>Confirmation and support states</strong></li>
+        <li class="motion-item"><span>03</span><strong>Coupon, voucher, gift card, or loyalty rule</strong></li>
+        <li class="motion-item"><span>04</span><strong>Final payment and confirmation path</strong></li>
         <li class="motion-item"><span>05</span><strong>Success measure and data boundaries</strong></li>
       </ol>
     </div>

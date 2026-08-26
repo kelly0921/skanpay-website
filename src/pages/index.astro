@@ -9,17 +9,17 @@ import {
 } from "../content/site";
 ---
 <BaseLayout
-  title="SkanPay - Payment and Redemption Checkout"
-  description="SkanPay helps participating wallets, merchants, and payment partners coordinate eligible value and final payment in one checkout flow. BeamCash is the small-seller demo."
+  title="SkanPay - Apply Offers and Pay in One Checkout"
+  description="SkanPay helps participating wallets, merchants, and payment partners apply eligible value before final payment. BeamCash is the small-seller QR checkout demo."
   activePath="/"
 >
   <section class="home-hero">
     <div class="home-hero-inner">
       <div class="home-hero-copy motion-item">
-        <p class="brand-kicker">Payment + redemption checkout</p>
-        <h1>Make wallet offers work at checkout.</h1>
+        <p class="brand-kicker">Value at checkout</p>
+        <h1>Apply offers and pay in one checkout.</h1>
         <p class="premium-lead">
-          SkanPay helps participating wallets, merchants, payment partners, and promotion programs coordinate eligible value and final payment in one flow. BeamCash is the small-seller demo that makes the scan-to-confirmation moment visible.
+          SkanPay helps participating wallets, merchants, payment partners, and promotion programs connect eligible coupons, vouchers, gift cards, or loyalty value to the final payment. BeamCash is the small-seller demo that makes the checkout moment visible.
         </p>
 
         <div class="premium-actions">
@@ -28,18 +28,18 @@ import {
         </div>
 
         <div class="scan-principles" aria-label="SkanPay payment principles">
-          <span>Present value</span>
-          <span>Apply at checkout</span>
-          <span>Confirm payment</span>
+          <span>Present offer</span>
+          <span>Apply value</span>
+          <span>Pay balance</span>
         </div>
 
-        <p class="product-status-line">The point is not another QR code. The point is a smoother handoff between value, checkout, payment, and confirmation.</p>
+        <p class="product-status-line">For the customer, it should feel like one checkout. For partners, each system keeps its role.</p>
       </div>
 
       <aside class="open-payment-field motion-item" aria-label="BeamCash QR checkout product scene">
         <div class="field-status-chip">
           <span>BeamCash demo</span>
-          <strong>Request ready for buyer review</strong>
+          <strong>Ready for buyer review</strong>
         </div>
         <div class="scan-beam" aria-hidden="true"></div>
         <img class="field-phone field-dashboard" src="/beamcash/beamcash-app-seller-dashboard.png" alt="BeamCash seller dashboard screen" />
@@ -58,8 +58,8 @@ import {
     <div class="relationship-inner">
       <div class="relationship-heading motion-item">
         <span>How the pieces fit</span>
-        <h2>SkanPay is the platform direction. BeamCash is the visible demo.</h2>
-        <p>SkanPay is the bigger payment-and-redemption thesis. BeamCash keeps the user experience concrete while the broader platform path is validated with partners.</p>
+        <h2>SkanPay is the company direction. BeamCash is the demo.</h2>
+        <p>BeamCash shows a simple seller-to-buyer QR checkout. SkanPay is the broader partner path for making wallet and offer value work at participating merchant checkout.</p>
       </div>
       <div class="relationship-map" aria-label="SkanPay and BeamCash relationship">
         {relationshipMap.map((item, index) => (
@@ -78,8 +78,8 @@ import {
     <div class="problem-flow-inner">
       <div class="problem-heading motion-item">
         <span>The payment problem</span>
-        <h2>Offers, wallets, and checkout still break apart.</h2>
-        <p>Coupons, vouchers, gift cards, loyalty value, merchant invoices, and payment processing often live in separate systems. The value can disappear at the exact moment it should be used.</p>
+        <h2>Checkout is where stored value gets lost.</h2>
+        <p>A customer may have a coupon, voucher, gift card, loyalty benefit, or payment account in one app, while the merchant invoice and payment path live somewhere else.</p>
       </div>
       <div class="problem-lines" aria-label="QR checkout problem and response">
         {checkoutProblems.map((item, index) => (
@@ -99,9 +99,9 @@ import {
     <div class="system-blueprint-inner">
       <div class="system-copy motion-item">
         <span>SkanPay</span>
-        <h2>Coordinate value, payment, and confirmation in one checkout flow.</h2>
+        <h2>The SkanPay idea in one flow.</h2>
         <p>
-          SkanPay is built around a simple public idea: a participating customer app should be able to apply eligible value at a participating merchant, pay the final balance, and confirm the result to the right parties.
+          Present eligible value, apply it at checkout, pay the final balance, and confirm what happened. That is the public product story; the partner details can be reviewed case by case.
         </p>
       </div>
 
